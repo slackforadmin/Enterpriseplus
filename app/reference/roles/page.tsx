@@ -1,0 +1,276 @@
+import Link from 'next/link';
+
+const SEARCH_BASE = 'https://slack.com/help/search?query=';
+const helpLink = (title: string) => `${SEARCH_BASE}${encodeURIComponent(title)}`;
+
+type Perm = { ko: string; en: string; note?: string };
+type Role = { ko: string; en: string; desc: string; perms: Perm[] };
+type Group = { tier: string; color: string; roles: Role[] };
+
+const groups: Group[] = [
+  {
+    tier: '조직 (Organization)',
+    color: '#635BFF',
+    roles: [
+      {
+        ko: '조직 주 소유자',
+        en: 'Org Primary Owner',
+        desc: '모든 조직에는 가장 높은 권한을 가진 한 명의 기본 소유자가 있습니다. Slack에서 가장 강력한 관리 역할이며, 청구·워크스페이스 인증·액세스·보안 정책 등에 접근할 수 있습니다. 한 명만 존재할 수 있지만 다른 구성원에게 양도할 수 있습니다. 조직 소유자가 할 수 있는 모든 일에 더해 다음을 할 수 있습니다.',
+        perms: [
+          { ko: '조직의 소유권 이전', en: 'Transfer ownership of the org' },
+          { ko: '채널 관리 도구 사용', en: 'Use channel management tools' },
+        ],
+      },
+      {
+        ko: '조직 소유자',
+        en: 'Org Owner',
+        desc: '여러 명일 수 있습니다. 조직 주 소유자와 동일한 수준의 권한을 갖지만 조직의 소유권을 이전할 수 없습니다. 조직 관리자가 할 수 있는 모든 일에 더해 다음을 할 수 있습니다.',
+        perms: [
+          { ko: '도메인 클레임 관리', en: 'Manage domain claiming' },
+          { ko: '조직 레벨의 앱 관리 정책', en: 'Set up org-wide app management policies' },
+          { ko: 'SAML 싱글사인온(SSO) 설정', en: 'Configure single sign-on' },
+          { ko: '이메일/표시이름 변경 권한', en: 'Allow users to change their email address or display name' },
+          { ko: '2단계 인증(2FA) 필수화', en: 'Enable mandatory two-factor authentication' },
+        ],
+      },
+      {
+        ko: '조직 관리자',
+        en: 'Org Admin',
+        desc: '여러 명일 수 있습니다. 조직 수준의 관리 작업을 돕습니다. 워크스페이스 소유자가 할 수 있는 모든 일에 더해 다음을 할 수 있습니다. (조직 소유자/관리자는 이 권한 중 일부를 워크스페이스 소유자/관리자나 구성원에게 전달할 수 있습니다.)',
+        perms: [
+          { ko: '워크스페이스 생성', en: 'Create a new workspace' },
+          { ko: '멀티워크스페이스 채널 생성', en: 'Create a multi-workspace channel' },
+          { ko: 'IDP 그룹을 워크스페이스/채널에 연결', en: 'Connect IDP groups to workspaces or channels' },
+          { ko: 'Slack 커넥트 채널 관리', en: 'Manage Slack Connect channels', note: 'Enterprise Grid' },
+          { ko: '메시지 편집/삭제 권한 관리', en: 'Set edit/deletion policy' },
+          { ko: 'Slack 외부 파일 공유 정책', en: 'Set public file sharing policy' },
+          { ko: '워크스페이스 간 채널 이동', en: 'Move channels between workspaces' },
+          { ko: '멀티 워크스페이스 채널 관리', en: 'Manage multi-workspace channel creation' },
+          { ko: '멤버 프로필 일부 편집', en: 'Edit select profile information for members' },
+          { ko: 'Slackbot 응답 정책 설정', en: 'Set Slackbot responses policy' },
+        ],
+      },
+    ],
+  },
+  {
+    tier: '워크스페이스 (Workspace)',
+    color: '#0EA5E9',
+    roles: [
+      {
+        ko: '워크스페이스 주 소유자',
+        en: 'Workspace Primary Owner',
+        desc: '모든 워크스페이스에는 가장 높은 권한을 가진 한 명의 기본 소유자가 있습니다. 청구·인증·액세스·보안 정책 등에 접근할 수 있습니다. 한 명만 존재하며 양도할 수 있습니다. (Ent+에서는 보통 워크스페이스 생성 시 조직 주 소유자가 워크스페이스 주 소유자가 되나 변경 가능합니다.) 워크스페이스 소유자가 할 수 있는 모든 일에 더해 다음을 할 수 있습니다.',
+        perms: [
+          { ko: '워크스페이스 삭제 또는 소유권 이전', en: 'Delete or transfer ownership of a workspace' },
+          { ko: '워크스페이스 소유자 강등', en: 'Demote a Workspace Owner' },
+        ],
+      },
+      {
+        ko: '워크스페이스 소유자',
+        en: 'Workspace Owner',
+        desc: '워크스페이스의 소유권을 삭제·이전할 수 없다는 점을 제외하면 가장 높은 권한을 보유합니다. 여러 명일 수 있습니다. 워크스페이스 관리자가 할 수 있는 모든 일에 더해 다음을 할 수 있습니다.',
+        perms: [
+          { ko: '메시지/파일 보존 정책 지정', en: 'Set custom message and file retention policies' },
+          { ko: '모든 멤버 비밀번호 재설정', en: "Reset all members' passwords" },
+          { ko: 'Slack 플랜 및 청구 관리', en: "Change your workspace's plan, add a payment method and view billing statements" },
+          { ko: '공개/비공개 채널·DM 내보내기 신청', en: 'Apply to export content from all conversations, including private channels and DMs' },
+          { ko: '앱 요청 승인 켜기', en: 'Turn on Approved Apps' },
+          { ko: '앱 설정 및 권한 관리', en: 'Manage app settings and permissions' },
+          { ko: 'Slack Connect 채널 관리', en: 'Manage Slack Connect channels', note: 'Pro·Business+' },
+          { ko: '워크스페이스 검색·액세스 설정', en: 'Set workspace discovery and access', note: 'Enterprise Grid' },
+          { ko: '워크스페이스 관리자 강등', en: 'Demote a Workspace Admin' },
+          { ko: '표시이름·언어·이름/URL 설정', en: 'name display guidelines, workspace language and workspace name/URL' },
+        ],
+      },
+      {
+        ko: '워크스페이스 관리자',
+        en: 'Workspace Admin',
+        desc: '담당 워크스페이스의 구성원·채널·관리 작업을 관리합니다. 여러 명일 수 있습니다. 멤버가 할 수 있는 모든 일에 더해 다음을 할 수 있습니다.',
+        perms: [
+          { ko: 'Slack Connect 채널 생성', en: 'Create a Slack Connect channel' },
+          { ko: '공개/비공개 채널 변환', en: 'Make a public channel private' },
+          { ko: '채널 이름 변경', en: 'Rename any channel' },
+          { ko: '채널 삭제', en: 'Delete a channel' },
+          { ko: '유저 그룹 생성', en: 'Create user groups' },
+          { ko: '게스트 초대 및 공개채널 추가', en: 'Invite new guests and add them to public channels' },
+          { ko: '멤버 계정 비활성화', en: "Deactivate a member's account" },
+          { ko: '워크스페이스 관리자 지정', en: 'Promote a Workspace Admin' },
+          { ko: '기본 채널 설정', en: 'Set default channels' },
+          { ko: '분석·사용 현황 보기', en: 'View analytics and usage' },
+          { ko: '다른 사람 메시지 삭제', en: "Delete other people's messages" },
+          { ko: '이름/표시이름 변경', en: 'Change full & display names' },
+          { ko: '이메일 주소 변경', en: 'Change an email address' },
+          { ko: '기본 방해금지 시간 설정', en: 'Set default Do Not Disturb hours' },
+          { ko: '2FA 필수화', en: 'Turn on mandatory 2FA', note: 'GRID는 조직 관리자/소유자' },
+          { ko: '공개 채널 데이터 내보내기', en: 'Export data from public channels', note: 'GRID는 조직 관리자/소유자' },
+          { ko: '워크스페이스 간 채널 이동', en: 'Move channels between workspaces', note: 'Enterprise Grid' },
+          { ko: '채널 관리 도구 사용', en: 'Use channel management tools', note: 'Business+' },
+          { ko: '초대 멤버 전체 공지', en: 'Send messages to all invited members at once' },
+          { ko: '메시지 편집/삭제 정책 설정', en: 'Set message edit/deletion policy' },
+          { ko: '채널 허들 비활성화', en: 'Disable huddles in channels', note: 'Enterprise Grid' },
+        ],
+      },
+    ],
+  },
+  {
+    tier: '채널 (Channel)',
+    color: '#10B981',
+    roles: [
+      {
+        ko: '채널 관리자',
+        en: 'Channel Manager',
+        desc: '새 채널을 만드는 사람에게 자동으로 할당됩니다. 담당 채널의 관리 작업을 수행할 수 있습니다. 멤버가 할 수 있는 모든 일에 더해 다음을 할 수 있습니다. (시스템 역할의 채널 관리자(Channel Admin)와는 다릅니다.)',
+        perms: [
+          { ko: '다른 채널 관리자 추가·관리', en: 'Add & manage other Channel Managers' },
+          { ko: '공개/비공개 채널 전환', en: 'Convert channels to private or public' },
+          { ko: '채널 이름 변경', en: 'Rename channels' },
+          { ko: '채널 보관', en: 'Archive channels' },
+        ],
+      },
+    ],
+  },
+];
+
+const systemRoles: Perm[] = [
+  { ko: '분석 관리자', en: 'View the analytics dashboard' },
+  { ko: '감사 로그 관리자', en: 'Access the audit logs' },
+  { ko: '채널 관리자', en: 'Manage how channels are managed' },
+  { ko: '콘텐츠 관리자', en: 'Review flagged content and moderate content' },
+  { ko: '사용자 맞춤 관리자', en: 'Manage custom emoji and Slackbot responses' },
+  { ko: 'DLP 관리자', en: 'Configure and manage Slack Data Loss Prevention' },
+  { ko: '내보내기 관리자', en: 'Access and manage exports' },
+  { ko: '통합 관리자', en: 'View, install, approve and manage apps' },
+  { ko: '법적 자료 관리자', en: 'Create and manage legal holds' },
+  { ko: '메시지 활동 관리자', en: 'View message activity in channels' },
+  { ko: '역할 관리자', en: 'Manage who is assigned system roles' },
+  { ko: '영업 관리자', en: 'Manage the Slack sales home' },
+  { ko: 'Salesforce 관리자', en: 'Manage the Salesforce integration' },
+  { ko: '보안 관리자', en: 'Manage sessions and deactivate accounts' },
+  { ko: '템플릿 관리자', en: 'Create and publish custom canvases and channel templates' },
+  { ko: '사용자 관리자', en: 'Add, remove or deactivate non-admin users' },
+  { ko: '워크플로 관리자', en: 'Manage workflows and view workflow analytics' },
+];
+
+export default function RolesReferencePage() {
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {/* Hero */}
+      <div
+        className="px-12 pt-14 pb-12 relative overflow-hidden"
+        style={{ background: 'linear-gradient(135deg, #0A2540 0%, #3C2A6B 60%, #635BFF 100%)' }}
+      >
+        <div
+          className="absolute inset-0 opacity-30"
+          style={{ background: 'radial-gradient(circle at 85% 15%, rgba(99,91,255,0.5) 0%, transparent 55%)' }}
+        />
+        <div className="relative max-w-4xl">
+          <Link href="/" className="text-sm text-white/60 hover:text-white mb-5 inline-flex items-center gap-1">
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+            런치 가이드로 돌아가기
+          </Link>
+          <h1 className="text-4xl font-bold text-white mb-3 tracking-tight mt-1">Roles &amp; Permissions</h1>
+          <p className="text-white/70 leading-relaxed">
+            Slack Enterprise+의 조직·워크스페이스·채널 역할과 각 역할의 권한입니다.<br />
+            각 권한을 클릭하면 Slack 헬프센터에서 자세한 내용을 확인할 수 있습니다.
+          </p>
+        </div>
+      </div>
+
+      <div className="px-12 py-12 max-w-4xl">
+        <div className="flex items-start gap-3 bg-sky-50 border border-sky-200 rounded-xl p-4 mb-10">
+          <span className="text-sky-500 flex-shrink-0 mt-0.5">💡</span>
+          <p className="text-sm text-sky-800 leading-relaxed">
+            설정을 진행하며 역할별 권한이 궁금할 때 참고하세요. 조직 소유자부터 채널 관리자까지 역할 계층과 권한을 확인할 수 있습니다.
+          </p>
+        </div>
+
+        {/* Role groups */}
+        <div className="space-y-12">
+          {groups.map((group) => (
+            <section key={group.tier}>
+              <div className="flex items-center gap-2 mb-5">
+                <span className="w-2.5 h-2.5 rounded-full" style={{ background: group.color }} />
+                <h2 className="text-sm font-bold uppercase tracking-wider text-gray-500">{group.tier}</h2>
+              </div>
+              <div className="space-y-5">
+                {group.roles.map((role) => (
+                  <div key={role.en} className="bg-white rounded-2xl border border-gray-200 overflow-hidden">
+                    <div className="px-6 pt-5 pb-4 border-b border-gray-100">
+                      <div className="flex items-baseline gap-2 flex-wrap">
+                        <h3 className="font-bold text-gray-900">{role.ko}</h3>
+                        <span className="text-sm font-medium" style={{ color: group.color }}>{role.en}</span>
+                      </div>
+                      <p className="text-sm text-gray-500 leading-relaxed mt-2">{role.desc}</p>
+                    </div>
+                    <ul className="grid sm:grid-cols-2 gap-px bg-gray-100">
+                      {role.perms.map((perm) => (
+                        <li key={perm.en} className="bg-white">
+                          <a
+                            href={helpLink(perm.en)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group flex items-start gap-3 px-5 py-3 hover:bg-gray-50 transition-colors h-full"
+                          >
+                            <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2" style={{ background: group.color }} />
+                            <span className="flex-1 text-sm text-gray-700 leading-snug">
+                              <span className="inline-flex items-center gap-1.5 flex-wrap">
+                                {perm.ko}
+                                {perm.note && (
+                                  <span className="text-[11px] text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded">{perm.note}</span>
+                                )}
+                              </span>
+                              <span className="block text-xs text-gray-400 mt-0.5">{perm.en}</span>
+                            </span>
+                            <svg className="w-3.5 h-3.5 text-gray-300 group-hover:text-gray-500 transition-colors flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </section>
+          ))}
+
+          {/* System roles */}
+          <section>
+            <div className="flex items-center gap-2 mb-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#ECB22E]" />
+              <h2 className="text-sm font-bold uppercase tracking-wider text-gray-500">시스템 역할 (System Roles)</h2>
+            </div>
+            <p className="text-sm text-gray-500 leading-relaxed mb-5">
+              시스템 역할은 소유자나 관리자의 역할 일부를 멤버에게 부여할 수 있습니다. 조직 주 소유자나 소유자라도 해당 메뉴에 접근하려면 역할을 부여받아야 하는 항목도 있습니다. (예: DLP 관리자)
+            </p>
+            <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden">
+              <ul className="divide-y divide-gray-50 sm:grid sm:grid-cols-2 sm:divide-y-0 sm:gap-px sm:bg-gray-50">
+                {systemRoles.map((role) => (
+                  <li key={role.en} className="bg-white">
+                    <a
+                      href={helpLink(role.en)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-center gap-3 px-6 py-3 hover:bg-gray-50 transition-colors h-full"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#ECB22E] flex-shrink-0" />
+                      <span className="flex-1 text-sm text-gray-700">
+                        {role.ko}
+                        <span className="block text-xs text-gray-400 mt-0.5">{role.en}</span>
+                      </span>
+                      <svg className="w-4 h-4 text-gray-300 group-hover:text-gray-500 transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  );
+}

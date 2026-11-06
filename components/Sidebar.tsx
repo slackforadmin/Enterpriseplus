@@ -38,6 +38,14 @@ const navItems = [
     label: '사용자 세션',
     href: '/user-session',
   },
+  {
+    label: 'Roles & Permissions',
+    href: '/reference/roles',
+  },
+  {
+    label: '데이터 보존 정책',
+    href: '/reference/retention',
+  },
 ];
 
 export default function Sidebar() {
@@ -65,7 +73,7 @@ export default function Sidebar() {
               <path d="M0 34.249a5.381 5.381 0 0 0 5.376 5.386 5.381 5.381 0 0 0 5.376-5.386v-5.387H5.376A5.381 5.381 0 0 0 0 34.249m14.336 0v14.364A5.381 5.381 0 0 0 19.712 54a5.381 5.381 0 0 0 5.376-5.387V34.249a5.381 5.381 0 0 0-5.376-5.387 5.381 5.381 0 0 0-5.376 5.387" fill="#fff"/>
             </svg>
           </div>
-          <span className="text-white font-semibold text-[15px] tracking-tight">Launch Guide</span>
+          <span className="text-white font-semibold text-[15px] tracking-tight">Ent+ Launch Guide</span>
         </div>
       </div>
 
@@ -81,6 +89,16 @@ export default function Sidebar() {
                   : 'text-[var(--sidebar-text)] hover:bg-white/5 hover:text-white'
               }`}
             >
+              {item.href === '/reference/roles' && (
+                <svg className="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+              )}
+              {item.href === '/reference/retention' && (
+                <svg className="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              )}
               {item.label}
             </Link>
             {item.children && isParentActive(item) && (

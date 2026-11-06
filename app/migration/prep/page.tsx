@@ -19,10 +19,7 @@ export default function MigrationPrepPage() {
             </svg>
             마이그레이션으로 돌아가기
           </Link>
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur text-white/90 text-xs font-medium px-3 py-1.5 rounded-full mb-4 border border-white/10">
-            마이그레이션 · 2단계
-          </div>
-          <h1 className="text-4xl font-bold text-white mb-3 tracking-tight">마이그레이션 사전작업</h1>
+          <h1 className="text-4xl font-bold text-white mb-3 tracking-tight mt-1">마이그레이션 사전작업</h1>
           <p className="text-white/70 leading-relaxed">
             마이그레이션 진행 전 완료해야 할 사전 준비 작업을 영상으로 안내합니다.
           </p>
