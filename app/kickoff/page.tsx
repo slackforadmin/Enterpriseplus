@@ -15,12 +15,6 @@ export default function KickoffPage() {
       >
         <div className="absolute inset-0 opacity-30" style={{ background: 'radial-gradient(circle at 85% 15%, rgba(99,91,255,0.5) 0%, transparent 55%)' }} />
         <div className="relative max-w-5xl">
-          <Link href="/" className="text-sm text-white/60 hover:text-white mb-5 inline-flex items-center gap-1">
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-            </svg>
-            런치 가이드로 돌아가기
-          </Link>
           <HeroBadge>런치 1단계</HeroBadge>
           <h1 className="text-4xl font-bold text-white mb-3 tracking-tight">Kick-Off 영상</h1>
           <p className="text-white/70 leading-relaxed">
