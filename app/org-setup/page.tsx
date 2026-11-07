@@ -36,18 +36,12 @@ export default function OrgSetupPage() {
 
         {/* 1. DLP */}
         <Section num={1} title="DLP 권한 추가" badge="관리자 화면">
-          <Step n="1">
-            조직 관리 화면의 <Chip>보안</Chip> → <Chip>데이터 손실 방지</Chip> 항목이 없는지 확인합니다. (없다면 아래 할당 작업 진행)
-          </Step>
-          <Figure src="/org-setup/dlp-1.png" alt="보안 > 데이터 손실 방지 확인" width={1120} height={1264} />
-          <Step n="2">
-            <Chip>역할 및 권한</Chip> → <Chip>역할</Chip> → <Chip>DLP 관리자</Chip>의 <Chip>···</Chip> → <Chip>사용자 할당</Chip>을 선택합니다.
-          </Step>
-          <Figure src="/org-setup/dlp-2.png" alt="역할 및 권한 > 역할 > DLP 관리자 > 사용자 할당" width={1184} height={1442} />
-          <Step n="3">
-            본인 계정을 선택한 뒤 <Chip>할당</Chip> 버튼을 클릭합니다.
-          </Step>
-          <Figure src="/org-setup/dlp-3.png" alt="멤버에게 DLP 관리자 역할 할당" width={1568} height={1400} />
+          <StepRow n="1" text={<>조직 관리 화면의 <Chip>보안</Chip> → <Chip>데이터 손실 방지</Chip> 항목이 없는지 확인합니다. (없다면 아래 할당 작업 진행)</>}
+            img={{ src: '/org-setup/dlp-1.png', alt: '보안 > 데이터 손실 방지 확인', width: 1120, height: 1264 }} />
+          <StepRow n="2" text={<><Chip>역할 및 권한</Chip> → <Chip>역할</Chip> → <Chip>DLP 관리자</Chip>의 <Chip>···</Chip> → <Chip>사용자 할당</Chip>을 선택합니다.</>}
+            img={{ src: '/org-setup/dlp-2.png', alt: '역할 및 권한 > 역할 > DLP 관리자 > 사용자 할당', width: 1184, height: 1442 }} />
+          <StepRow n="3" text={<>본인 계정을 선택한 뒤 <Chip>할당</Chip> 버튼을 클릭합니다.</>}
+            img={{ src: '/org-setup/dlp-3.png', alt: '멤버에게 DLP 관리자 역할 할당', width: 1568, height: 1400 }} />
         </Section>
 
         {/* 2. 법적 자료 관리자 */}
@@ -59,10 +53,8 @@ export default function OrgSetupPage() {
 
         {/* 3. 플래그 콘텐츠 검토 */}
         <Section num={3} title="플래그가 지정된 콘텐츠 검토 활성화" badge="관리자 화면">
-          <Step n="1">
-            <Chip>설정</Chip> → <Chip>조직 설정</Chip> → <Chip>플래그가 지정된 콘텐츠 검토</Chip>를 활성화합니다.
-          </Step>
-          <Figure src="/org-setup/flag-content.webp" alt="설정 > 조직 설정 > 플래그가 지정된 콘텐츠 검토" width={2000} height={1151} />
+          <StepRow n="1" text={<><Chip>설정</Chip> → <Chip>조직 설정</Chip> → <Chip>플래그가 지정된 콘텐츠 검토</Chip>를 활성화합니다.</>}
+            img={{ src: '/org-setup/flag-content.webp', alt: '설정 > 조직 설정 > 플래그가 지정된 콘텐츠 검토', width: 2000, height: 1151 }} />
         </Section>
 
         {/* 4. 데이터 내보내기 */}
@@ -73,10 +65,10 @@ export default function OrgSetupPage() {
         {/* 5. Data Retention */}
         <Section num={5} title="Data Retention 설정 요청" badge="피드백팀 요청" last>
           <LinkCallout>
-            <a href="https://salesforce.enterprise.slack.com/docs/T34263EUF/F0C9H1TGGE5" target="_blank" rel="noopener noreferrer" className="font-semibold underline">
-              Slack 데이터 보존 정책 및 기간 설정 가이드
-            </a>{' '}
-            캔버스를 참조하여 관리 방식을 정한 뒤 피드백팀에 요청해주세요.
+            <Link href="/reference/retention" className="font-semibold underline">
+              데이터 보존 정책
+            </Link>{' '}
+            화면을 참조하여 관리 방식을 정한 뒤 피드백팀에 요청해주세요.
           </LinkCallout>
           <p className="text-gray-600 leading-relaxed">
             Enterprise+ 플랜의 데이터 보존 정책은 관리자 화면에서 설정할 수 없어 <strong className="text-gray-900">피드백팀에 요청</strong>해야 합니다. 요청 시 다음 정보가 필요합니다.
@@ -162,10 +154,18 @@ function LinkCallout({ children }: { children: React.ReactNode }) {
   );
 }
 
-function Figure({ src, alt, width, height }: { src: string; alt: string; width: number; height: number }) {
+type Img = { src: string; alt: string; width: number; height: number };
+
+function StepRow({ n, text, img }: { n: string; text: React.ReactNode; img: Img }) {
   return (
-    <div className="ml-9 rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm max-w-2xl">
-      <ZoomableImage src={asset(src)} alt={alt} width={width} height={height} className="w-full h-auto" />
+    <div className="grid md:grid-cols-2 gap-6 items-start">
+      <div className="flex items-start gap-3">
+        <span className="w-6 h-6 rounded-full bg-gray-900 text-white text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">{n}</span>
+        <p className="text-gray-700 leading-relaxed pt-0.5">{text}</p>
+      </div>
+      <div className="rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm">
+        <ZoomableImage src={asset(img.src)} alt={img.alt} width={img.width} height={img.height} className="w-full h-auto" />
+      </div>
     </div>
   );
 }

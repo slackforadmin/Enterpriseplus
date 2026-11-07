@@ -47,22 +47,13 @@ const navItems = [
     label: '사용자 세션',
     href: '/user-session',
   },
-  {
-    label: 'Roles & Permissions',
-    href: '/reference/roles',
-  },
-  {
-    label: '데이터 보존 정책',
-    href: '/reference/retention',
-  },
-  {
-    label: 'Support Case 신청',
-    href: '/reference/support-case',
-  },
-  {
-    label: 'Slack AI & Agents',
-    href: '/reference/ai-agents',
-  },
+];
+
+const referenceItems = [
+  { label: 'Roles & Permissions', href: '/reference/roles' },
+  { label: '데이터 보존 정책', href: '/reference/retention' },
+  { label: 'Support Case 신청', href: '/reference/support-case' },
+  { label: 'Slack AI & Agents', href: '/reference/ai-agents' },
 ];
 
 export default function Sidebar() {
@@ -169,6 +160,45 @@ export default function Sidebar() {
               </div>
             )}
           </div>
+        ))}
+
+        {/* 참고 자료 섹션 */}
+        <div className="mx-3 my-3 border-t border-white/10" />
+        <p className="px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-[var(--sidebar-text)]/70">
+          참고 자료
+        </p>
+        {referenceItems.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className={`flex items-center gap-2 px-3 py-2 mb-0.5 rounded-lg text-[13px] font-medium transition-all ${
+              isActive(item.href)
+                ? 'bg-[#635BFF] text-white'
+                : 'text-[var(--sidebar-text)] hover:bg-white/5 hover:text-white'
+            }`}
+          >
+            {item.href === '/reference/roles' && (
+              <svg className="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+            )}
+            {item.href === '/reference/retention' && (
+              <svg className="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            )}
+            {item.href === '/reference/support-case' && (
+              <svg className="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072m0 0l-2.829-2.829m-4.243 2.829a4.978 4.978 0 01-1.414-2.83m-1.414 5.658a9 9 0 01-2.167-9.238m7.824 2.167a1 1 0 111.414 1.414m-1.414-1.414L3 3m8.293 8.293l1.414 1.414" />
+              </svg>
+            )}
+            {item.href === '/reference/ai-agents' && (
+              <svg className="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+              </svg>
+            )}
+            {item.label}
+          </Link>
         ))}
       </div>
     </nav>
