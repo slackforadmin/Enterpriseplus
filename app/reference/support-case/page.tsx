@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { asset } from '@/lib/asset';
+import ZoomableImage from '@/components/ZoomableImage';
 
 type Img = { src: string; alt: string; width: number; height: number };
 
@@ -185,7 +185,7 @@ function StepRow({ n, title, children, img }: { n: string; title: string; childr
 function Figure({ img }: { img: Img }) {
   return (
     <div className="rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm">
-      <Image src={asset(img.src)} alt={img.alt} width={img.width} height={img.height} className="w-full h-auto" />
+      <ZoomableImage src={asset(img.src)} alt={img.alt} width={img.width} height={img.height} className="w-full h-auto" />
     </div>
   );
 }

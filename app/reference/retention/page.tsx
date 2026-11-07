@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { asset } from '@/lib/asset';
+import ZoomableImage from '@/components/ZoomableImage';
 
 type Opt = { label: string; desc: string; recommended?: boolean };
 
@@ -322,7 +322,7 @@ function LinkCallout({ children }: { children: React.ReactNode }) {
 function Figure({ src, alt, width, height }: { src: string; alt: string; width: number; height: number }) {
   return (
     <div className="rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm">
-      <Image src={asset(src)} alt={alt} width={width} height={height} className="w-full h-auto" />
+      <ZoomableImage src={asset(src)} alt={alt} width={width} height={height} className="w-full h-auto" />
     </div>
   );
 }

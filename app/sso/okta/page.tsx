@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { asset } from '@/lib/asset';
+import ZoomableImage from '@/components/ZoomableImage';
 
 type Step = { title: string; caption: string; tag?: string };
 
@@ -109,7 +109,7 @@ export default function OktaSSOPage() {
               </div>
               <p className="text-sm text-gray-600 leading-relaxed mb-4 ml-10">{step.caption}</p>
               <div className="ml-10 rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm">
-                <Image
+                <ZoomableImage
                   src={asset(`/okta-sso/step${String(i + 1).padStart(2, '0')}.png`)}
                   alt={step.title}
                   width={1440}

@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { asset } from '@/lib/asset';
+import ZoomableImage from '@/components/ZoomableImage';
 
 export default function DummySSOPage() {
   return (
@@ -71,7 +71,7 @@ export default function DummySSOPage() {
               </div>
             </div>
             <div className="rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm">
-              <Image src={asset('/dummy-sso/add-to-slack.webp')} alt="Simple IdP - Add to Slack 버튼" width={2000} height={600} className="w-full h-auto" />
+              <ZoomableImage src={asset('/dummy-sso/add-to-slack.webp')} alt="Simple IdP - Add to Slack 버튼" width={2000} height={600} className="w-full h-auto" />
             </div>
           </div>
         </Section>
@@ -186,7 +186,7 @@ function StepRow({ n, text, img }: { n: string; text: React.ReactNode; img: Img 
         <div className="text-gray-700 leading-relaxed pt-0.5">{text}</div>
       </div>
       <div className="rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm">
-        <Image src={asset(img.src)} alt={img.alt} width={img.width} height={img.height} className="w-full h-auto" />
+        <ZoomableImage src={asset(img.src)} alt={img.alt} width={img.width} height={img.height} className="w-full h-auto" />
       </div>
     </div>
   );
