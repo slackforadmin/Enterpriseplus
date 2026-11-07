@@ -31,7 +31,7 @@ export default function OrgSetupPage() {
 
       <div className="px-6 md:px-12 py-12 max-w-4xl">
         <p className="text-gray-600 leading-relaxed mb-10">
-          관리자 계정에서 운영에 필요하지만 <strong className="text-gray-900">기본값이 권한 부여되지 않은 상태</strong>의 권한들입니다. 마이그레이션 이후 확인 후 설정해주세요.
+          관리자 계정에서 운영에 필요하지만 <strong className="text-gray-900">기본값이 권한 부여되지 않은 상태</strong>의 권한들입니다. 확인 후 설정해주세요.
         </p>
 
         {/* 1. DLP */}
