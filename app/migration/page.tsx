@@ -9,7 +9,7 @@ export default function MigrationPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="px-12 py-16 max-w-4xl">
+      <div className="px-12 py-16 max-w-5xl">
         <div className="mb-2">
           <span className="text-xs font-semibold text-[#635BFF] uppercase tracking-wider">선택사항</span>
         </div>

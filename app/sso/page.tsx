@@ -61,7 +61,7 @@ export default function SSOPage() {
         </div>
       </div>
 
-      <div className="px-12 py-12 max-w-4xl">
+      <div className="px-12 py-12 max-w-5xl">
         {/* SSO 사용 */}
         <div className="mb-10">
           <div className="flex items-center gap-2 mb-5">

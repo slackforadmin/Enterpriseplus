@@ -6,7 +6,7 @@ export default function OrgSetupPage() {
       {/* Hero */}
       <div
         className="px-12 pt-14 pb-12 relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #0A2540 0%, #1A1F71 60%, #635BFF 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #0A2540 0%, #3C2A6B 60%, #635BFF 100%)' }}
       >
         <div className="absolute inset-0 opacity-30" style={{ background: 'radial-gradient(circle at 85% 15%, rgba(99,91,255,0.5) 0%, transparent 55%)' }} />
         <div className="relative max-w-5xl">
@@ -23,7 +23,7 @@ export default function OrgSetupPage() {
         </div>
       </div>
 
-      <div className="px-12 py-12 max-w-4xl">
+      <div className="px-12 py-12 max-w-5xl">
         <div className="flex items-start gap-3 bg-sky-50 border border-sky-200 rounded-xl p-4 mb-8">
           <span className="text-sky-500 flex-shrink-0 mt-0.5">💡</span>
           <p className="text-sm text-sky-800 leading-relaxed">

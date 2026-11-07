@@ -20,7 +20,7 @@ export default function SupportCaseReferencePage() {
         style={{ background: 'linear-gradient(135deg, #0A2540 0%, #3C2A6B 60%, #635BFF 100%)' }}
       >
         <div className="absolute inset-0 opacity-30" style={{ background: 'radial-gradient(circle at 85% 15%, rgba(99,91,255,0.5) 0%, transparent 55%)' }} />
-        <div className="relative max-w-4xl">
+        <div className="relative max-w-5xl">
           <Link href="/" className="text-sm text-white/60 hover:text-white mb-5 inline-flex items-center gap-1">
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
@@ -34,7 +34,7 @@ export default function SupportCaseReferencePage() {
         </div>
       </div>
 
-      <div className="px-12 py-12 max-w-4xl">
+      <div className="px-12 py-12 max-w-5xl">
         {/* feedback 중단 안내 */}
         <Callout className="mb-8">
           <strong>/feedback · feedback@slack.com은 더 이상 동작하지 않습니다.</strong> 이제 Slack 고객지원센터에서 지원 사례(Case)를 생성하세요. (`/feedback` 실행 시 Help Center 안내창으로 이동합니다.)
@@ -43,15 +43,21 @@ export default function SupportCaseReferencePage() {
         {/* 전체 흐름 */}
         <section className="mb-14">
           <h2 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-5">전체 접수 흐름</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div className="flex flex-col sm:flex-row sm:items-stretch gap-2">
             {flow.map((f, i) => (
-              <div key={f.n} className="relative bg-white rounded-xl border border-gray-200 p-4">
-                <div className="w-7 h-7 rounded-full bg-[#635BFF] text-white text-xs font-bold flex items-center justify-center mb-2">{f.n}</div>
-                <div className="font-semibold text-gray-900 text-sm">{f.title}</div>
-                <div className="text-xs text-[#635BFF] font-medium mt-0.5">{f.sub}</div>
-                <div className="text-xs text-gray-400 mt-1">{f.desc}</div>
+              <div key={f.n} className="flex items-center gap-2 sm:flex-1">
+                <div className="flex-1 bg-white rounded-xl border border-gray-200 p-4 h-full">
+                  <div className="w-7 h-7 rounded-full bg-[#635BFF] text-white text-xs font-bold flex items-center justify-center mb-2">{f.n}</div>
+                  <div className="font-semibold text-gray-900 text-sm">{f.title}</div>
+                  <div className="text-xs text-[#635BFF] font-medium mt-0.5">{f.sub}</div>
+                  <div className="text-xs text-gray-400 mt-1">{f.desc}</div>
+                </div>
                 {i < flow.length - 1 && (
-                  <div className="hidden sm:block absolute top-1/2 -right-2 text-gray-300 z-10">→</div>
+                  <div className="flex-shrink-0 text-gray-300 sm:rotate-0 rotate-90 self-center">
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
                 )}
               </div>
             ))}

@@ -3,7 +3,7 @@ import Link from 'next/link';
 const SEARCH_BASE = 'https://slack.com/help/search?query=';
 const helpLink = (title: string) => `${SEARCH_BASE}${encodeURIComponent(title)}`;
 
-type Perm = { ko: string; en: string; note?: string };
+type Perm = { ko: string; en: string; note?: string; url?: string };
 type Role = { ko: string; en: string; desc: string; perms: Perm[] };
 type Group = { tier: string; color: string; roles: Role[] };
 
@@ -17,8 +17,8 @@ const groups: Group[] = [
         en: 'Org Primary Owner',
         desc: '모든 조직에는 가장 높은 권한을 가진 한 명의 기본 소유자가 있습니다. Slack에서 가장 강력한 관리 역할이며, 청구·워크스페이스 인증·액세스·보안 정책 등에 접근할 수 있습니다. 한 명만 존재할 수 있지만 다른 구성원에게 양도할 수 있습니다. 조직 소유자가 할 수 있는 모든 일에 더해 다음을 할 수 있습니다.',
         perms: [
-          { ko: '조직의 소유권 이전', en: 'Transfer ownership of the org' },
-          { ko: '채널 관리 도구 사용', en: 'Use channel management tools' },
+          { ko: '조직의 소유권 이전', en: 'Transfer ownership of the org', url: 'https://slack.com/intl/ko-kr/help/articles/204401633-%EC%9B%8C%ED%81%AC%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4-%EB%98%90%EB%8A%94-%EC%A1%B0%EC%A7%81%EC%9D%98-%EC%86%8C%EC%9C%A0%EA%B6%8C-%EC%9D%B4%EC%A0%84' },
+          { ko: '채널 관리 도구 사용', en: 'Use channel management tools', url: 'https://slack.com/intl/ko-kr/help/articles/360047512554-%EC%B1%84%EB%84%90-%EA%B4%80%EB%A6%AC-%EB%8F%84%EA%B5%AC-%EC%82%AC%EC%9A%A9' },
         ],
       },
       {
@@ -26,11 +26,11 @@ const groups: Group[] = [
         en: 'Org Owner',
         desc: '여러 명일 수 있습니다. 조직 주 소유자와 동일한 수준의 권한을 갖지만 조직의 소유권을 이전할 수 없습니다. 조직 관리자가 할 수 있는 모든 일에 더해 다음을 할 수 있습니다.',
         perms: [
-          { ko: '도메인 클레임 관리', en: 'Manage domain claiming' },
-          { ko: '조직 레벨의 앱 관리 정책', en: 'Set up org-wide app management policies' },
-          { ko: 'SAML 싱글사인온(SSO) 설정', en: 'Configure single sign-on' },
-          { ko: '이메일/표시이름 변경 권한', en: 'Allow users to change their email address or display name' },
-          { ko: '2단계 인증(2FA) 필수화', en: 'Enable mandatory two-factor authentication' },
+          { ko: '도메인 클레임 관리', en: 'Manage domain claiming', url: 'https://slack.com/intl/ko-kr/help/articles/115001379947-Enterprise-%EC%A1%B0%EC%A7%81%EC%9D%98-%ED%81%B4%EB%A0%88%EC%9E%84-%EB%8F%84%EB%A9%94%EC%9D%B8' },
+          { ko: '조직 레벨의 앱 관리 정책', en: 'Set up org-wide app management policies', url: 'https://slack.com/intl/ko-kr/help/articles/360000281563-Enterprise-%EC%A1%B0%EC%A7%81%EC%97%90%EC%84%9C-%EC%95%B1-%EA%B4%80%EB%A6%AC' },
+          { ko: 'SAML 싱글사인온(SSO) 설정', en: 'Configure single sign-on', url: 'https://slack.com/intl/ko-kr/help/articles/203772216-Slack%EC%9A%A9-SAML-Single-Sign-On-%EC%84%A4%EC%A0%95' },
+          { ko: '이메일/표시이름 변경 권한', en: 'Allow users to change their email address or display name', url: 'https://slack.com/intl/ko-kr/help/articles/220403548-Single-Sign-On-%EC%84%A4%EC%A0%95-%EA%B4%80%EB%A6%AC#enterprise-grid-%ED%94%8C%EB%9E%9C-1' },
+          { ko: '2단계 인증(2FA) 필수화', en: 'Enable mandatory two-factor authentication', url: 'https://slack.com/intl/ko-kr/help/articles/212221668-%ED%95%84%EC%88%98-%EC%9B%8C%ED%81%AC%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4-2%EB%8B%A8%EA%B3%84-%EC%9D%B8%EC%A6%9D' },
         ],
       },
       {
@@ -38,7 +38,7 @@ const groups: Group[] = [
         en: 'Org Admin',
         desc: '여러 명일 수 있습니다. 조직 수준의 관리 작업을 돕습니다. 워크스페이스 소유자가 할 수 있는 모든 일에 더해 다음을 할 수 있습니다. (조직 소유자/관리자는 이 권한 중 일부를 워크스페이스 소유자/관리자나 구성원에게 전달할 수 있습니다.)',
         perms: [
-          { ko: '워크스페이스 생성', en: 'Create a new workspace' },
+          { ko: '워크스페이스 생성', en: 'Create a new workspace', url: 'https://slack.com/intl/ko-kr/help/articles/115001344007-Enterprise-%EC%A1%B0%EC%A7%81%EC%97%90%EC%84%9C-%EC%9B%8C%ED%81%AC%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4-%EC%83%9D%EC%84%B1' },
           { ko: '멀티워크스페이스 채널 생성', en: 'Create a multi-workspace channel' },
           { ko: 'IDP 그룹을 워크스페이스/채널에 연결', en: 'Connect IDP groups to workspaces or channels' },
           { ko: 'Slack 커넥트 채널 관리', en: 'Manage Slack Connect channels', note: 'Enterprise Grid' },
@@ -163,7 +163,7 @@ export default function RolesReferencePage() {
           className="absolute inset-0 opacity-30"
           style={{ background: 'radial-gradient(circle at 85% 15%, rgba(99,91,255,0.5) 0%, transparent 55%)' }}
         />
-        <div className="relative max-w-4xl">
+        <div className="relative max-w-5xl">
           <Link href="/" className="text-sm text-white/60 hover:text-white mb-5 inline-flex items-center gap-1">
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
@@ -178,7 +178,7 @@ export default function RolesReferencePage() {
         </div>
       </div>
 
-      <div className="px-12 py-12 max-w-4xl">
+      <div className="px-12 py-12 max-w-5xl">
         <div className="flex items-start gap-3 bg-sky-50 border border-sky-200 rounded-xl p-4 mb-10">
           <span className="text-sky-500 flex-shrink-0 mt-0.5">💡</span>
           <p className="text-sm text-sky-800 leading-relaxed">
@@ -208,7 +208,7 @@ export default function RolesReferencePage() {
                       {role.perms.map((perm) => (
                         <li key={perm.en} className="bg-white">
                           <a
-                            href={helpLink(perm.en)}
+                            href={perm.url ?? helpLink(perm.en)}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="group flex items-start gap-3 px-5 py-3 hover:bg-gray-50 transition-colors h-full"

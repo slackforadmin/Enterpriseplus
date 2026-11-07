@@ -51,7 +51,7 @@ export default function RetentionReferencePage() {
           className="absolute inset-0 opacity-30"
           style={{ background: 'radial-gradient(circle at 85% 15%, rgba(99,91,255,0.5) 0%, transparent 55%)' }}
         />
-        <div className="relative max-w-4xl">
+        <div className="relative max-w-5xl">
           <Link href="/" className="text-sm text-white/60 hover:text-white mb-5 inline-flex items-center gap-1">
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
@@ -65,7 +65,7 @@ export default function RetentionReferencePage() {
         </div>
       </div>
 
-      <div className="px-12 py-12 max-w-4xl">
+      <div className="px-12 py-12 max-w-5xl">
         {/* Overview diagram */}
         <div className="mb-12">
           <Figure src="/retention/org-diagram.png" alt="Locking retention down Org-wide 다이어그램" width={1455} height={876} />
@@ -175,7 +175,7 @@ export default function RetentionReferencePage() {
         <OptionBlock n="4" title="파일 보존" options={fileOptions} note="파일은 Org(조직) 레벨 데이터이므로 워크스페이스 레벨 설정이 불가능합니다." />
 
         <OptionBlock n="5" title="캔버스 및 리스트 보존" options={canvasOptions} note="캔버스/리스트는 Org(조직) 레벨 데이터이므로 워크스페이스 레벨 설정이 불가능합니다." />
-        <div className="ml-9 -mt-2">
+        <div className="ml-9 mt-4">
           <Callout>캔버스와 리스트가 편집/수정되는 경우, 리텐션 기간은 리셋됩니다.</Callout>
         </div>
 
@@ -208,7 +208,7 @@ export default function RetentionReferencePage() {
           { label: '메시지를 절대 삭제하지 않음 – 편집 내용 저장하지 않음 (기본값)', desc: 'Slack에서 모든 메시지를 보관하지만 편집·삭제는 추적하지 않습니다.' },
           { label: '사용자 지정 타임라인 선택', desc: 'Slack에서 사용자 지정 기간에 따라 메시지를 삭제합니다.' },
         ]} />
-        <div className="ml-9 -mt-2">
+        <div className="ml-9 mt-4">
           <Callout>멀티 워크스페이스 채널의 조직 레벨 설정이 없으면 &ldquo;메시지를 절대 삭제하지 않음 - 편집 내용 저장하지 않음&rdquo;으로 기본 설정됩니다.</Callout>
         </div>
 
@@ -216,7 +216,7 @@ export default function RetentionReferencePage() {
           { label: '재정의 허용 안 함 (기본값)', desc: '워크스페이스에서 재정의를 허용하지 않습니다.' },
           { label: '멤버 재정의 허용', desc: '멤버는 비공개 채널 재정의를 설정할 수 있으며, 워크스페이스 소유자는 공개 채널 재정의를 설정할 수 있습니다.' },
         ]} />
-        <div className="ml-9 -mt-2">
+        <div className="ml-9 mt-4">
           <Figure src="/retention/channel-settings.png" alt="채널 설정 - 메시지 내역" width={1176} height={1461} />
           <div className="mt-4 flex items-start gap-3 bg-emerald-50 border border-emerald-200 rounded-xl p-4">
             <span className="text-emerald-500 flex-shrink-0 mt-0.5">💡</span>

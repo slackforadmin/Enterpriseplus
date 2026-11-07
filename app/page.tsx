@@ -66,7 +66,7 @@ export default function Home() {
       {/* Hero */}
       <div
         className="px-12 py-20 relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #0A2540 0%, #1A1F71 60%, #635BFF 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #0A2540 0%, #3C2A6B 60%, #635BFF 100%)' }}
       >
         <div
           className="absolute inset-0 opacity-30"

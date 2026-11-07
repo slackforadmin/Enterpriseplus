@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function MigrationOverviewPage() {
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="px-12 py-16 max-w-4xl">
+      <div className="px-12 py-16 max-w-5xl">
         <Link href="/migration" className="text-xs text-gray-400 hover:text-gray-600 mb-6 inline-flex items-center gap-1">
           ← 마이그레이션으로 돌아가기
         </Link>

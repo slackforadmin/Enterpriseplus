@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function AdminSessionPage() {
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="px-12 py-16 max-w-4xl">
+      <div className="px-12 py-16 max-w-5xl">
         <div className="mb-2">
           <span className="text-xs font-semibold text-[#635BFF] uppercase tracking-wider">세션</span>
         </div>
