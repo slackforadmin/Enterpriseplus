@@ -8,7 +8,7 @@ export default function MigrationOverviewPage() {
           ← 마이그레이션으로 돌아가기
         </Link>
         <div className="mb-2 mt-4">
-          <span className="text-xs font-semibold text-[#10B981] uppercase tracking-wider">마이그레이션 · 1단계</span>
+          <span className="text-xs font-semibold text-[#635BFF] uppercase tracking-wider">마이그레이션 · 1단계</span>
         </div>
         <h1 className="text-3xl font-bold text-gray-900 mb-4">마이그레이션 오버뷰</h1>
         <p className="text-gray-500 mb-10">마이그레이션 전체 과정과 주요 고려사항을 안내합니다.</p>

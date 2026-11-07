@@ -100,8 +100,8 @@ export default function Sidebar() {
       <nav className="sidebar flex flex-col">
       {/* Logo */}
       <div className="px-5 py-6 pr-14">
-        <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #635BFF 0%, #0EA5E9 100%)' }}>
+        <Link href="/" className="flex items-center gap-2.5 group">
+          <div className="w-8 h-8 rounded-lg flex items-center justify-center transition-transform group-hover:scale-105" style={{ background: 'linear-gradient(135deg, #635BFF 0%, #0EA5E9 100%)' }}>
             <svg width="15" height="15" viewBox="0 0 54 54" fill="none">
               <path d="M19.712.133a5.381 5.381 0 0 0-5.376 5.387 5.381 5.381 0 0 0 5.376 5.386h5.376V5.52A5.381 5.381 0 0 0 19.712.133m0 14.365H5.376A5.381 5.381 0 0 0 0 19.884a5.381 5.381 0 0 0 5.376 5.387h14.336a5.381 5.381 0 0 0 5.376-5.387 5.381 5.381 0 0 0-5.376-5.386" fill="#fff"/>
               <path d="M53.76 19.884a5.381 5.381 0 0 0-5.376-5.386 5.381 5.381 0 0 0-5.376 5.386v5.387h5.376a5.381 5.381 0 0 0 5.376-5.387m-14.336 0V5.52A5.381 5.381 0 0 0 34.048.133a5.381 5.381 0 0 0-5.376 5.387v14.364a5.381 5.381 0 0 0 5.376 5.387 5.381 5.381 0 0 0 5.376-5.387" fill="#fff"/>
@@ -110,11 +110,11 @@ export default function Sidebar() {
             </svg>
           </div>
           <span className="text-white font-semibold text-[15px] tracking-tight truncate">Ent+ Launch Guide</span>
-        </div>
+        </Link>
       </div>
 
       {/* Nav items */}
-      <div className="flex-1 py-2 px-3">
+      <div className="flex-1 pt-8 pb-2 px-3">
         {navItems.map((item) => (
           <div key={item.href} className="mb-0.5">
             <Link

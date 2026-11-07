@@ -11,7 +11,7 @@ export default function MigrationPage() {
     <div className="min-h-screen bg-gray-50">
       <div className="px-12 py-16 max-w-4xl">
         <div className="mb-2">
-          <span className="text-xs font-semibold text-[#10B981] uppercase tracking-wider">선택사항</span>
+          <span className="text-xs font-semibold text-[#635BFF] uppercase tracking-wider">선택사항</span>
         </div>
         <h1 className="text-3xl font-bold text-gray-900 mb-4">마이그레이션</h1>
         <p className="text-gray-500 mb-10">
@@ -25,8 +25,8 @@ export default function MigrationPage() {
               selected === 'yes' ? 'border-[#635BFF] shadow-sm' : 'border-gray-100 hover:border-gray-200'
             }`}
           >
-            <div className="w-10 h-10 rounded-lg bg-[#10B981]/10 flex items-center justify-center flex-shrink-0">
-              <span className="text-[#10B981] text-lg">✓</span>
+            <div className="w-10 h-10 rounded-lg bg-[#635BFF]/10 flex items-center justify-center flex-shrink-0">
+              <span className="text-[#635BFF] text-lg">✓</span>
             </div>
             <div>
               <div className="font-semibold text-gray-900 text-sm">마이그레이션 있음</div>
@@ -70,27 +70,27 @@ export default function MigrationPage() {
             <div className="space-y-3">
               <button
                 onClick={() => router.push('/migration/overview')}
-                className="w-full flex items-center gap-4 p-4 rounded-lg border border-gray-100 hover:border-[#10B981] hover:bg-[#10B981]/5 transition-all text-left group"
+                className="w-full flex items-center gap-4 p-4 rounded-lg border border-gray-100 hover:border-[#635BFF] hover:bg-[#635BFF]/5 transition-all text-left group"
               >
-                <div className="w-7 h-7 rounded-full bg-[#10B981] text-white text-xs font-bold flex items-center justify-center flex-shrink-0">1</div>
+                <div className="w-7 h-7 rounded-full bg-[#635BFF] text-white text-xs font-bold flex items-center justify-center flex-shrink-0">1</div>
                 <div>
-                  <div className="font-medium text-gray-900 text-sm group-hover:text-[#10B981]">마이그레이션 오버뷰</div>
+                  <div className="font-medium text-gray-900 text-sm group-hover:text-[#635BFF]">마이그레이션 오버뷰</div>
                   <div className="text-xs text-gray-400 mt-0.5">마이그레이션 전체 과정을 이해합니다.</div>
                 </div>
-                <svg className="w-4 h-4 text-gray-300 group-hover:text-[#10B981] ml-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-4 h-4 text-gray-300 group-hover:text-[#635BFF] ml-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </button>
               <button
                 onClick={() => router.push('/migration/prep')}
-                className="w-full flex items-center gap-4 p-4 rounded-lg border border-gray-100 hover:border-[#10B981] hover:bg-[#10B981]/5 transition-all text-left group"
+                className="w-full flex items-center gap-4 p-4 rounded-lg border border-gray-100 hover:border-[#635BFF] hover:bg-[#635BFF]/5 transition-all text-left group"
               >
-                <div className="w-7 h-7 rounded-full bg-[#10B981] text-white text-xs font-bold flex items-center justify-center flex-shrink-0">2</div>
+                <div className="w-7 h-7 rounded-full bg-[#635BFF] text-white text-xs font-bold flex items-center justify-center flex-shrink-0">2</div>
                 <div>
-                  <div className="font-medium text-gray-900 text-sm group-hover:text-[#10B981]">마이그레이션 사전작업</div>
+                  <div className="font-medium text-gray-900 text-sm group-hover:text-[#635BFF]">마이그레이션 사전작업</div>
                   <div className="text-xs text-gray-400 mt-0.5">마이그레이션 전 필요한 준비를 완료합니다.</div>
                 </div>
-                <svg className="w-4 h-4 text-gray-300 group-hover:text-[#10B981] ml-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-4 h-4 text-gray-300 group-hover:text-[#635BFF] ml-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </button>

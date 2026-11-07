@@ -7,11 +7,11 @@ export default function MigrationPrepPage() {
       {/* Hero */}
       <div
         className="px-12 pt-14 pb-12 relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #0A2540 0%, #0B5345 55%, #10B981 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #0A2540 0%, #3C2A6B 60%, #635BFF 100%)' }}
       >
         <div
           className="absolute inset-0 opacity-30"
-          style={{ background: 'radial-gradient(circle at 85% 15%, rgba(16,185,129,0.5) 0%, transparent 55%)' }}
+          style={{ background: 'radial-gradient(circle at 85% 15%, rgba(99,91,255,0.5) 0%, transparent 55%)' }}
         />
         <div className="relative max-w-5xl">
           <Link href="/migration" className="text-sm text-white/60 hover:text-white mb-5 inline-flex items-center gap-1">
@@ -31,8 +31,8 @@ export default function MigrationPrepPage() {
         {/* Video */}
         <div className="mb-10">
           <div className="flex items-center gap-2 mb-4">
-            <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-[#10B981]/10">
-              <svg className="w-4 h-4 text-[#10B981]" fill="currentColor" viewBox="0 0 20 20">
+            <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-[#635BFF]/10">
+              <svg className="w-4 h-4 text-[#635BFF]" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M6.3 2.841A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
               </svg>
             </span>
