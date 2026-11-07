@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import HeroBadge from '@/components/HeroBadge';
 
 // 영상 파일이 준비되면 public/kickoff/kickoff.mp4 로 넣고
 // 아래 VIDEO_READY 를 true 로 바꾸면 플레이어가 표시됩니다.
@@ -20,7 +21,8 @@ export default function KickoffPage() {
             </svg>
             런치 가이드로 돌아가기
           </Link>
-          <h1 className="text-4xl font-bold text-white mb-3 tracking-tight mt-1">Kick-Off 영상</h1>
+          <HeroBadge>런치 1단계</HeroBadge>
+          <h1 className="text-4xl font-bold text-white mb-3 tracking-tight">Kick-Off 영상</h1>
           <p className="text-white/70 leading-relaxed">
             런치를 시작하기 전, Kick-Off 영상으로 전체 과정과 핵심 포인트를 먼저 확인하세요.
           </p>

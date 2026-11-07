@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { asset } from '@/lib/asset';
 import ZoomableImage from '@/components/ZoomableImage';
+import HeroBadge from '@/components/HeroBadge';
 
 export default function DummySSOPage() {
   return (
@@ -21,7 +22,8 @@ export default function DummySSOPage() {
             </svg>
             SSO 설정으로 돌아가기
           </Link>
-          <h1 className="text-4xl font-bold text-white mb-3 tracking-tight mt-1">Dummy SSO 설정</h1>
+          <HeroBadge>런치 2단계</HeroBadge>
+          <h1 className="text-4xl font-bold text-white mb-3 tracking-tight">Dummy SSO 설정</h1>
           <p className="text-white/70 leading-relaxed">
             SSO를 사용하지 않는 경우, Dummy SSO(Simple IdP)를 연결하여 로그인 환경을 구성합니다.
           </p>

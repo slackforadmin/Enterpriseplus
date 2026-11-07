@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { asset } from '@/lib/asset';
 import ZoomableImage from '@/components/ZoomableImage';
+import HeroBadge from '@/components/HeroBadge';
 
 type Img = { src: string; alt: string; width: number; height: number };
 
@@ -27,7 +28,8 @@ export default function SupportCaseReferencePage() {
             </svg>
             런치 가이드로 돌아가기
           </Link>
-          <h1 className="text-4xl font-bold text-white mb-3 tracking-tight mt-1">Support Case 신청 가이드</h1>
+          <HeroBadge>참고 자료</HeroBadge>
+          <h1 className="text-4xl font-bold text-white mb-3 tracking-tight">Support Case 신청 가이드</h1>
           <p className="text-white/70 leading-relaxed">
             Slack 고객지원센터에서 지원 사례(Case)를 생성하고 제출하는 방법입니다.
           </p>

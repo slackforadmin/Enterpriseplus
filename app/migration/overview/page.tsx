@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import HeroBadge from '@/components/HeroBadge';
 
 export default function MigrationOverviewPage() {
   return (
@@ -16,9 +17,7 @@ export default function MigrationOverviewPage() {
             </svg>
             마이그레이션으로 돌아가기
           </Link>
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur text-white/90 text-xs font-medium px-3 py-1.5 rounded-full mb-4 border border-white/10">
-            마이그레이션 · 1단계
-          </div>
+          <HeroBadge>런치 3단계</HeroBadge>
           <h1 className="text-4xl font-bold text-white mb-3 tracking-tight">마이그레이션 오버뷰</h1>
           <p className="text-white/70 leading-relaxed">
             마이그레이션 전체 과정과 주요 고려사항을 영상과 함께 안내합니다.

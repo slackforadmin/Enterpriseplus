@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { asset } from '@/lib/asset';
 import ZoomableImage from '@/components/ZoomableImage';
+import HeroBadge from '@/components/HeroBadge';
 
 type Opt = { label: string; desc: string; recommended?: boolean };
 
@@ -58,7 +59,8 @@ export default function RetentionReferencePage() {
             </svg>
             런치 가이드로 돌아가기
           </Link>
-          <h1 className="text-4xl font-bold text-white mb-3 tracking-tight mt-1">데이터 보존 정책 &amp; 기간 설정</h1>
+          <HeroBadge>참고 자료</HeroBadge>
+          <h1 className="text-4xl font-bold text-white mb-3 tracking-tight">데이터 보존 정책 &amp; 기간 설정</h1>
           <p className="text-white/70 leading-relaxed">
             Slack 메시지·파일·캔버스의 보존 주기를 조직/워크스페이스 레벨에서 설정하는 방법입니다.
           </p>

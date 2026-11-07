@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import HeroBadge from '@/components/HeroBadge';
 
 const SEARCH_BASE = 'https://slack.com/help/search?query=';
 const helpLink = (title: string) => `${SEARCH_BASE}${encodeURIComponent(title)}`;
@@ -173,7 +174,8 @@ export default function RolesReferencePage() {
             </svg>
             런치 가이드로 돌아가기
           </Link>
-          <h1 className="text-4xl font-bold text-white mb-3 tracking-tight mt-1">Roles &amp; Permissions</h1>
+          <HeroBadge>참고 자료</HeroBadge>
+          <h1 className="text-4xl font-bold text-white mb-3 tracking-tight">Roles &amp; Permissions</h1>
           <p className="text-white/70 leading-relaxed">
             Slack Enterprise+의 조직·워크스페이스·채널 역할과 각 역할의 권한입니다.<br />
             각 권한을 클릭하면 Slack 헬프센터에서 자세한 내용을 확인할 수 있습니다.

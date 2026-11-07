@@ -1,5 +1,6 @@
 import { asset } from '@/lib/asset';
 import ZoomableImage from '@/components/ZoomableImage';
+import HeroBadge from '@/components/HeroBadge';
 
 export default function Day1Setup() {
   return (
@@ -11,9 +12,7 @@ export default function Day1Setup() {
       >
         <div className="absolute inset-0 opacity-30" style={{ background: 'radial-gradient(circle at 85% 15%, rgba(99,91,255,0.5) 0%, transparent 55%)' }} />
         <div className="relative max-w-5xl">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur text-white/90 text-xs font-medium px-3 py-1.5 rounded-full mb-4 border border-white/10">
-            Day 1
-          </div>
+          <HeroBadge>런치 2단계</HeroBadge>
           <h1 className="text-4xl font-bold text-white mb-3 tracking-tight">조직 초기 설정</h1>
           <p className="text-white/70 leading-relaxed">
             계약 시작일에 Enterprise+ 환경을 사용하기 위한 조직 초기 설정 가이드입니다.<br />

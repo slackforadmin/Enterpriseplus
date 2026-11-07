@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import HeroBadge from '@/components/HeroBadge';
 
 export default function AdminSessionPage() {
   return (
@@ -10,9 +11,7 @@ export default function AdminSessionPage() {
       >
         <div className="absolute inset-0 opacity-30" style={{ background: 'radial-gradient(circle at 85% 15%, rgba(99,91,255,0.5) 0%, transparent 55%)' }} />
         <div className="relative max-w-5xl">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur text-white/90 text-xs font-medium px-3 py-1.5 rounded-full mb-4 border border-white/10">
-            세션
-          </div>
+          <HeroBadge>런치 5단계</HeroBadge>
           <h1 className="text-4xl font-bold text-white mb-3 tracking-tight">관리자 세션</h1>
           <p className="text-white/70 leading-relaxed">
             Slack Enterprise+ 관리자를 위한 핵심 기능과 관리 도구를 영상으로 안내합니다.

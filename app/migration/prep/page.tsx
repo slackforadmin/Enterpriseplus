@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { asset } from '@/lib/asset';
+import HeroBadge from '@/components/HeroBadge';
 
 export default function MigrationPrepPage() {
   return (
@@ -20,7 +21,8 @@ export default function MigrationPrepPage() {
             </svg>
             마이그레이션으로 돌아가기
           </Link>
-          <h1 className="text-4xl font-bold text-white mb-3 tracking-tight mt-1">마이그레이션 사전작업</h1>
+          <HeroBadge>런치 3단계</HeroBadge>
+          <h1 className="text-4xl font-bold text-white mb-3 tracking-tight">마이그레이션 사전작업</h1>
           <p className="text-white/70 leading-relaxed">
             마이그레이션 진행 전 완료해야 할 사전 준비 작업을 영상으로 안내합니다.
           </p>

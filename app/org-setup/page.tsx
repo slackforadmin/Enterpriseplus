@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { asset } from '@/lib/asset';
 import ZoomableImage from '@/components/ZoomableImage';
+import HeroBadge from '@/components/HeroBadge';
 
 const recommended: { label: string; value: string }[] = [
   { label: '공개 채널', value: '개정 내역을 포함한 모든 메시지 보관' },
@@ -21,7 +22,8 @@ export default function OrgSetupPage() {
       >
         <div className="absolute inset-0 opacity-30" style={{ background: 'radial-gradient(circle at 85% 15%, rgba(99,91,255,0.5) 0%, transparent 55%)' }} />
         <div className="relative max-w-5xl">
-          <h1 className="text-4xl font-bold text-white mb-3 tracking-tight mt-1">조직 관리자 설정</h1>
+          <HeroBadge>런치 4단계</HeroBadge>
+          <h1 className="text-4xl font-bold text-white mb-3 tracking-tight">조직 관리자 설정</h1>
           <p className="text-white/70 leading-relaxed">
             운영에 필요하지만 기본값으로 권한이 부여되지 않은 설정들입니다.<br />
             확인 후 설정해주세요.

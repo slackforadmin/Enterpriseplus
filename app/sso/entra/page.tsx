@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { asset } from '@/lib/asset';
 import ZoomableImage from '@/components/ZoomableImage';
+import HeroBadge from '@/components/HeroBadge';
 
 type Item = { title: string; caption: string; img: string; mapping?: { label: string; value: string }[] };
 
@@ -86,7 +87,8 @@ export default function EntraSSOPage() {
             </svg>
             SSO 설정으로 돌아가기
           </Link>
-          <h1 className="text-4xl font-bold text-white mb-3 tracking-tight mt-1">Entra ID SSO 설정</h1>
+          <HeroBadge>런치 2단계</HeroBadge>
+          <h1 className="text-4xl font-bold text-white mb-3 tracking-tight">Entra ID SSO 설정</h1>
           <p className="text-white/70 leading-relaxed">
             Microsoft Entra ID(Azure AD)를 IdP로 사용하여 SAML 기반 SSO와 사용자 프로비저닝을 설정합니다.
           </p>
