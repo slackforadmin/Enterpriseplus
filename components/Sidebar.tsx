@@ -33,6 +33,7 @@ const navItems = [
     children: [
       { label: '마이그레이션 오버뷰 세션', href: '/migration/overview' },
       { label: '마이그레이션 사전작업', href: '/migration/prep' },
+      { label: '전/후 진행 요청사항', href: '/migration/requests' },
     ],
   },
   {
