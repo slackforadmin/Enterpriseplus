@@ -21,7 +21,7 @@ const navItems = [
     label: 'SSO 설정',
     href: '/sso',
     children: [
-      { label: 'SSO 없음 (Dummy SSO)', href: '/sso/dummy' },
+      { label: 'SSO없음-DummySSO', href: '/sso/dummy' },
       { label: 'Google', href: '/sso/google' },
       { label: 'Okta', href: '/sso/okta' },
       { label: 'Entra ID', href: '/sso/entra' },
