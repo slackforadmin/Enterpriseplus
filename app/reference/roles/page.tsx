@@ -182,12 +182,9 @@ export default function RolesReferencePage() {
       </div>
 
       <div className="px-6 md:px-12 py-12 max-w-5xl">
-        <div className="flex items-start gap-3 bg-sky-50 border border-sky-200 rounded-xl p-4 mb-10">
-          <span className="text-sky-500 flex-shrink-0 mt-0.5">💡</span>
-          <p className="text-sm text-sky-800 leading-relaxed">
-            설정을 진행하며 역할별 권한이 궁금할 때 참고하세요. 조직 소유자부터 채널 관리자까지 역할 계층과 권한을 확인할 수 있습니다.
-          </p>
-        </div>
+        <p className="text-gray-600 leading-relaxed mb-10">
+          설정을 진행하며 역할별 권한이 궁금할 때 참고하세요. 조직 소유자부터 채널 관리자까지 역할 계층과 권한을 확인할 수 있습니다.
+        </p>
 
         {/* Role groups */}
         <div className="space-y-12">
