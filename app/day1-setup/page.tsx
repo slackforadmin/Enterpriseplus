@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { asset } from '@/lib/asset';
 
 export default function Day1Setup() {
   return (
@@ -143,7 +144,7 @@ function StepRow({ n, text, img }: { n: string; text: React.ReactNode; img: Img 
         <div className="text-gray-700 leading-relaxed pt-0.5">{text}</div>
       </div>
       <div className="rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm">
-        <Image src={img.src} alt={img.alt} width={img.width} height={img.height} className="w-full h-auto" />
+        <Image src={asset(img.src)} alt={img.alt} width={img.width} height={img.height} className="w-full h-auto" />
       </div>
     </div>
   );

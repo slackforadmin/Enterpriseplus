@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { asset } from '@/lib/asset';
 
 const steps = [
   { title: 'SSO 구성 진입', caption: 'Slack 관리자: 보안 → SSO 설정 → SSO 구성을 선택합니다. (Business+는 인증 → SAML 인증)' },
@@ -55,7 +56,7 @@ export default function GoogleSSOPage() {
           </div>
           <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-sm bg-black max-w-[64%]">
             <video controls preload="metadata" className="w-full h-auto">
-              <source src="/google-sso/google-saml-demo.mp4" type="video/mp4" />
+              <source src={asset('/google-sso/google-saml-demo.mp4')} type="video/mp4" />
               브라우저가 영상 재생을 지원하지 않습니다.
             </video>
           </div>
@@ -86,7 +87,7 @@ export default function GoogleSSOPage() {
               <p className="text-sm text-gray-600 leading-relaxed mb-4 ml-10">{step.caption}</p>
               <div className="ml-10 rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm">
                 <Image
-                  src={`/google-sso/step${String(i + 1).padStart(2, '0')}.png`}
+                  src={asset(`/google-sso/step${String(i + 1).padStart(2, '0')}.png`)}
                   alt={step.title}
                   width={1440}
                   height={810}

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { asset } from '@/lib/asset';
 
 export default function MigrationPrepPage() {
   return (
@@ -39,7 +40,7 @@ export default function MigrationPrepPage() {
           </div>
           <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-sm bg-black max-w-[64%]">
             <video controls preload="metadata" className="w-full h-auto">
-              <source src="/migration/migration-demo.mp4" type="video/mp4" />
+              <source src={asset('/migration/migration-demo.mp4')} type="video/mp4" />
               브라우저가 영상 재생을 지원하지 않습니다.
             </video>
           </div>

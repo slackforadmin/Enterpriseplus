@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { asset } from '@/lib/asset';
 
 type Step = { title: string; caption: string; tag?: string };
 
@@ -67,7 +68,7 @@ export default function OktaSSOPage() {
           </div>
           <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-sm bg-black max-w-[64%]">
             <video controls preload="metadata" className="w-full h-auto">
-              <source src="/okta-sso/okta-saml-demo.mp4" type="video/mp4" />
+              <source src={asset('/okta-sso/okta-saml-demo.mp4')} type="video/mp4" />
               브라우저가 영상 재생을 지원하지 않습니다.
             </video>
           </div>
@@ -109,7 +110,7 @@ export default function OktaSSOPage() {
               <p className="text-sm text-gray-600 leading-relaxed mb-4 ml-10">{step.caption}</p>
               <div className="ml-10 rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm">
                 <Image
-                  src={`/okta-sso/step${String(i + 1).padStart(2, '0')}.png`}
+                  src={asset(`/okta-sso/step${String(i + 1).padStart(2, '0')}.png`)}
                   alt={step.title}
                   width={1440}
                   height={810}

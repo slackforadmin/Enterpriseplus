@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { asset } from '@/lib/asset';
 
 type Item = { title: string; caption: string; img: string };
 
@@ -107,7 +108,7 @@ export default function EntraSSOPage() {
               </div>
               <p className="text-sm text-gray-600 leading-relaxed mb-4 ml-10">{step.caption}</p>
               <div className="ml-10 rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm">
-                <Image src={`/entra-sso/${step.img}.png`} alt={step.title} width={1440} height={810} className="w-full h-auto" />
+                <Image src={asset(`/entra-sso/${step.img}.png`)} alt={step.title} width={1440} height={810} className="w-full h-auto" />
               </div>
             </div>
           ))}
@@ -136,7 +137,7 @@ export default function EntraSSOPage() {
                 </div>
                 <p className="text-sm text-gray-600 leading-relaxed mb-4 ml-2">{item.caption}</p>
                 <div className="rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm">
-                  <Image src={`/entra-sso/${item.img}.png`} alt={item.title} width={1440} height={810} className="w-full h-auto" />
+                  <Image src={asset(`/entra-sso/${item.img}.png`)} alt={item.title} width={1440} height={810} className="w-full h-auto" />
                 </div>
               </div>
             ))}

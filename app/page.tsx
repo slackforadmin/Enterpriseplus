@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { asset } from '@/lib/asset';
 
 const steps = [
   {
@@ -65,7 +66,7 @@ export default function Home() {
           </div>
           <div className="flex-shrink-0 hidden md:block">
             <Image
-              src="/slackbot.png"
+              src={asset('/slackbot.png')}
               alt="Slackbot"
               width={160}
               height={160}
