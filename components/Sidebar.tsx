@@ -43,10 +43,6 @@ const navItems = [
     label: '관리자 세션',
     href: '/admin-session',
   },
-  {
-    label: '사용자 세션',
-    href: '/user-session',
-  },
 ];
 
 const referenceItems = [

@@ -51,13 +51,6 @@ const phases: Phase[] = [
     description: '관리자 세션 영상을 통해 Slack Enterprise+의 핵심 관리 기능을 학습합니다.',
     links: [{ label: '관리자 세션', href: '/admin-session' }],
   },
-  {
-    number: '06',
-    title: '사용자 세션',
-    description: '일반 사용자를 위한 Slack 사용법과 온보딩을 영상으로 안내합니다.',
-    badge: '필요 시',
-    links: [{ label: '사용자 세션', href: '/user-session' }],
-  },
 ];
 
 export default function Home() {

@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import HeroBadge from '@/components/HeroBadge';
 
 export default function AdminSessionPage() {
@@ -28,15 +27,6 @@ export default function AdminSessionPage() {
           </div>
           <p className="font-semibold text-gray-700 mb-1">관리자 세션 영상 준비 중</p>
           <p className="text-sm text-gray-400">영상이 업로드되면 이 자리에서 바로 재생됩니다.</p>
-        </div>
-
-        <div className="mt-8">
-          <Link
-            href="/user-session"
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#635BFF] text-white rounded-lg text-sm font-medium hover:bg-[#4F46E5] transition-colors"
-          >
-            다음: 사용자 세션 →
-          </Link>
         </div>
       </div>
     </div>
