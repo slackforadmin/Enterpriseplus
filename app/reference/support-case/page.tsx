@@ -119,14 +119,14 @@ export default function SupportCaseReferencePage() {
         {/* 한국어 경로 */}
         <SectionLabel color="#007a5a" text="STEP 6–7 · 한국어 경로" />
 
-        <StepRow n="6" title="(한국어) 사례 생성" img={{ src: '/support-case/step6-caselist.png', alt: '진행 중인 내 사례 목록', width: 2019, height: 564 }}>
+        <StepStacked n="6" title="(한국어) 사례 생성" img={{ src: '/support-case/step6-caselist.png', alt: '진행 중인 내 사례 목록', width: 2019, height: 564 }}>
           내 사례 화면에서 중앙 하단 또는 우측 <Chip>사례 생성</Chip>을 클릭해 입력 양식으로 이동합니다.
-        </StepRow>
+        </StepStacked>
 
-        <StepRow n="7" title="(한국어) 사례 정보 입력" img={{ src: '/support-case/step7-caseform.png', alt: '사례 생성 양식', width: 1089, height: 543 }}>
+        <StepStacked n="7" title="(한국어) 사례 정보 입력" img={{ src: '/support-case/step7-caseform.png', alt: '사례 생성 양식', width: 1089, height: 543 }}>
           <span className="block mb-2"><strong className="text-gray-900">필수 입력</strong>: 사례 제목·설명, 제품(Slack)·주제, 인스턴스 유형·연락 가능 시간대, 심각도(기본 Lv4)·Slack ID(자동)</span>
           <span className="block">선택 입력: 협업자·파일 첨부 → 입력 후 <Chip>사례 만들기</Chip> 클릭</span>
-        </StepRow>
+        </StepStacked>
 
         {/* English 경로 */}
         <SectionLabel color="#1264a3" text="STEP 8–9 · English 경로 (Fin 에이전트)" />
@@ -195,6 +195,21 @@ function StepRow({ n, title, children, img }: { n: string; title: string; childr
         <div className="text-sm text-gray-600 leading-relaxed ml-10">{children}</div>
       </div>
       <Figure img={img} />
+    </div>
+  );
+}
+
+function StepStacked({ n, title, children, img }: { n: string; title: string; children: React.ReactNode; img: Img }) {
+  return (
+    <div className="mb-8">
+      <div className="flex items-center gap-3 mb-2">
+        <span className="w-7 h-7 rounded-full bg-gray-900 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">{n}</span>
+        <h3 className="font-semibold text-gray-900 text-sm">{title}</h3>
+      </div>
+      <div className="text-sm text-gray-600 leading-relaxed ml-10 mb-3">{children}</div>
+      <div className="ml-10">
+        <Figure img={img} />
+      </div>
     </div>
   );
 }
