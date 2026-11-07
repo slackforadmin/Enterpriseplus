@@ -249,21 +249,31 @@ export default function RolesReferencePage() {
               <ul className="divide-y divide-gray-50 sm:grid sm:grid-cols-2 sm:divide-y-0 sm:gap-px sm:bg-gray-50">
                 {systemRoles.map((role) => (
                   <li key={role.en} className="bg-white">
-                    <a
-                      href={role.url ?? helpLink(role.en)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group flex items-center gap-3 px-6 py-3 hover:bg-gray-50 transition-colors h-full"
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#ECB22E] flex-shrink-0" />
-                      <span className="flex-1 text-sm text-gray-700">
-                        {role.ko}
-                        <span className="block text-xs text-gray-400 mt-0.5">{role.en}</span>
-                      </span>
-                      <svg className="w-4 h-4 text-gray-300 group-hover:text-gray-500 transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                    </a>
+                    {role.url ? (
+                      <a
+                        href={role.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex items-center gap-3 px-6 py-3 hover:bg-gray-50 transition-colors h-full"
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#ECB22E] flex-shrink-0" />
+                        <span className="flex-1 text-sm text-gray-700">
+                          {role.ko}
+                          <span className="block text-xs text-gray-400 mt-0.5">{role.en}</span>
+                        </span>
+                        <svg className="w-4 h-4 text-gray-300 group-hover:text-gray-500 transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+                    ) : (
+                      <div className="flex items-center gap-3 px-6 py-3 h-full">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#ECB22E] flex-shrink-0" />
+                        <span className="flex-1 text-sm text-gray-700">
+                          {role.ko}
+                          <span className="block text-xs text-gray-400 mt-0.5">{role.en}</span>
+                        </span>
+                      </div>
+                    )}
                   </li>
                 ))}
               </ul>
