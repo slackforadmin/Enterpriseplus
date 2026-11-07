@@ -2,36 +2,54 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { asset } from '@/lib/asset';
 
-const steps = [
+type SubLink = { label: string; href: string };
+type Phase = {
+  number: string;
+  title: string;
+  description: string;
+  badge?: string;
+  links?: SubLink[];
+  note?: string;
+};
+
+const phases: Phase[] = [
   {
     number: '01',
-    title: 'Day 1 조직 초기 설정',
-    description: 'Enterprise+ 조직의 기본 설정을 완료합니다. 워크스페이스 생성, 도메인 연결, 기본 정책을 구성합니다.',
-    href: '/day1-setup',
+    title: 'Kickoff 영상 시청',
+    description: '런치를 시작하기 전, Kickoff 영상을 통해 전체 과정과 핵심 포인트를 먼저 확인합니다.',
+    note: '영상 준비 중',
   },
   {
     number: '02',
-    title: 'SSO 설정',
-    description: 'Single Sign-On을 구성합니다. SSO 없이 Dummy SSO를 사용하거나, Google / Okta / Entra ID와 연동할 수 있습니다.',
-    href: '/sso',
+    title: '서비스 시작일 · Day 1 설정',
+    description: '서비스 시작일에 조직의 기본 환경과 로그인 방식을 설정합니다. 조직 초기 설정을 완료한 뒤 SSO를 구성하세요.',
+    links: [
+      { label: 'Day 1 조직 초기 설정', href: '/day1-setup' },
+      { label: 'SSO 설정', href: '/sso' },
+    ],
   },
   {
     number: '03',
     title: '마이그레이션',
-    description: '기존 Slack 데이터를 Enterprise+로 이전합니다. 마이그레이션 오버뷰와 사전작업을 순서대로 진행합니다.',
-    href: '/migration',
+    description: '기존 Slack 데이터를 이전하는 경우, 오버뷰 영상을 먼저 시청한 뒤 사전작업을 직접 진행합니다. 마이그레이션 전·후 사용자/관리자 진행사항을 함께 안내합니다.',
+    badge: '필요 시',
+    links: [
+      { label: '마이그레이션 오버뷰', href: '/migration/overview' },
+      { label: '마이그레이션 사전작업', href: '/migration/prep' },
+    ],
   },
   {
     number: '04',
-    title: '관리자 세션',
-    description: '관리자를 위한 Slack Enterprise+ 핵심 기능과 관리 도구 사용법을 안내합니다.',
-    href: '/admin-session',
+    title: '조직 추가 설정 · 관리자 세션',
+    description: '관리자가 조직에 필요한 추가 설정을 진행하고, 관리자 세션 영상을 통해 핵심 관리 기능을 학습합니다.',
+    links: [{ label: '관리자 세션', href: '/admin-session' }],
   },
   {
     number: '05',
     title: '사용자 세션',
-    description: '일반 사용자를 위한 Slack 사용 가이드와 온보딩 자료를 제공합니다.',
-    href: '/user-session',
+    description: '일반 사용자를 위한 Slack 사용법과 온보딩을 영상으로 안내합니다.',
+    badge: '필요 시',
+    links: [{ label: '사용자 세션', href: '/user-session' }],
   },
 ];
 
@@ -41,15 +59,11 @@ export default function Home() {
       {/* Hero */}
       <div
         className="px-12 py-20 relative overflow-hidden"
-        style={{
-          background: 'linear-gradient(135deg, #0A2540 0%, #1A1F71 60%, #635BFF 100%)',
-        }}
+        style={{ background: 'linear-gradient(135deg, #0A2540 0%, #1A1F71 60%, #635BFF 100%)' }}
       >
         <div
           className="absolute inset-0 opacity-30"
-          style={{
-            background: 'radial-gradient(circle at 80% 20%, rgba(99,91,255,0.4) 0%, transparent 50%)',
-          }}
+          style={{ background: 'radial-gradient(circle at 80% 20%, rgba(99,91,255,0.4) 0%, transparent 50%)' }}
         />
         <div className="max-w-6xl relative flex items-center gap-24">
           <div className="max-w-xl">
@@ -60,8 +74,8 @@ export default function Home() {
               Slack 런치 가이드
             </h1>
             <p className="text-lg text-white/70 leading-relaxed max-w-xl">
-              Enterprise+ 플랜 도입을 위한 단계별 가이드입니다.<br />
-              아래 순서에 따라 설정을 진행해주세요.
+              처음 Slack을 도입하시나요? 아래 여정을 따라<br />
+              Kickoff부터 사용자 온보딩까지 차근차근 진행하세요.
             </p>
           </div>
           <div className="flex-shrink-0 hidden md:block">
@@ -77,35 +91,64 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Steps */}
+      {/* Journey timeline */}
       <div className="px-12 py-14">
         <div className="max-w-3xl">
-          <h2 className="text-xs font-semibold text-[var(--muted)] uppercase tracking-wider mb-6">
-            진행 단계
+          <h2 className="text-xs font-semibold text-[var(--muted)] uppercase tracking-wider mb-8">
+            런치 여정
           </h2>
-          <div className="space-y-3">
-            {steps.map((step) => (
-              <Link
-                key={step.href}
-                href={step.href}
-                className="flex items-start gap-5 p-6 bg-white rounded-2xl border border-[var(--border)] hover:shadow-[0_8px_30px_rgba(10,37,64,0.08)] hover:-translate-y-0.5 transition-all group"
-              >
-                <div className="w-11 h-11 rounded-xl flex items-center justify-center text-white font-bold text-sm flex-shrink-0 bg-gradient-to-br from-[#635BFF] to-[#0EA5E9]">
-                  {step.number}
+
+          <div className="relative">
+            {/* vertical line */}
+            <div className="absolute left-[18px] top-2 bottom-2 w-px bg-gradient-to-b from-[#635BFF] via-[#635BFF]/40 to-[#635BFF]/10" />
+
+            <div className="space-y-8">
+              {phases.map((phase) => (
+                <div key={phase.number} className="relative flex gap-5">
+                  {/* node */}
+                  <div className="relative z-10 flex-shrink-0">
+                    <div className="w-9 h-9 rounded-full bg-white border-2 border-[#635BFF] text-[#635BFF] font-bold text-xs flex items-center justify-center shadow-sm">
+                      {phase.number}
+                    </div>
+                  </div>
+
+                  {/* content */}
+                  <div className="flex-1 pb-2">
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <h3 className="font-semibold text-[var(--foreground)] text-base">{phase.title}</h3>
+                      {phase.badge && (
+                        <span className="text-[11px] font-medium text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full">
+                          {phase.badge}
+                        </span>
+                      )}
+                      {phase.note && (
+                        <span className="text-[11px] font-medium text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">
+                          {phase.note}
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-sm text-[var(--muted)] leading-relaxed mb-3">{phase.description}</p>
+
+                    {phase.links && (
+                      <div className="flex flex-wrap gap-2">
+                        {phase.links.map((l) => (
+                          <Link
+                            key={l.href}
+                            href={l.href}
+                            className="group inline-flex items-center gap-1.5 text-sm font-medium text-[#635BFF] bg-[#635BFF]/8 border border-[#635BFF]/20 rounded-lg px-3 py-1.5 hover:bg-[#635BFF]/12 transition-colors"
+                          >
+                            {l.label}
+                            <svg className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                            </svg>
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="font-semibold text-[var(--foreground)] mb-1 group-hover:text-[#635BFF] transition-colors">
-                    {step.title}
-                  </h3>
-                  <p className="text-sm text-[var(--muted)] leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
-                <svg className="w-5 h-5 text-gray-300 group-hover:text-[#635BFF] group-hover:translate-x-1 transition-all flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
