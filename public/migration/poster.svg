@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="720" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#F3F1FC"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <circle cx="1180" cy="90" r="140" fill="#635BFF" fill-opacity="0.08"/>
+
+  <!-- migration icon (arrows) -->
+  <g transform="translate(120, 150)">
+    <rect x="0" y="0" width="66" height="66" rx="16" fill="#635BFF"/>
+    <path d="M22 26 H44 M44 26 L37 19 M44 26 L37 33" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M44 40 H22 M22 40 L29 33 M22 40 L29 47" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <text x="122" y="330" font-family="Inter, -apple-system, sans-serif" font-size="16" font-weight="700" fill="#635BFF" letter-spacing="2">MIGRATION · 사전작업</text>
+  <text x="120" y="400" font-family="Inter, -apple-system, sans-serif" font-size="60" font-weight="800" fill="#0A2540" letter-spacing="-1">마이그레이션 사전작업</text>
+  <text x="120" y="450" font-family="Inter, -apple-system, sans-serif" font-size="23" font-weight="400" fill="#5B6B7F">마이그레이션 전 준비 작업 안내 영상</text>
+
+  <g transform="translate(1000, 300)">
+    <circle cx="60" cy="60" r="60" fill="#635BFF" fill-opacity="0.12"/>
+    <circle cx="60" cy="60" r="46" fill="#635BFF"/>
+    <path d="M50 40 L84 60 L50 80 Z" fill="#ffffff"/>
+  </g>
+</svg>

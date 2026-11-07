@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="720" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#EEF4F8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <circle cx="1180" cy="90" r="140" fill="#007DC1" fill-opacity="0.08"/>
+
+  <!-- Okta mark (ring) -->
+  <g transform="translate(120, 155)">
+    <circle cx="33" cy="33" r="33" fill="#007DC1"/>
+    <circle cx="33" cy="33" r="14" fill="#ffffff"/>
+  </g>
+
+  <text x="122" y="330" font-family="Inter, -apple-system, sans-serif" font-size="16" font-weight="700" fill="#007DC1" letter-spacing="2">OKTA · SSO</text>
+  <text x="120" y="400" font-family="Inter, -apple-system, sans-serif" font-size="66" font-weight="800" fill="#0A2540" letter-spacing="-1">Okta SSO 설정</text>
+  <text x="120" y="450" font-family="Inter, -apple-system, sans-serif" font-size="23" font-weight="400" fill="#5B6B7F">SAML 연동 및 사용자 프로비저닝 가이드 영상</text>
+
+  <g transform="translate(1000, 300)">
+    <circle cx="60" cy="60" r="60" fill="#007DC1" fill-opacity="0.12"/>
+    <circle cx="60" cy="60" r="46" fill="#007DC1"/>
+    <path d="M50 40 L84 60 L50 80 Z" fill="#ffffff"/>
+  </g>
+</svg>

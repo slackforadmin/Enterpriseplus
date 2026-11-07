@@ -1,4 +1,15 @@
 import Link from 'next/link';
+import { asset } from '@/lib/asset';
+import ZoomableImage from '@/components/ZoomableImage';
+
+const recommended: { label: string; value: string }[] = [
+  { label: '공개 채널', value: '개정 내역을 포함한 모든 메시지 보관' },
+  { label: '비공개 채널', value: '개정 내역을 포함한 모든 메시지 보관' },
+  { label: '다이렉트 메시지', value: '개정 내역을 포함한 모든 메시지 보관' },
+  { label: '보존 재정의', value: '관리자 재정의 - 항상 재정의 허용' },
+  { label: '파일 보존', value: '삭제된 파일을 포함하여 모든 파일 보관' },
+  { label: '캔버스 및 리스트 보존', value: '삭제된 캔버스를 포함하여 캔버스 및 리스트 보관' },
+];
 
 export default function OrgSetupPage() {
   return (
@@ -10,48 +21,151 @@ export default function OrgSetupPage() {
       >
         <div className="absolute inset-0 opacity-30" style={{ background: 'radial-gradient(circle at 85% 15%, rgba(99,91,255,0.5) 0%, transparent 55%)' }} />
         <div className="relative max-w-5xl">
-          <Link href="/" className="text-sm text-white/60 hover:text-white mb-5 inline-flex items-center gap-1">
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-            </svg>
-            런치 가이드로 돌아가기
-          </Link>
           <h1 className="text-4xl font-bold text-white mb-3 tracking-tight mt-1">조직 관리자 설정</h1>
           <p className="text-white/70 leading-relaxed">
-            관리자가 조직 운영에 필요한 기본 추가 설정을 진행합니다.
+            운영에 필요하지만 기본값으로 권한이 부여되지 않은 설정들입니다.<br />
+            마이그레이션 이후 확인하여 설정해주세요.
           </p>
         </div>
       </div>
 
-      <div className="px-6 md:px-12 py-12 max-w-5xl">
-        <div className="flex items-start gap-3 bg-sky-50 border border-sky-200 rounded-xl p-4 mb-8">
-          <span className="text-sky-500 flex-shrink-0 mt-0.5">💡</span>
-          <p className="text-sm text-sky-800 leading-relaxed">
-            관리자 세션을 듣기 전, 조직에 기본적으로 필요한 설정을 먼저 완료하세요. 세부 항목은 곧 업데이트됩니다.
-          </p>
-        </div>
+      <div className="px-6 md:px-12 py-12 max-w-4xl">
+        <Callout className="mb-10">
+          관리자 계정에서 운영에 필요하지만 <strong>기본값이 권한 부여되지 않은 상태</strong>의 권한들입니다. 마이그레이션 이후 확인 후 설정해주세요.
+        </Callout>
 
-        <div className="rounded-2xl border-2 border-dashed border-gray-300 bg-white p-10 flex flex-col items-center justify-center text-center">
-          <div className="w-14 h-14 rounded-full bg-[#635BFF]/10 flex items-center justify-center mb-4">
-            <svg className="w-7 h-7 text-[#635BFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
+        {/* 1. DLP */}
+        <Section num={1} title="DLP 권한 추가" badge="관리자 화면">
+          <Step n="1">
+            조직 관리 화면의 <Chip>보안</Chip> → <Chip>데이터 손실 방지</Chip> 항목이 없는지 확인합니다. (없다면 아래 할당 작업 진행)
+          </Step>
+          <Figure src="/org-setup/dlp-1.png" alt="보안 > 데이터 손실 방지 확인" width={1120} height={1264} />
+          <Step n="2">
+            <Chip>역할 및 권한</Chip> → <Chip>역할</Chip> → <Chip>DLP 관리자</Chip>의 <Chip>···</Chip> → <Chip>사용자 할당</Chip>을 선택합니다.
+          </Step>
+          <Figure src="/org-setup/dlp-2.png" alt="역할 및 권한 > 역할 > DLP 관리자 > 사용자 할당" width={1184} height={1442} />
+          <Step n="3">
+            본인 계정을 선택한 뒤 <Chip>할당</Chip> 버튼을 클릭합니다.
+          </Step>
+          <Figure src="/org-setup/dlp-3.png" alt="멤버에게 DLP 관리자 역할 할당" width={1568} height={1400} />
+        </Section>
+
+        {/* 2. 법적 자료 관리자 */}
+        <Section num={2} title="법적 자료 관리자 권한 추가" badge="관리자 화면">
+          <Step n="1">
+            조직 관리 화면의 <Chip>역할 및 권한</Chip> → <Chip>역할</Chip> → <Chip>법적 자료 관리자</Chip>의 <Chip>···</Chip> → <Chip>사용자 할당</Chip>을 선택합니다.
+          </Step>
+        </Section>
+
+        {/* 3. 플래그 콘텐츠 검토 */}
+        <Section num={3} title="플래그가 지정된 콘텐츠 검토 활성화" badge="관리자 화면">
+          <Step n="1">
+            <Chip>설정</Chip> → <Chip>조직 설정</Chip> → <Chip>플래그가 지정된 콘텐츠 검토</Chip>를 활성화합니다.
+          </Step>
+          <Figure src="/org-setup/flag-content.webp" alt="설정 > 조직 설정 > 플래그가 지정된 콘텐츠 검토" width={2000} height={1151} />
+        </Section>
+
+        {/* 4. 데이터 내보내기 */}
+        <Section num={4} title="데이터 내보내기 권한 요청" badge="피드백팀 요청">
+          <p className="text-gray-600 leading-relaxed">데이터 내보내기 권한은 피드백팀에 요청해야 합니다.</p>
+        </Section>
+
+        {/* 5. Data Retention */}
+        <Section num={5} title="Data Retention 설정 요청" badge="피드백팀 요청" last>
+          <LinkCallout>
+            <a href="https://salesforce.enterprise.slack.com/docs/T34263EUF/F0C9H1TGGE5" target="_blank" rel="noopener noreferrer" className="font-semibold underline">
+              Slack 데이터 보존 정책 및 기간 설정 가이드
+            </a>{' '}
+            캔버스를 참조하여 관리 방식을 정한 뒤 피드백팀에 요청해주세요.
+          </LinkCallout>
+          <p className="text-gray-600 leading-relaxed">
+            Enterprise+ 플랜의 데이터 보존 정책은 관리자 화면에서 설정할 수 없어 <strong className="text-gray-900">피드백팀에 요청</strong>해야 합니다. 요청 시 다음 정보가 필요합니다.
+          </p>
+          <ul className="space-y-2 ml-2">
+            <li className="flex items-start gap-3 text-sm text-gray-600">
+              <span className="w-5 h-5 rounded-full bg-gray-100 text-gray-500 text-[11px] font-semibold flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
+              <span><strong className="text-gray-900">조직 레벨 설정의 8가지 항목 값</strong> — 삭제/편집 데이터 보관 및 멤버 재정의 방지를 위해 <Chip>권장</Chip> 값으로 설정하는 것을 권장합니다. 권장 표시가 없는 항목은 내용 확인 후 선택해주세요.</span>
+            </li>
+            <li className="flex items-start gap-3 text-sm text-gray-600">
+              <span className="w-5 h-5 rounded-full bg-gray-100 text-gray-500 text-[11px] font-semibold flex items-center justify-center flex-shrink-0 mt-0.5">2</span>
+              <span>조직 URL과 인증 코드 (<Link href="/reference/retention" className="text-[#635BFF] hover:underline">데이터 보존 정책 참조</Link>)</span>
+            </li>
+          </ul>
+
+          <div className="mt-4 rounded-2xl border border-gray-200 overflow-hidden bg-white">
+            <div className="px-5 py-3 bg-[#635BFF]/5 border-b border-gray-100">
+              <span className="text-sm font-bold text-gray-900">권장 설정 값</span>
+            </div>
+            <ul className="divide-y divide-gray-50">
+              {recommended.map((r) => (
+                <li key={r.label} className="flex items-center gap-3 px-5 py-3">
+                  <span className="text-sm text-gray-500 w-36 flex-shrink-0">{r.label}</span>
+                  <span className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-900">
+                    <span className="text-[10px] font-bold text-white bg-[#635BFF] px-1.5 py-0.5 rounded">권장</span>
+                    {r.value}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
-          <p className="font-semibold text-gray-700 mb-1">콘텐츠 준비 중</p>
-          <p className="text-sm text-gray-400">조직 관리자 설정 가이드가 곧 업데이트됩니다.</p>
-        </div>
-
-        {/* Next */}
-        <div className="mt-8">
-          <Link
-            href="/admin-session"
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#635BFF] text-white rounded-lg text-sm font-medium hover:bg-[#4F46E5] transition-colors"
-          >
-            다음: 관리자 세션 →
-          </Link>
-        </div>
+        </Section>
       </div>
+    </div>
+  );
+}
+
+function Section({ num, title, badge, last, children }: { num: number; title: string; badge?: string; last?: boolean; children: React.ReactNode }) {
+  return (
+    <section className={last ? 'mb-4' : 'mb-14'}>
+      <div className="flex items-center gap-3 mb-5 flex-wrap">
+        <div className="w-9 h-9 rounded-xl bg-[#635BFF] text-white text-base font-bold flex items-center justify-center flex-shrink-0">{num}</div>
+        <h2 className="text-xl font-bold text-gray-900">{title}</h2>
+        {badge && (
+          <span className="text-[11px] font-medium text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">{badge}</span>
+        )}
+      </div>
+      <div className="space-y-4 ml-1">{children}</div>
+    </section>
+  );
+}
+
+function Step({ n, children }: { n: string; children: React.ReactNode }) {
+  return (
+    <div className="flex items-start gap-3">
+      <span className="w-6 h-6 rounded-full bg-gray-900 text-white text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">{n}</span>
+      <p className="text-gray-700 leading-relaxed pt-0.5">{children}</p>
+    </div>
+  );
+}
+
+function Chip({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-[#635BFF]/10 text-[#635BFF] text-sm font-semibold mx-0.5">{children}</span>
+  );
+}
+
+function Callout({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+  return (
+    <div className={`flex items-start gap-3 bg-amber-50 border border-amber-200 rounded-xl p-4 ${className}`}>
+      <span className="text-amber-500 flex-shrink-0 mt-0.5">⚠️</span>
+      <p className="text-sm text-amber-800 leading-relaxed">{children}</p>
+    </div>
+  );
+}
+
+function LinkCallout({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex items-start gap-3 bg-indigo-50 border border-indigo-200 rounded-xl p-4">
+      <span className="text-[#635BFF] flex-shrink-0 mt-0.5">📄</span>
+      <p className="text-sm text-indigo-900 leading-relaxed">{children}</p>
+    </div>
+  );
+}
+
+function Figure({ src, alt, width, height }: { src: string; alt: string; width: number; height: number }) {
+  return (
+    <div className="ml-9 rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm max-w-2xl">
+      <ZoomableImage src={asset(src)} alt={alt} width={width} height={height} className="w-full h-auto" />
     </div>
   );
 }
