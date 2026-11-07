@@ -15,9 +15,10 @@ type Phase = {
 const phases: Phase[] = [
   {
     number: '01',
-    title: 'Kickoff 영상 시청',
-    description: '런치를 시작하기 전, Kickoff 영상을 통해 전체 과정과 핵심 포인트를 먼저 확인합니다.',
+    title: 'Kick-Off 영상 시청',
+    description: '런치를 시작하기 전, Kick-Off 영상을 통해 전체 과정과 핵심 포인트를 먼저 확인합니다.',
     note: '영상 준비 중',
+    links: [{ label: 'Kick-Off 영상', href: '/kickoff' }],
   },
   {
     number: '02',
@@ -40,12 +41,18 @@ const phases: Phase[] = [
   },
   {
     number: '04',
-    title: '조직 추가 설정 · 관리자 세션',
-    description: '관리자가 조직에 필요한 추가 설정을 진행하고, 관리자 세션 영상을 통해 핵심 관리 기능을 학습합니다.',
-    links: [{ label: '관리자 세션', href: '/admin-session' }],
+    title: '조직 추가 설정',
+    description: '관리자가 조직 운영에 필요한 기본 추가 설정을 진행합니다.',
+    links: [{ label: '조직 추가 설정', href: '/org-setup' }],
   },
   {
     number: '05',
+    title: '관리자 세션',
+    description: '관리자 세션 영상을 통해 Slack Enterprise+의 핵심 관리 기능을 학습합니다.',
+    links: [{ label: '관리자 세션', href: '/admin-session' }],
+  },
+  {
+    number: '06',
     title: '사용자 세션',
     description: '일반 사용자를 위한 Slack 사용법과 온보딩을 영상으로 안내합니다.',
     badge: '필요 시',
@@ -75,7 +82,7 @@ export default function Home() {
             </h1>
             <p className="text-lg text-white/70 leading-relaxed max-w-xl">
               처음 Slack을 도입하시나요? 아래 여정을 따라<br />
-              Kickoff부터 사용자 온보딩까지 차근차근 진행하세요.
+              Kick-Off부터 사용자 온보딩까지 차근차근 진행하세요.
             </p>
           </div>
           <div className="flex-shrink-0 hidden md:block">

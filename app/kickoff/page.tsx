@@ -1,0 +1,74 @@
+import Link from 'next/link';
+
+// 영상 파일이 준비되면 public/kickoff/kickoff.mp4 로 넣고
+// 아래 VIDEO_READY 를 true 로 바꾸면 플레이어가 표시됩니다.
+const VIDEO_READY = false;
+
+export default function KickoffPage() {
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {/* Hero */}
+      <div
+        className="px-12 pt-14 pb-12 relative overflow-hidden"
+        style={{ background: 'linear-gradient(135deg, #0A2540 0%, #1A1F71 60%, #635BFF 100%)' }}
+      >
+        <div className="absolute inset-0 opacity-30" style={{ background: 'radial-gradient(circle at 85% 15%, rgba(99,91,255,0.5) 0%, transparent 55%)' }} />
+        <div className="relative max-w-5xl">
+          <Link href="/" className="text-sm text-white/60 hover:text-white mb-5 inline-flex items-center gap-1">
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+            런치 가이드로 돌아가기
+          </Link>
+          <h1 className="text-4xl font-bold text-white mb-3 tracking-tight mt-1">Kick-Off 영상</h1>
+          <p className="text-white/70 leading-relaxed">
+            런치를 시작하기 전, Kick-Off 영상으로 전체 과정과 핵심 포인트를 먼저 확인하세요.
+          </p>
+        </div>
+      </div>
+
+      <div className="px-12 py-12 max-w-5xl">
+        <div className="flex items-center gap-2 mb-4">
+          <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-[#635BFF]/10">
+            <svg className="w-4 h-4 text-[#635BFF]" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M6.3 2.841A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
+            </svg>
+          </span>
+          <h2 className="text-lg font-bold text-gray-900">Kick-Off 영상 보기</h2>
+        </div>
+
+        <div className="max-w-[64%]">
+          {VIDEO_READY ? (
+            <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-sm bg-black">
+              <video controls preload="metadata" className="w-full h-auto">
+                <source src="/kickoff/kickoff.mp4" type="video/mp4" />
+                브라우저가 영상 재생을 지원하지 않습니다.
+              </video>
+            </div>
+          ) : (
+            <div className="rounded-2xl border-2 border-dashed border-gray-300 bg-white aspect-video flex flex-col items-center justify-center text-center p-8">
+              <div className="w-14 h-14 rounded-full bg-[#635BFF]/10 flex items-center justify-center mb-4">
+                <svg className="w-7 h-7 text-[#635BFF]" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M6.3 2.841A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
+                </svg>
+              </div>
+              <p className="font-semibold text-gray-700 mb-1">Kick-Off 영상 준비 중</p>
+              <p className="text-sm text-gray-400">영상이 업로드되면 이 자리에서 바로 재생됩니다.</p>
+            </div>
+          )}
+        </div>
+        <p className="text-xs text-gray-400 mt-3">영상을 시청한 뒤, 다음 단계인 Day 1 설정을 진행하세요.</p>
+
+        {/* Next */}
+        <div className="mt-8">
+          <Link
+            href="/day1-setup"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#635BFF] text-white rounded-lg text-sm font-medium hover:bg-[#4F46E5] transition-colors"
+          >
+            다음: Day 1 조직 초기 설정 →
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}

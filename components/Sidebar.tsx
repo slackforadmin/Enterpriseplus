@@ -10,6 +10,10 @@ const navItems = [
     href: '/',
   },
   {
+    label: 'Kick-Off 영상',
+    href: '/kickoff',
+  },
+  {
     label: 'Day 1 조직 초기 설정',
     href: '/day1-setup',
   },
@@ -30,6 +34,10 @@ const navItems = [
       { label: '마이그레이션 오버뷰', href: '/migration/overview' },
       { label: '마이그레이션 사전작업', href: '/migration/prep' },
     ],
+  },
+  {
+    label: '조직 추가 설정',
+    href: '/org-setup',
   },
   {
     label: '관리자 세션',
