@@ -64,12 +64,6 @@ export default function OrgSetupPage() {
 
         {/* 5. Data Retention */}
         <Section num={5} title="Data Retention 설정 요청" badge="피드백팀 요청" last>
-          <LinkCallout>
-            <Link href="/reference/retention" className="font-semibold underline">
-              데이터 보존 정책
-            </Link>{' '}
-            화면을 참조하여 관리 방식을 정한 뒤 피드백팀에 요청해주세요.
-          </LinkCallout>
           <p className="text-gray-600 leading-relaxed">
             Enterprise+ 플랜의 데이터 보존 정책은 관리자 화면에서 설정할 수 없어 <strong className="text-gray-900">피드백팀에 요청</strong>해야 합니다. 요청 시 다음 정보가 필요합니다.
           </p>
@@ -83,6 +77,14 @@ export default function OrgSetupPage() {
               <span>조직 URL과 인증 코드</span>
             </li>
           </ul>
+
+          <LinkCallout>
+            관리 방식은{' '}
+            <Link href="/reference/retention" className="font-semibold underline">
+              데이터 보존 정책
+            </Link>{' '}
+            화면을 참조하여 정한 뒤 피드백팀에 요청해주세요.
+          </LinkCallout>
 
           <div className="mt-4 rounded-2xl border border-gray-200 overflow-hidden bg-white">
             <div className="px-5 py-3 bg-[#635BFF]/5 border-b border-gray-100">
