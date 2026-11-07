@@ -30,9 +30,9 @@ export default function OrgSetupPage() {
       </div>
 
       <div className="px-6 md:px-12 py-12 max-w-4xl">
-        <Callout className="mb-10">
-          관리자 계정에서 운영에 필요하지만 <strong>기본값이 권한 부여되지 않은 상태</strong>의 권한들입니다. 마이그레이션 이후 확인 후 설정해주세요.
-        </Callout>
+        <p className="text-gray-600 leading-relaxed mb-10">
+          관리자 계정에서 운영에 필요하지만 <strong className="text-gray-900">기본값이 권한 부여되지 않은 상태</strong>의 권한들입니다. 마이그레이션 이후 확인 후 설정해주세요.
+        </p>
 
         {/* 1. DLP */}
         <Section num={1} title="DLP 권한 추가" badge="관리자 화면">
@@ -133,15 +133,6 @@ function Step({ n, children }: { n: string; children: React.ReactNode }) {
 function Chip({ children }: { children: React.ReactNode }) {
   return (
     <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-[#635BFF]/10 text-[#635BFF] text-sm font-semibold mx-0.5">{children}</span>
-  );
-}
-
-function Callout({ children, className = '' }: { children: React.ReactNode; className?: string }) {
-  return (
-    <div className={`flex items-start gap-3 bg-amber-50 border border-amber-200 rounded-xl p-4 ${className}`}>
-      <span className="text-amber-500 flex-shrink-0 mt-0.5">⚠️</span>
-      <p className="text-sm text-amber-800 leading-relaxed">{children}</p>
-    </div>
   );
 }
 
