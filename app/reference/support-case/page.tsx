@@ -83,14 +83,20 @@ export default function SupportCaseReferencePage() {
           도움말에서 우측 <Chip>내 사례</Chip>를 클릭하면 지원 포털(Salesforce Portal)로 이동합니다.
         </StepRow>
 
-        <StepRow n="3" title="Portal 로그인 · 계정 생성" img={{ src: '/support-case/step3-login.png', alt: 'Salesforce Portal 로그인', width: 573, height: 552 }}>
-          <span className="block">최초 1회 계정 생성 후 재사용합니다.</span>
-          <ul className="mt-2 space-y-1 border-l-2 border-[#635BFF]/30 pl-3 text-sm">
-            <li>A. 로그인 승인 → <Chip>승인하고 계속</Chip></li>
-            <li>B. 지역 선택·약관 동의 → <Chip>Next</Chip></li>
-            <li>C. 이름·회사·역할 입력 → <Chip>Next</Chip></li>
-          </ul>
-        </StepRow>
+        <div className="mb-8">
+          <div className="flex items-center gap-3 mb-2">
+            <span className="w-7 h-7 rounded-full bg-gray-900 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <h3 className="font-semibold text-gray-900 text-sm">Portal 로그인 · 계정 생성</h3>
+          </div>
+          <p className="text-sm text-gray-600 leading-relaxed ml-10 mb-4">
+            최초 1회만 계정을 생성하면 이후 재사용합니다. 아래 <strong className="text-gray-900">A → B → C</strong> 순서로 진행하세요.
+          </p>
+          <div className="ml-10 grid sm:grid-cols-3 gap-4">
+            <CaptionedShot step="A" caption={<>로그인 승인 → <Chip>승인하고 계속</Chip></>} img={{ src: '/support-case/step3a-approve.png', alt: 'Salesforce 로그인 승인 화면', width: 504, height: 444 }} />
+            <CaptionedShot step="B" caption={<>지역 선택·약관 동의 → <Chip>Next</Chip></>} img={{ src: '/support-case/step3b-region.png', alt: '지역 선택 및 약관 동의 (Step 2 of 3)', width: 474, height: 722 }} />
+            <CaptionedShot step="C" caption={<>이름·회사·역할 입력 → <Chip>Next</Chip></>} img={{ src: '/support-case/step3c-info.png', alt: '이름·회사·역할 입력 (Step 3 of 3)', width: 440, height: 720 }} />
+          </div>
+        </div>
 
         <StepRow n="4" title="로그인 후 포털 화면" img={{ src: '/support-case/step4-portal.png', alt: 'Salesforce Portal 홈', width: 1158, height: 708 }}>
           본인 Org의 <strong className="text-gray-900">Org ID · Success Plan</strong>을 확인하고, <Chip>Create a Case</Chip>로 사례를 생성할 수 있습니다.
@@ -197,6 +203,20 @@ function Figure({ img }: { img: Img }) {
   return (
     <div className="rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm">
       <ZoomableImage src={asset(img.src)} alt={img.alt} width={img.width} height={img.height} className="w-full h-auto" />
+    </div>
+  );
+}
+
+function CaptionedShot({ step, caption, img }: { step: string; caption: React.ReactNode; img: Img }) {
+  return (
+    <div className="flex flex-col">
+      <div className="flex items-center gap-2 mb-2">
+        <span className="w-5 h-5 rounded-full bg-[#635BFF] text-white text-[11px] font-bold flex items-center justify-center flex-shrink-0">{step}</span>
+        <span className="text-xs text-gray-600 leading-snug">{caption}</span>
+      </div>
+      <div className="rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm">
+        <ZoomableImage src={asset(img.src)} alt={img.alt} width={img.width} height={img.height} className="w-full h-auto" />
+      </div>
     </div>
   );
 }
