@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { asset } from '@/lib/asset';
 import ZoomableImage from '@/components/ZoomableImage';
 import HeroBadge from '@/components/HeroBadge';
@@ -81,12 +80,6 @@ export default function EntraSSOPage() {
           style={{ background: 'radial-gradient(circle at 85% 15%, rgba(0,120,212,0.5) 0%, transparent 55%)' }}
         />
         <div className="relative max-w-5xl">
-          <Link href="/sso" className="text-sm text-white/60 hover:text-white mb-5 inline-flex items-center gap-1">
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-            </svg>
-            SSO 설정으로 돌아가기
-          </Link>
           <HeroBadge>런치 2단계</HeroBadge>
           <h1 className="text-4xl font-bold text-white mb-3 tracking-tight">Entra ID SSO 설정</h1>
           <p className="text-white/70 leading-relaxed">
