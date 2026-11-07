@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { asset } from '@/lib/asset';
 import ZoomableImage from '@/components/ZoomableImage';
 
-type Item = { title: string; caption: string; img: string };
+type Item = { title: string; caption: string; img: string; mapping?: { label: string; value: string }[] };
 
 const steps: Item[] = [
   {
@@ -55,7 +55,14 @@ const appendix: Item[] = [
   },
   {
     title: '에러 시 Attribute 확인',
-    caption: '구성 후 테스트에서 오류가 보이면 attribute 매핑을 확인하세요. first_name → user.givenname, last_name → user.surname, Username → user.userprincipalname, Email → user.mail, Unique ID → user.userprincipalname',
+    caption: '구성 후 테스트에서 오류가 보이면 아래 attribute 매핑을 확인하세요.',
+    mapping: [
+      { label: 'first_name', value: 'user.givenname' },
+      { label: 'last_name', value: 'user.surname' },
+      { label: 'Username', value: 'user.userprincipalname' },
+      { label: 'Email', value: 'user.mail' },
+      { label: 'Unique ID', value: 'user.userprincipalname' },
+    ],
     img: 'appendix03',
   },
 ];
@@ -136,6 +143,21 @@ export default function EntraSSOPage() {
                   <h3 className="font-semibold text-gray-900 text-sm leading-tight">{item.title}</h3>
                 </div>
                 <p className="text-sm text-gray-600 leading-relaxed mb-4 ml-2">{item.caption}</p>
+                {item.mapping && (
+                  <div className="mb-4 ml-2 rounded-xl border border-gray-200 overflow-hidden bg-white">
+                    <ul className="divide-y divide-gray-50">
+                      {item.mapping.map((m) => (
+                        <li key={m.label} className="flex items-center gap-3 px-4 py-2.5">
+                          <span className="text-sm font-medium text-gray-700 w-28 flex-shrink-0">{m.label}</span>
+                          <svg className="w-4 h-4 text-gray-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                          </svg>
+                          <code className="text-sm font-medium bg-[#0078D4]/10 text-[#0078D4] px-2 py-0.5 rounded">{m.value}</code>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
                 <div className="rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm">
                   <ZoomableImage src={asset(`/entra-sso/${item.img}.png`)} alt={item.title} width={1440} height={810} className="w-full h-auto" />
                 </div>
