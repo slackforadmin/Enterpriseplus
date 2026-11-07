@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Sidebar from '@/components/Sidebar';
+import ChatbotWidget from '@/components/ChatbotWidget';
 
 export const metadata: Metadata = {
   title: 'Slack Enterprise+ Launch Guide',
@@ -19,6 +20,7 @@ export default function RootLayout({
         <main className="main-content">
           {children}
         </main>
+        <ChatbotWidget />
       </body>
     </html>
   );
