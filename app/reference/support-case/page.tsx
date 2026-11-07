@@ -16,7 +16,7 @@ export default function SupportCaseReferencePage() {
     <div className="min-h-screen bg-gray-50">
       {/* Hero */}
       <div
-        className="px-12 pt-14 pb-12 relative overflow-hidden"
+        className="px-6 md:px-12 pt-14 pb-12 relative overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #0A2540 0%, #3C2A6B 60%, #635BFF 100%)' }}
       >
         <div className="absolute inset-0 opacity-30" style={{ background: 'radial-gradient(circle at 85% 15%, rgba(99,91,255,0.5) 0%, transparent 55%)' }} />
@@ -34,7 +34,7 @@ export default function SupportCaseReferencePage() {
         </div>
       </div>
 
-      <div className="px-12 py-12 max-w-5xl">
+      <div className="px-6 md:px-12 py-12 max-w-5xl">
         {/* feedback 중단 안내 */}
         <Callout className="mb-8">
           <strong>/feedback · feedback@slack.com은 더 이상 동작하지 않습니다.</strong> 이제 Slack 고객지원센터에서 지원 사례(Case)를 생성하세요. (`/feedback` 실행 시 Help Center 안내창으로 이동합니다.)

@@ -65,7 +65,7 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Hero */}
       <div
-        className="px-12 py-20 relative overflow-hidden"
+        className="px-6 md:px-12 py-20 relative overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #0A2540 0%, #3C2A6B 60%, #635BFF 100%)' }}
       >
         <div
@@ -99,7 +99,7 @@ export default function Home() {
       </div>
 
       {/* Journey timeline */}
-      <div className="px-12 py-14">
+      <div className="px-6 md:px-12 py-14">
         <div className="max-w-3xl">
           <h2 className="text-xs font-semibold text-[var(--muted)] uppercase tracking-wider mb-8">
             런치 여정

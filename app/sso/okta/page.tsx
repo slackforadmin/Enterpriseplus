@@ -18,15 +18,15 @@ const steps: Step[] = [
   { title: '설정 완료', caption: 'Okta 연동이 성공적으로 테스트되면 업데이트 확인 버튼을 눌러 Slack 설정을 완료합니다.' },
   { title: 'Provisioning 앱 설치', caption: '사용자 할당/삭제 시 Slack 계정을 자동 생성·비활성화하는 Provisioning을 위해, Slack에 Okta용 앱을 설치합니다.' },
   { title: 'Authenticate with Slack', caption: 'Okta 앱을 Slack에 설치하기 위한 인증 과정 - Authenticate with Slack을 선택합니다.' },
-  { title: '설치 대상 선택', caption: 'Business+ 플랜은 워크스페이스에, Enterprise Grid 플랜은 조직(Org)에 설치합니다.' },
+  { title: '설치 대상 선택', caption: 'Business+ 플랜은 워크스페이스에, Enterprise+ 플랜은 조직(Org)에 설치합니다.' },
   { title: '인증 후 Save', caption: '인증을 끝낸 후 Save 버튼을 선택합니다.' },
   { title: '프로비저닝 옵션', caption: 'Create User, Update User Attributes, Deactivate Users를 모두 선택한 후 Save합니다.' },
   { title: 'Push Groups', caption: 'Push Groups 버튼을 클릭합니다. (Group sync는 Okta LCM 라이선스 필요, 적용 시 메뉴 추가)' },
   { title: '그룹 Sync', caption: 'Sync할 그룹을 검색·선택한 후 Save합니다.' },
   { title: 'Sync 완료', caption: 'Pushing → Active 상태가 되면 그룹 sync가 완료됩니다. (중복 유저 등 오류 시 Okta Support 문의)' },
   { title: '사용자 그룹 설정', caption: '관리자 페이지 → 사람 → 사용자 그룹 편집 → 그룹 선택 → 핸들 및 기본 채널 추가', tag: 'Business+' },
-  { title: 'Sync 그룹 확인', caption: 'sync된 그룹을 확인합니다.', tag: 'Enterprise' },
-  { title: '기본 워크스페이스 연결', caption: '기본 워크스페이스 연결 - 기본 워크스페이스를 선택합니다.', tag: 'Enterprise' },
+  { title: 'Sync 그룹 확인', caption: 'sync된 그룹을 확인합니다.', tag: 'Enterprise+' },
+  { title: '기본 워크스페이스 연결', caption: '기본 워크스페이스 연결 - 기본 워크스페이스를 선택합니다.', tag: 'Enterprise+' },
 ];
 
 export default function OktaSSOPage() {
@@ -34,7 +34,7 @@ export default function OktaSSOPage() {
     <div className="min-h-screen bg-gray-50">
       {/* Hero */}
       <div
-        className="px-12 pt-14 pb-12 relative overflow-hidden"
+        className="px-6 md:px-12 pt-14 pb-12 relative overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #0A2540 0%, #004E7C 55%, #007DC1 100%)' }}
       >
         <div
@@ -55,7 +55,7 @@ export default function OktaSSOPage() {
         </div>
       </div>
 
-      <div className="px-12 py-12 max-w-5xl">
+      <div className="px-6 md:px-12 py-12 max-w-5xl">
         {/* Video */}
         <div className="mb-14">
           <div className="flex items-center gap-2 mb-4">
@@ -97,7 +97,7 @@ export default function OktaSSOPage() {
                   {step.tag && (
                     <span
                       className={`text-[11px] font-medium px-2 py-0.5 rounded-full ${
-                        step.tag === 'Enterprise'
+                        step.tag === 'Enterprise+'
                           ? 'bg-[#007DC1]/10 text-[#007DC1]'
                           : 'bg-gray-100 text-gray-500'
                       }`}

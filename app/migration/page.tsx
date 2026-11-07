@@ -9,15 +9,24 @@ export default function MigrationPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="px-12 py-16 max-w-5xl">
-        <div className="mb-2">
-          <span className="text-xs font-semibold text-[#635BFF] uppercase tracking-wider">선택사항</span>
+      {/* Hero */}
+      <div
+        className="px-6 md:px-12 pt-14 pb-12 relative overflow-hidden"
+        style={{ background: 'linear-gradient(135deg, #0A2540 0%, #3C2A6B 60%, #635BFF 100%)' }}
+      >
+        <div className="absolute inset-0 opacity-30" style={{ background: 'radial-gradient(circle at 85% 15%, rgba(99,91,255,0.5) 0%, transparent 55%)' }} />
+        <div className="relative max-w-5xl">
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur text-white/90 text-xs font-medium px-3 py-1.5 rounded-full mb-4 border border-white/10">
+            선택사항
+          </div>
+          <h1 className="text-4xl font-bold text-white mb-3 tracking-tight">마이그레이션</h1>
+          <p className="text-white/70 leading-relaxed">
+            기존 Slack 데이터를 Enterprise+로 이전할 계획이 있으신가요?
+          </p>
         </div>
-        <h1 className="text-3xl font-bold text-gray-900 mb-4">마이그레이션</h1>
-        <p className="text-gray-500 mb-10">
-          기존 Slack 데이터를 Enterprise+로 이전할 계획이 있으신가요?
-        </p>
+      </div>
 
+      <div className="px-6 md:px-12 py-12 max-w-5xl">
         <div className="space-y-3 mb-8">
           <button
             onClick={() => setSelected('yes')}

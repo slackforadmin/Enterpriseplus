@@ -44,7 +44,7 @@ export default function RetentionReferencePage() {
     <div className="min-h-screen bg-gray-50">
       {/* Hero */}
       <div
-        className="px-12 pt-14 pb-12 relative overflow-hidden"
+        className="px-6 md:px-12 pt-14 pb-12 relative overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #0A2540 0%, #3C2A6B 60%, #635BFF 100%)' }}
       >
         <div
@@ -65,7 +65,7 @@ export default function RetentionReferencePage() {
         </div>
       </div>
 
-      <div className="px-12 py-12 max-w-5xl">
+      <div className="px-6 md:px-12 py-12 max-w-5xl">
         {/* Overview diagram */}
         <div className="mb-12">
           <Figure src="/retention/org-diagram.png" alt="Locking retention down Org-wide 다이어그램" width={1455} height={876} />

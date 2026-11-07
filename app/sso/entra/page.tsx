@@ -65,7 +65,7 @@ export default function EntraSSOPage() {
     <div className="min-h-screen bg-gray-50">
       {/* Hero */}
       <div
-        className="px-12 pt-14 pb-12 relative overflow-hidden"
+        className="px-6 md:px-12 pt-14 pb-12 relative overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #0A2540 0%, #004A87 55%, #0078D4 100%)' }}
       >
         <div
@@ -86,7 +86,7 @@ export default function EntraSSOPage() {
         </div>
       </div>
 
-      <div className="px-12 py-12 max-w-5xl">
+      <div className="px-6 md:px-12 py-12 max-w-5xl">
         {/* Steps */}
         <div className="flex items-center gap-2 mb-6">
           <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-[#0078D4]/10 text-[#0078D4]">

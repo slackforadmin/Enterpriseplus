@@ -6,7 +6,7 @@ export default function MigrationPrepPage() {
     <div className="min-h-screen bg-gray-50">
       {/* Hero */}
       <div
-        className="px-12 pt-14 pb-12 relative overflow-hidden"
+        className="px-6 md:px-12 pt-14 pb-12 relative overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #0A2540 0%, #3C2A6B 60%, #635BFF 100%)' }}
       >
         <div
@@ -27,7 +27,7 @@ export default function MigrationPrepPage() {
         </div>
       </div>
 
-      <div className="px-12 py-12 max-w-5xl">
+      <div className="px-6 md:px-12 py-12 max-w-5xl">
         {/* Video */}
         <div className="mb-10">
           <div className="flex items-center gap-2 mb-4">

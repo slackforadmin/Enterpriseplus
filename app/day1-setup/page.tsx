@@ -4,17 +4,25 @@ import ZoomableImage from '@/components/ZoomableImage';
 export default function Day1Setup() {
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="px-12 py-16 max-w-5xl">
-        {/* Header */}
-        <div className="mb-2">
-          <span className="text-xs font-semibold text-[#635BFF] uppercase tracking-wider">Day 1</span>
+      {/* Hero */}
+      <div
+        className="px-6 md:px-12 pt-14 pb-12 relative overflow-hidden"
+        style={{ background: 'linear-gradient(135deg, #0A2540 0%, #3C2A6B 60%, #635BFF 100%)' }}
+      >
+        <div className="absolute inset-0 opacity-30" style={{ background: 'radial-gradient(circle at 85% 15%, rgba(99,91,255,0.5) 0%, transparent 55%)' }} />
+        <div className="relative max-w-5xl">
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur text-white/90 text-xs font-medium px-3 py-1.5 rounded-full mb-4 border border-white/10">
+            Day 1
+          </div>
+          <h1 className="text-4xl font-bold text-white mb-3 tracking-tight">조직 초기 설정</h1>
+          <p className="text-white/70 leading-relaxed">
+            계약 시작일에 Enterprise+ 환경을 사용하기 위한 조직 초기 설정 가이드입니다.<br />
+            아래 순서대로 진행해주세요!
+          </p>
         </div>
-        <h1 className="text-3xl font-bold text-gray-900 mb-4">조직 초기 설정</h1>
-        <p className="text-gray-600 leading-relaxed mb-14">
-          계약 시작일에 Enterprise+ 환경을 사용하기 위한 조직 초기 설정 가이드입니다.
-          아래 순서대로 진행해주세요!
-        </p>
+      </div>
 
+      <div className="px-6 md:px-12 py-12 max-w-5xl">
         {/* Section 1: 이메일 확인 */}
         <Section num={1} title="이메일 확인">
           <StepRow
@@ -39,7 +47,7 @@ export default function Day1Setup() {
           <StepRow
             n="1"
             text={<><Chip>시작</Chip> 버튼을 클릭합니다. <span className="text-gray-400 text-sm">(1/3단계)</span></>}
-            img={{ src: '/day1/setup-step1.webp', alt: 'Slack Enterprise Grid 환영 화면', width: 1680, height: 944 }}
+            img={{ src: '/day1/setup-step1.webp', alt: 'Slack Enterprise+ 환영 화면', width: 1680, height: 944 }}
           />
           <StepRow
             n="2"
