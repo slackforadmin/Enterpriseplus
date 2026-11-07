@@ -135,12 +135,18 @@ export default function DummySSOPage() {
             text={
               <>
                 <p>조직 관리 화면에서 다음 순서로 이동합니다.</p>
-                <ul className="mt-3 space-y-1.5 border-l-2 border-[#635BFF]/30 pl-4 text-sm text-gray-600">
-                  <li><Chip>보안</Chip></li>
-                  <li><Chip>SSO 설정</Chip></li>
-                  <li><Chip>SSO 이름 및 로그인 버튼</Chip> 우측 <Chip>편집</Chip> 클릭</li>
-                  <li>SSO 이름에 <strong className="text-gray-900">&ldquo;절대 누르지 마시고 아래&rdquo;</strong> 기입 후 저장</li>
-                </ul>
+                <div className="mt-3 flex flex-wrap items-center gap-1.5">
+                  <Chip>보안</Chip>
+                  <Arrow />
+                  <Chip>SSO 설정</Chip>
+                  <Arrow />
+                  <Chip>SSO 이름 및 로그인 버튼</Chip>
+                  <Arrow />
+                  <Chip>편집</Chip>
+                </div>
+                <p className="mt-3 text-sm text-gray-600">
+                  이후 SSO 이름에 <strong className="text-gray-900">&ldquo;절대 누르지 마시고 아래&rdquo;</strong>를 기입한 뒤 저장합니다.
+                </p>
               </>
             }
             img={{ src: '/dummy-sso/rename-modal.webp', alt: 'SSO 이름 및 로그인 버튼 편집 모달', width: 2000, height: 1335 }}
@@ -193,6 +199,14 @@ function Chip({ children }: { children: React.ReactNode }) {
     <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-[#635BFF]/10 text-[#635BFF] text-sm font-semibold mx-0.5">
       {children}
     </span>
+  );
+}
+
+function Arrow() {
+  return (
+    <svg className="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+    </svg>
   );
 }
 
