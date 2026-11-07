@@ -68,11 +68,11 @@ export default function OrgSetupPage() {
             Enterprise+ 플랜의 데이터 보존 정책은 관리자 화면에서 설정할 수 없어 <strong className="text-gray-900">피드백팀에 요청</strong>해야 합니다.<br />요청 시 다음 정보가 필요합니다.
           </p>
           <ul className="space-y-2 ml-2">
-            <li className="flex items-start gap-3 text-sm text-gray-600">
+            <li className="flex items-start gap-3 text-gray-600 leading-relaxed">
               <span className="w-5 h-5 rounded-full bg-gray-100 text-gray-500 text-[11px] font-semibold flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
               <span><strong className="text-gray-900">조직 레벨 설정의 8가지 항목 값</strong> — 삭제/편집 데이터 보관 및 멤버 재정의 방지를 위해 <Chip>권장</Chip> 값으로 설정하는 것을 권장합니다. 권장 표시가 없는 항목은 내용 확인 후 선택해주세요.</span>
             </li>
-            <li className="flex items-start gap-3 text-sm text-gray-600">
+            <li className="flex items-start gap-3 text-gray-600 leading-relaxed">
               <span className="w-5 h-5 rounded-full bg-gray-100 text-gray-500 text-[11px] font-semibold flex items-center justify-center flex-shrink-0 mt-0.5">2</span>
               <span>조직 URL과 인증 코드</span>
             </li>
