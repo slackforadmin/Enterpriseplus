@@ -36,9 +36,19 @@ export default function SupportCaseReferencePage() {
 
       <div className="px-6 md:px-12 py-12 max-w-5xl">
         {/* feedback 중단 안내 */}
-        <Callout className="mb-8">
-          <strong>/feedback · feedback@slack.com은 더 이상 동작하지 않습니다.</strong> 이제 Slack 고객지원센터에서 지원 사례(Case)를 생성하세요. (`/feedback` 실행 시 Help Center 안내창으로 이동합니다.)
-        </Callout>
+        <div className="mb-8 rounded-2xl border border-[#635BFF]/20 bg-[#635BFF]/[0.05] p-5">
+          <div className="mb-3">
+            <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#635BFF] bg-[#635BFF]/10 px-2.5 py-1 rounded-full">
+              📣 변경 안내
+            </span>
+          </div>
+          <p className="text-gray-800 leading-relaxed">
+            <code className="text-sm bg-white border border-gray-200 px-1.5 py-0.5 rounded">/feedback</code> · <code className="text-sm bg-white border border-gray-200 px-1.5 py-0.5 rounded">feedback@slack.com</code> 은 더 이상 동작하지 않습니다. 이제 <strong className="text-gray-900">Slack 고객지원센터</strong>에서 지원 사례(Case)를 생성하세요.
+          </p>
+          <p className="mt-2 text-sm text-gray-500">
+            <code className="text-xs bg-white border border-gray-200 px-1.5 py-0.5 rounded">/feedback</code> 실행 시 Help Center 안내창으로 이동합니다.
+          </p>
+        </div>
 
         {/* 전체 흐름 */}
         <section className="mb-14">
@@ -199,15 +209,6 @@ function Figure({ img }: { img: Img }) {
 function Chip({ children }: { children: React.ReactNode }) {
   return (
     <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-[#635BFF]/10 text-[#635BFF] text-sm font-semibold mx-0.5">{children}</span>
-  );
-}
-
-function Callout({ children, className = '' }: { children: React.ReactNode; className?: string }) {
-  return (
-    <div className={`flex items-start gap-3 bg-amber-50 border border-amber-200 rounded-xl p-4 ${className}`}>
-      <span className="text-amber-500 flex-shrink-0 mt-0.5">⚠️</span>
-      <p className="text-sm text-amber-800 leading-relaxed">{children}</p>
-    </div>
   );
 }
 
