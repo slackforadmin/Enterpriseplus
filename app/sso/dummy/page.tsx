@@ -31,49 +31,45 @@ export default function DummySSOPage() {
       <div className="px-6 md:px-12 py-12 max-w-5xl">
         {/* Section 1: 앱 접속 */}
         <Section num={1} title="Simple IdP 앱 접속">
-          <div className="grid md:grid-cols-2 gap-6 items-start">
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <span className="w-6 h-6 rounded-full bg-gray-900 text-white text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
-                <div className="text-gray-700 leading-relaxed pt-0.5">
-                  반드시{' '}
-                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-amber-100 text-amber-900 text-sm font-bold border border-amber-300 mx-0.5 align-middle">
-                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                    </svg>
-                    시크릿 모드
-                  </span>
-                  {' '}에서 아래 링크에 접속합니다.
-                </div>
-              </div>
-              <div className="ml-9">
-                <a
-                  href="https://slack-test-idp-for-sandboxes.herokuapp.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-[#635BFF] bg-[#635BFF]/8 border border-[#635BFF]/20 rounded-lg px-3 py-2 hover:bg-[#635BFF]/12 transition-colors break-all"
-                >
-                  <svg className="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101M10.172 13.828a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-                  </svg>
-                  https://slack-test-idp-for-sandboxes.herokuapp.com
-                </a>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="w-6 h-6 rounded-full bg-gray-900 text-white text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">2</span>
-                <p className="text-gray-700 leading-relaxed pt-0.5"><Chip>Add to Slack</Chip> 버튼을 클릭합니다.</p>
-              </div>
-              <div className="ml-9">
-                <InfoCallout>
-                  개별 워크스페이스가 아닌 <strong>Enterprise+ 조직(Org)</strong>에 설치해야 합니다.
-                </InfoCallout>
-              </div>
-            </div>
-            <div className="rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm">
-              <ZoomableImage src={asset('/dummy-sso/add-to-slack.webp')} alt="Simple IdP - Add to Slack 버튼" width={2000} height={600} className="w-full h-auto" />
+          <div className="flex items-start gap-3">
+            <span className="w-6 h-6 rounded-full bg-gray-900 text-white text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
+            <div className="text-gray-700 leading-relaxed pt-0.5">
+              반드시{' '}
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-amber-100 text-amber-900 text-sm font-bold border border-amber-300 mx-0.5 align-middle">
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+                시크릿 모드
+              </span>
+              {' '}에서 아래 링크에 접속합니다.
             </div>
           </div>
+          <div className="ml-9">
+            <a
+              href="https://slack-test-idp-for-sandboxes.herokuapp.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-medium text-[#635BFF] bg-[#635BFF]/8 border border-[#635BFF]/20 rounded-lg px-3 py-2 hover:bg-[#635BFF]/12 transition-colors break-all"
+            >
+              <svg className="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101M10.172 13.828a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+              </svg>
+              https://slack-test-idp-for-sandboxes.herokuapp.com
+            </a>
+          </div>
+          <StepRow
+            n="2"
+            text={
+              <>
+                <p><Chip>Add to Slack</Chip> 버튼을 클릭합니다.</p>
+                <InfoCallout className="mt-4">
+                  개별 워크스페이스가 아닌 <strong>Enterprise+ 조직(Org)</strong>에 설치해야 합니다.
+                </InfoCallout>
+              </>
+            }
+            img={{ src: '/dummy-sso/add-to-slack.webp', alt: 'Simple IdP - Add to Slack 버튼', width: 2000, height: 600 }}
+          />
         </Section>
 
         {/* Section 2: 앱 허용 */}
@@ -220,9 +216,9 @@ function Callout({ children, className = '' }: { children: React.ReactNode; clas
   );
 }
 
-function InfoCallout({ children }: { children: React.ReactNode }) {
+function InfoCallout({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   return (
-    <div className="flex items-start gap-3 bg-sky-50 border border-sky-200 rounded-xl p-4">
+    <div className={`flex items-start gap-3 bg-sky-50 border border-sky-200 rounded-xl p-4 ${className}`}>
       <span className="text-sky-500 flex-shrink-0 mt-0.5">⚠️</span>
       <p className="text-sm text-sky-800 leading-relaxed">{children}</p>
     </div>
