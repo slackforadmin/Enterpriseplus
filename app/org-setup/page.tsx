@@ -24,7 +24,7 @@ export default function OrgSetupPage() {
           <h1 className="text-4xl font-bold text-white mb-3 tracking-tight mt-1">조직 관리자 설정</h1>
           <p className="text-white/70 leading-relaxed">
             운영에 필요하지만 기본값으로 권한이 부여되지 않은 설정들입니다.<br />
-            마이그레이션 이후 확인하여 설정해주세요.
+            확인 후 설정해주세요.
           </p>
         </div>
       </div>
