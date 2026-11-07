@@ -82,7 +82,7 @@ export default function MigrationPage() {
               >
                 <div className="w-7 h-7 rounded-full bg-[#635BFF] text-white text-xs font-bold flex items-center justify-center flex-shrink-0">1</div>
                 <div>
-                  <div className="font-medium text-gray-900 text-sm group-hover:text-[#635BFF]">마이그레이션 오버뷰</div>
+                  <div className="font-medium text-gray-900 text-sm group-hover:text-[#635BFF]">마이그레이션 오버뷰 세션</div>
                   <div className="text-xs text-gray-400 mt-0.5">마이그레이션 전체 과정을 이해합니다.</div>
                 </div>
                 <svg className="w-4 h-4 text-gray-300 group-hover:text-[#635BFF] ml-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">

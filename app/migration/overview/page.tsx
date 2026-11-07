@@ -12,7 +12,7 @@ export default function MigrationOverviewPage() {
         <div className="absolute inset-0 opacity-30" style={{ background: 'radial-gradient(circle at 85% 15%, rgba(99,91,255,0.5) 0%, transparent 55%)' }} />
         <div className="relative max-w-5xl">
           <HeroBadge>런치 3단계</HeroBadge>
-          <h1 className="text-4xl font-bold text-white mb-3 tracking-tight">마이그레이션 오버뷰</h1>
+          <h1 className="text-4xl font-bold text-white mb-3 tracking-tight">마이그레이션 오버뷰 세션</h1>
           <p className="text-white/70 leading-relaxed">
             마이그레이션 전체 과정과 주요 고려사항을 영상과 함께 안내합니다.
           </p>
