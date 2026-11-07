@@ -80,7 +80,7 @@ export default function OrgSetupPage() {
             </li>
             <li className="flex items-start gap-3 text-sm text-gray-600">
               <span className="w-5 h-5 rounded-full bg-gray-100 text-gray-500 text-[11px] font-semibold flex items-center justify-center flex-shrink-0 mt-0.5">2</span>
-              <span>조직 URL과 인증 코드 (<Link href="/reference/retention" className="text-[#635BFF] hover:underline">데이터 보존 정책 참조</Link>)</span>
+              <span>조직 URL과 인증 코드</span>
             </li>
           </ul>
 
