@@ -36,7 +36,7 @@ const navItems = [
     ],
   },
   {
-    label: '조직 추가 설정',
+    label: '조직 관리자 설정',
     href: '/org-setup',
   },
   {

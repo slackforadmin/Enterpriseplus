@@ -55,7 +55,7 @@ export default function GoogleSSOPage() {
             <h2 className="text-lg font-bold text-gray-900">영상으로 먼저 보기</h2>
           </div>
           <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-sm bg-black max-w-[64%]">
-            <video controls preload="metadata" className="w-full h-auto">
+            <video controls preload="metadata" poster={asset('/google-sso/poster.svg')} className="w-full h-auto">
               <source src={asset('/google-sso/google-saml-demo.mp4')} type="video/mp4" />
               브라우저가 영상 재생을 지원하지 않습니다.
             </video>

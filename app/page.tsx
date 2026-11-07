@@ -41,9 +41,9 @@ const phases: Phase[] = [
   },
   {
     number: '04',
-    title: '조직 추가 설정',
+    title: '조직 관리자 설정',
     description: '관리자가 조직 운영에 필요한 기본 추가 설정을 진행합니다.',
-    links: [{ label: '조직 추가 설정', href: '/org-setup' }],
+    links: [{ label: '조직 관리자 설정', href: '/org-setup' }],
   },
   {
     number: '05',

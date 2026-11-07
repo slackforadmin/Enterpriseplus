@@ -16,7 +16,7 @@ export default function OrgSetupPage() {
             </svg>
             런치 가이드로 돌아가기
           </Link>
-          <h1 className="text-4xl font-bold text-white mb-3 tracking-tight mt-1">조직 추가 설정</h1>
+          <h1 className="text-4xl font-bold text-white mb-3 tracking-tight mt-1">조직 관리자 설정</h1>
           <p className="text-white/70 leading-relaxed">
             관리자가 조직 운영에 필요한 기본 추가 설정을 진행합니다.
           </p>
@@ -39,7 +39,7 @@ export default function OrgSetupPage() {
             </svg>
           </div>
           <p className="font-semibold text-gray-700 mb-1">콘텐츠 준비 중</p>
-          <p className="text-sm text-gray-400">조직 추가 설정 가이드가 곧 업데이트됩니다.</p>
+          <p className="text-sm text-gray-400">조직 관리자 설정 가이드가 곧 업데이트됩니다.</p>
         </div>
 
         {/* Next */}
