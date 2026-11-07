@@ -78,13 +78,16 @@ export default function OrgSetupPage() {
             </li>
           </ul>
 
-          <p className="text-gray-600 leading-relaxed">
-            관리 방식은{' '}
-            <Link href="/reference/retention" className="text-[#635BFF] hover:underline font-medium">
-              데이터 보존 정책
-            </Link>{' '}
-            화면을 참조하여 정한 뒤 피드백팀에 요청해주세요.
-          </p>
+          <div className="flex items-start gap-2 ml-2">
+            <span className="text-[#635BFF] flex-shrink-0 mt-0.5">📄</span>
+            <p className="text-gray-600 leading-relaxed">
+              관리 방식은{' '}
+              <Link href="/reference/retention" className="text-[#635BFF] hover:underline font-medium">
+                데이터 보존 정책
+              </Link>{' '}
+              화면을 참조하여 정한 뒤 피드백팀에 요청해주세요.
+            </p>
+          </div>
 
           <div className="mt-4 rounded-2xl border border-gray-200 overflow-hidden bg-white">
             <div className="px-5 py-3 bg-[#635BFF]/5 border-b border-gray-100">
