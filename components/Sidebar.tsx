@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useState, useEffect } from 'react';
 
 const navItems = [
   {
@@ -54,6 +55,11 @@ const navItems = [
 
 export default function Sidebar() {
   const pathname = usePathname();
+  const [collapsed, setCollapsed] = useState(false);
+
+  useEffect(() => {
+    document.body.classList.toggle('sidebar-collapsed', collapsed);
+  }, [collapsed]);
 
   const isActive = (href: string) => pathname === href;
   const isParentActive = (item: typeof navItems[0]) => {
@@ -65,9 +71,27 @@ export default function Sidebar() {
   };
 
   return (
-    <nav className="sidebar flex flex-col">
+    <>
+      <button
+        type="button"
+        onClick={() => setCollapsed((c) => !c)}
+        className="sidebar-toggle"
+        aria-label={collapsed ? '사이드바 펼치기' : '사이드바 접기'}
+        title={collapsed ? '사이드바 펼치기' : '사이드바 접기'}
+      >
+        {collapsed ? (
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        ) : (
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M11 19l-7-7 7-7M18 19l-7-7 7-7" />
+          </svg>
+        )}
+      </button>
+      <nav className="sidebar flex flex-col">
       {/* Logo */}
-      <div className="px-5 py-6">
+      <div className="px-5 py-6 pr-14">
         <div className="flex items-center gap-2.5">
           <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #635BFF 0%, #0EA5E9 100%)' }}>
             <svg width="15" height="15" viewBox="0 0 54 54" fill="none">
@@ -77,7 +101,7 @@ export default function Sidebar() {
               <path d="M0 34.249a5.381 5.381 0 0 0 5.376 5.386 5.381 5.381 0 0 0 5.376-5.386v-5.387H5.376A5.381 5.381 0 0 0 0 34.249m14.336 0v14.364A5.381 5.381 0 0 0 19.712 54a5.381 5.381 0 0 0 5.376-5.387V34.249a5.381 5.381 0 0 0-5.376-5.387 5.381 5.381 0 0 0-5.376 5.387" fill="#fff"/>
             </svg>
           </div>
-          <span className="text-white font-semibold text-[15px] tracking-tight">Ent+ Launch Guide</span>
+          <span className="text-white font-semibold text-[15px] tracking-tight truncate">Ent+ Launch Guide</span>
         </div>
       </div>
 
@@ -131,5 +155,6 @@ export default function Sidebar() {
         ))}
       </div>
     </nav>
+    </>
   );
 }
