@@ -65,7 +65,7 @@ export default function OrgSetupPage() {
         {/* 5. Data Retention */}
         <Section num={5} title="Data Retention 설정 요청" badge="피드백팀 요청" last>
           <p className="text-gray-600 leading-relaxed">
-            Enterprise+ 플랜의 데이터 보존 정책은 관리자 화면에서 설정할 수 없어 <strong className="text-gray-900">피드백팀에 요청</strong>해야 합니다. 요청 시 다음 정보가 필요합니다.
+            Enterprise+ 플랜의 데이터 보존 정책은 관리자 화면에서 설정할 수 없어 <strong className="text-gray-900">피드백팀에 요청</strong>해야 합니다.<br />요청 시 다음 정보가 필요합니다.
           </p>
           <ul className="space-y-2 ml-2">
             <li className="flex items-start gap-3 text-sm text-gray-600">
@@ -78,13 +78,13 @@ export default function OrgSetupPage() {
             </li>
           </ul>
 
-          <LinkCallout>
+          <p className="text-gray-600 leading-relaxed">
             관리 방식은{' '}
-            <Link href="/reference/retention" className="font-semibold underline">
+            <Link href="/reference/retention" className="text-[#635BFF] hover:underline font-medium">
               데이터 보존 정책
             </Link>{' '}
             화면을 참조하여 정한 뒤 피드백팀에 요청해주세요.
-          </LinkCallout>
+          </p>
 
           <div className="mt-4 rounded-2xl border border-gray-200 overflow-hidden bg-white">
             <div className="px-5 py-3 bg-[#635BFF]/5 border-b border-gray-100">
@@ -135,15 +135,6 @@ function Step({ n, children }: { n: string; children: React.ReactNode }) {
 function Chip({ children }: { children: React.ReactNode }) {
   return (
     <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-[#635BFF]/10 text-[#635BFF] text-sm font-semibold mx-0.5">{children}</span>
-  );
-}
-
-function LinkCallout({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="flex items-start gap-3 bg-indigo-50 border border-indigo-200 rounded-xl p-4">
-      <span className="text-[#635BFF] flex-shrink-0 mt-0.5">📄</span>
-      <p className="text-sm text-indigo-900 leading-relaxed">{children}</p>
-    </div>
   );
 }
 
