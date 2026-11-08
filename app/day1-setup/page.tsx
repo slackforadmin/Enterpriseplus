@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { asset } from '@/lib/asset';
 import ZoomableImage from '@/components/ZoomableImage';
 import HeroBadge from '@/components/HeroBadge';
@@ -120,6 +121,15 @@ export default function Day1Setup() {
             img={{ src: '/day1/org-02.png', alt: '기본 조직 설정 사용 선택', width: 1122, height: 1166 }}
           />
         </Section>
+
+        <div className="mt-12">
+          <Link
+            href="/sso"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#635BFF] text-white rounded-lg text-sm font-medium hover:bg-[#4F46E5] transition-colors"
+          >
+            다음: SSO 설정 →
+          </Link>
+        </div>
       </div>
     </div>
   );
