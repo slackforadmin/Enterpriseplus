@@ -23,7 +23,7 @@ export default function FaqReferencePage() {
 
       <div className="px-6 md:px-12 py-12 max-w-4xl space-y-4">
         {/* 404 */}
-        <FaqItem q="‘결함이 있습니다…’ 화면(404)이 떠요">
+        <FaqItem q="‘결함이 있습니다…’ 화면이 떠요">
           <p>
             해당 화면은 Slack의 일반적인 <strong className="text-gray-900">404 오류 페이지</strong>입니다.
           </p>
