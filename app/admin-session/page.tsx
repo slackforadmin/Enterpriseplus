@@ -31,36 +31,23 @@ export default function AdminSessionPage() {
         </div>
 
         {/* 런치 프로세스 완료 */}
-        <div
-          className="mt-12 rounded-3xl relative overflow-hidden"
-          style={{ background: 'linear-gradient(135deg, #0A2540 0%, #3C2A6B 60%, #635BFF 100%)' }}
-        >
-          <div className="absolute inset-0 opacity-40" style={{ background: 'radial-gradient(circle at 85% 20%, rgba(99,91,255,0.6) 0%, transparent 55%)' }} />
-          <div className="relative px-8 py-12 text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/15 backdrop-blur border border-white/20 mb-5">
-              <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+        <div className="mt-12 rounded-2xl border border-gray-200 bg-white px-6 py-8 text-center">
+          <div className="inline-flex items-center justify-center w-11 h-11 rounded-full bg-emerald-50 mb-3">
+            <svg className="w-6 h-6 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <h2 className="text-lg font-bold text-gray-900 mb-1">런치 프로세스를 모두 완료했습니다</h2>
+          <p className="text-sm text-gray-500 leading-relaxed">
+            Kick-Off부터 관리자 세션까지 모든 단계를 마쳤어요.
+          </p>
+          <div className="mt-5">
+            <Link href="/" className="inline-flex items-center gap-1.5 text-sm font-medium text-[#635BFF] hover:underline">
+              런치 가이드 처음으로
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
               </svg>
-            </div>
-            <h2 className="text-2xl font-bold text-white mb-2 tracking-tight">🎉 런치 프로세스를 모두 완료했습니다!</h2>
-            <p className="text-white/70 leading-relaxed max-w-xl mx-auto">
-              Kick-Off부터 관리자 세션까지 모든 단계를 마쳤어요.<br />
-              이제 Slack Enterprise+를 본격적으로 활용해보세요. 운영 중 궁금한 점은 참고 자료를 확인하세요.
-            </p>
-            <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
-              <Link
-                href="/"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-[#0A2540] rounded-lg text-sm font-semibold hover:bg-white/90 transition-colors"
-              >
-                런치 가이드 처음으로
-              </Link>
-              <Link
-                href="/reference/faq"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 text-white border border-white/20 rounded-lg text-sm font-medium hover:bg-white/15 transition-colors"
-              >
-                FAQ & 문제 해결
-              </Link>
-            </div>
+            </Link>
           </div>
         </div>
       </div>
