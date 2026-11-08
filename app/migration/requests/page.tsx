@@ -56,7 +56,7 @@ export default function MigrationRequestsPage() {
           <PhaseTag label="마이그레이션 후" className="mt-6" />
           <Checklist>
             <Check n="1" title="캐시 초기화" required>
-              <strong className="text-rose-700">마이그레이션 후 반드시 진행해야 합니다.</strong> 좌측 사이드바의 <strong className="text-gray-900">캐시 초기화 방법</strong>을 참고하세요.
+              <strong className="text-rose-700">마이그레이션 후 반드시 진행해야 합니다.</strong>
             </Check>
             <Check n="2" title="비밀번호 리셋">
               마이그레이션 전에 비밀번호를 추가하지 않은 경우, 새 Ent+ URL(<code className="text-xs bg-gray-100 px-1.5 py-0.5 rounded">XXXX.enterprise.slack.com</code>)로 접속한 뒤 아래 순서로 진행합니다.
@@ -99,7 +99,7 @@ export default function MigrationRequestsPage() {
           <PhaseTag label="마이그레이션 후" color="#0EA5E9" />
           <Checklist>
             <Check n="1" title="캐시 초기화" color="#0EA5E9" required>
-              <strong className="text-rose-700">마이그레이션 후 반드시 진행해야 합니다.</strong> 좌측 사이드바의 <strong className="text-gray-900">캐시 초기화 방법</strong>을 참고하세요.
+              <strong className="text-rose-700">마이그레이션 후 반드시 진행해야 합니다.</strong>
             </Check>
             <Check n="2" title="로그인 가능 여부 확인" color="#0EA5E9" />
             <Check n="3" title="앱 재인증" color="#0EA5E9">
