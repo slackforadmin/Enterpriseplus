@@ -32,7 +32,7 @@ export default function MigrationRequestsPage() {
       <div className="px-6 md:px-12 py-12 max-w-4xl">
         <div className="mb-8">
           <p className="text-sm text-gray-500 mb-3">사용하는 로그인 방식을 먼저 선택하세요. 선택한 경우의 요청 사항만 표시됩니다.</p>
-          <div className="inline-flex flex-wrap gap-1 rounded-xl border border-gray-200 bg-white p-1">
+          <div className="grid grid-cols-2 gap-1 max-w-md rounded-xl border border-gray-200 bg-white p-1">
             <ToggleBtn active={selected === 'dummy'} onClick={() => setSelected('dummy')} color="#635BFF">Dummy SSO를 설정한 경우</ToggleBtn>
             <ToggleBtn active={selected === 'sso'} onClick={() => setSelected('sso')} color="#0EA5E9">SSO를 설정한 경우</ToggleBtn>
           </div>
@@ -243,7 +243,7 @@ function ToggleBtn({ active, onClick, color, children }: { active: boolean; onCl
     <button
       type="button"
       onClick={onClick}
-      className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${active ? 'text-white' : 'text-gray-500 hover:text-gray-800 hover:bg-gray-50'}`}
+      className={`w-full text-center px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${active ? 'text-white' : 'text-gray-500 hover:text-gray-800 hover:bg-gray-50'}`}
       style={active ? { background: color } : undefined}
     >
       {children}
