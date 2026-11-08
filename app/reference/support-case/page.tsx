@@ -67,9 +67,9 @@ export default function SupportCaseReferencePage() {
               </div>
             ))}
           </div>
-          <InfoCallout className="mt-4">
+          <p className="text-sm text-gray-500 leading-relaxed mt-4">
             Slack 고객지원센터 → Salesforce Portal 로그인 → 본인 Org 기준으로 사례 생성·제출. 언어(한국어/English)에 따라 생성 방식이 다르며, 두 경로를 모두 안내합니다.
-          </InfoCallout>
+          </p>
         </section>
 
         {/* 공통 STEP 1~5 */}
@@ -123,10 +123,22 @@ export default function SupportCaseReferencePage() {
           내 사례 화면에서 중앙 하단 또는 우측 <Chip>사례 생성</Chip>을 클릭해 입력 양식으로 이동합니다.
         </StepRow>
 
-        <StepRow n="7" title="(한국어) 사례 정보 입력" img={{ src: '/support-case/step7-caseform.png', alt: '사례 생성 양식', width: 1089, height: 543 }}>
-          <span className="block mb-2"><strong className="text-gray-900">필수 입력</strong>: 사례 제목·설명, 제품(Slack)·주제, 인스턴스 유형·연락 가능 시간대, 심각도(기본 Lv4)·Slack ID(자동)</span>
-          <span className="block">선택 입력: 협업자·파일 첨부 → 입력 후 <Chip>사례 만들기</Chip> 클릭</span>
-        </StepRow>
+        <div className="grid md:grid-cols-2 gap-6 items-start mb-8">
+          <div>
+            <div className="flex items-center gap-3 mb-2">
+              <span className="w-7 h-7 rounded-full bg-gray-900 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">7</span>
+              <h3 className="font-semibold text-gray-900 text-sm">(한국어) 사례 정보 입력</h3>
+            </div>
+            <div className="text-sm text-gray-600 leading-relaxed ml-10">
+              <span className="block mb-2"><strong className="text-gray-900">필수 입력</strong>: 사례 제목·설명, 제품(Slack)·주제, 인스턴스 유형·연락 가능 시간대, 심각도(기본 Lv4)·Slack ID(자동)</span>
+              <span className="block">선택 입력: 협업자·파일 첨부 → 입력 후 <Chip>사례 만들기</Chip> 클릭</span>
+            </div>
+          </div>
+          <div className="space-y-3">
+            <Figure img={{ src: '/support-case/step7-form-1.png', alt: '사례 생성 양식 - 제목·설명·제품·주제', width: 684, height: 708 }} />
+            <Figure img={{ src: '/support-case/step7-form-2.png', alt: '사례 생성 양식 - 인스턴스·심각도·Slack ID·파일', width: 698, height: 646 }} />
+          </div>
+        </div>
 
         {/* English 경로 */}
         <SectionLabel color="#1264a3" text="STEP 8–9 · English 경로 (Fin 에이전트)" />
@@ -224,11 +236,3 @@ function Chip({ children }: { children: React.ReactNode }) {
   );
 }
 
-function InfoCallout({ children, className = '' }: { children: React.ReactNode; className?: string }) {
-  return (
-    <div className={`flex items-start gap-3 bg-sky-50 border border-sky-200 rounded-xl p-4 ${className}`}>
-      <span className="text-sky-500 flex-shrink-0 mt-0.5">💡</span>
-      <p className="text-sm text-sky-800 leading-relaxed">{children}</p>
-    </div>
-  );
-}
