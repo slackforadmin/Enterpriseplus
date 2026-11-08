@@ -1,9 +1,13 @@
+'use client';
+
 import Link from 'next/link';
+import { useState } from 'react';
 import { asset } from '@/lib/asset';
 import ZoomableImage from '@/components/ZoomableImage';
 import HeroBadge from '@/components/HeroBadge';
 
 export default function MigrationRequestsPage() {
+  const [selected, setSelected] = useState<'dummy' | 'sso'>('dummy');
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero */}
@@ -26,10 +30,16 @@ export default function MigrationRequestsPage() {
       </div>
 
       <div className="px-6 md:px-12 py-12 max-w-4xl">
-        <InfoCallout>
-          사용하는 로그인 방식에 따라 요청 사항이 다릅니다. <strong>Dummy SSO를 설정한 경우</strong>와 <strong>실제 SSO를 설정한 경우</strong>로 나누어 안내합니다.
-        </InfoCallout>
+        <div className="mb-8">
+          <p className="text-sm text-gray-500 mb-3">사용하는 로그인 방식을 먼저 선택하세요. 선택한 경우의 요청 사항만 표시됩니다.</p>
+          <div className="inline-flex flex-wrap gap-1 rounded-xl border border-gray-200 bg-white p-1">
+            <ToggleBtn active={selected === 'dummy'} onClick={() => setSelected('dummy')} color="#635BFF">Dummy SSO를 설정한 경우</ToggleBtn>
+            <ToggleBtn active={selected === 'sso'} onClick={() => setSelected('sso')} color="#0EA5E9">SSO를 설정한 경우</ToggleBtn>
+          </div>
+        </div>
 
+        {selected === 'dummy' && (
+          <>
         {/* ===== 분기 A: Dummy SSO ===== */}
         <BranchHeader badge="Dummy SSO" title="Dummy SSO를 설정한 경우" />
 
@@ -77,6 +87,11 @@ export default function MigrationRequestsPage() {
           </Checklist>
         </RoleBlock>
 
+          </>
+        )}
+
+        {selected === 'sso' && (
+          <>
         {/* ===== 분기 B: 실제 SSO ===== */}
         <BranchHeader badge="SSO" title="SSO를 설정한 경우" color="#0EA5E9" />
 
@@ -100,6 +115,8 @@ export default function MigrationRequestsPage() {
             <Check n="2" title="앱 재인증">사용하고 있는 앱이 있는 경우 재인증을 실시합니다.</Check>
           </Checklist>
         </RoleBlock>
+          </>
+        )}
 
         {/* Next */}
         <div className="mt-12">
@@ -221,11 +238,15 @@ function Figure({ src, alt, width, height }: { src: string; alt: string; width: 
   );
 }
 
-function InfoCallout({ children }: { children: React.ReactNode }) {
+function ToggleBtn({ active, onClick, color, children }: { active: boolean; onClick: () => void; color: string; children: React.ReactNode }) {
   return (
-    <div className="flex items-start gap-3 bg-sky-50 border border-sky-200 rounded-xl p-4 mb-2">
-      <span className="text-sky-500 flex-shrink-0 mt-0.5">💡</span>
-      <p className="text-sm text-sky-800 leading-relaxed">{children}</p>
-    </div>
+    <button
+      type="button"
+      onClick={onClick}
+      className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${active ? 'text-white' : 'text-gray-500 hover:text-gray-800 hover:bg-gray-50'}`}
+      style={active ? { background: color } : undefined}
+    >
+      {children}
+    </button>
   );
 }
