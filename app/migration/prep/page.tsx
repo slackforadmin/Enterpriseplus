@@ -122,10 +122,10 @@ export default function MigrationPrepPage() {
         {/* Next */}
         <div className="mt-6">
           <Link
-            href="/admin-session"
+            href="/migration/requests"
             className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#635BFF] text-white rounded-lg text-sm font-medium hover:bg-[#4F46E5] transition-colors"
           >
-            다음: 관리자 세션 →
+            다음: 전/후 진행 요청 사항 →
           </Link>
         </div>
       </div>
