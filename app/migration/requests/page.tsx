@@ -45,8 +45,8 @@ export default function MigrationRequestsPage() {
 
           <PhaseTag label="마이그레이션 후" className="mt-6" />
           <Checklist>
-            <Check n="1" title="캐시 초기화">
-              좌측 사이드바의 <strong className="text-gray-900">캐시 초기화 방법</strong>을 참고하여 진행합니다.
+            <Check n="1" title="캐시 초기화" required>
+              <strong className="text-rose-700">마이그레이션 후 반드시 진행해야 합니다.</strong> 좌측 사이드바의 <strong className="text-gray-900">캐시 초기화 방법</strong>을 참고하세요.
             </Check>
             <Check n="2" title="비밀번호 리셋">
               마이그레이션 전에 비밀번호를 추가하지 않은 경우, 새 Ent+ URL(<code className="text-xs bg-gray-100 px-1.5 py-0.5 rounded">XXXX.enterprise.slack.com</code>)로 접속한 뒤 아래 순서로 진행합니다.
@@ -80,11 +80,11 @@ export default function MigrationRequestsPage() {
         {/* ===== 분기 B: 실제 SSO ===== */}
         <BranchHeader badge="SSO" title="SSO를 설정한 경우" color="#0EA5E9" />
 
-        <RoleBlock role="user" title="사용자 마이그레이션 후 확인 사항" color="#0EA5E9">
+        <RoleBlock role="user" title="사용자 마이그레이션 후 확인 사항">
           <PhaseTag label="마이그레이션 후" color="#0EA5E9" />
-          <Checklist color="#0EA5E9">
-            <Check n="1" title="캐시 초기화" color="#0EA5E9">
-              좌측 사이드바의 <strong className="text-gray-900">캐시 초기화 방법</strong>을 참고하여 진행합니다.
+          <Checklist>
+            <Check n="1" title="캐시 초기화" color="#0EA5E9" required>
+              <strong className="text-rose-700">마이그레이션 후 반드시 진행해야 합니다.</strong> 좌측 사이드바의 <strong className="text-gray-900">캐시 초기화 방법</strong>을 참고하세요.
             </Check>
             <Check n="2" title="로그인 가능 여부 확인" color="#0EA5E9" />
             <Check n="3" title="앱 재인증" color="#0EA5E9">
@@ -93,11 +93,11 @@ export default function MigrationRequestsPage() {
           </Checklist>
         </RoleBlock>
 
-        <RoleBlock role="admin" title="관리자 마이그레이션 후 확인 사항" color="#0EA5E9">
-          <PhaseTag label="마이그레이션 후" color="#0EA5E9" />
-          <Checklist color="#0EA5E9">
-            <Check n="1" title="사용자 로그인 확인" color="#0EA5E9" />
-            <Check n="2" title="앱 재인증" color="#0EA5E9">사용하고 있는 앱이 있는 경우 재인증을 실시합니다.</Check>
+        <RoleBlock role="admin" title="관리자 마이그레이션 후 확인 사항">
+          <PhaseTag label="마이그레이션 후" />
+          <Checklist>
+            <Check n="1" title="사용자 로그인 확인" />
+            <Check n="2" title="앱 재인증">사용하고 있는 앱이 있는 경우 재인증을 실시합니다.</Check>
           </Checklist>
         </RoleBlock>
 
@@ -115,36 +115,43 @@ export default function MigrationRequestsPage() {
   );
 }
 
-function BranchHeader({ badge, title, color = '#635BFF' }: { badge: string; title: string; color?: string }) {
+function BranchHeader({ badge, title }: { badge: string; title: string; color?: string }) {
   return (
-    <div className="mt-14 mb-6 first:mt-10">
+    <div className="mt-14 mb-6 first:mt-10 pb-3 border-b-2 border-gray-200">
       <div className="flex items-center gap-2.5">
-        <span className="text-[11px] font-bold text-white px-2.5 py-1 rounded-full" style={{ background: color }}>{badge}</span>
+        <span className="text-[11px] font-bold text-white bg-[#0A2540] px-2.5 py-1 rounded-full">{badge}</span>
         <h2 className="text-xl font-bold text-gray-900">{title}</h2>
       </div>
     </div>
   );
 }
 
-function RoleBlock({ role, title, color = '#635BFF', children }: { role: 'user' | 'admin'; title: string; color?: string; children: React.ReactNode }) {
+const ROLE = {
+  user: { color: '#0EA5E9', label: '사용자', tint: 'bg-[#0EA5E9]/[0.06]' },
+  admin: { color: '#635BFF', label: '관리자', tint: 'bg-[#635BFF]/[0.06]' },
+};
+
+function RoleBlock({ role, title, children }: { role: 'user' | 'admin'; title: string; children: React.ReactNode }) {
   const isAdmin = role === 'admin';
+  const r = ROLE[role];
   return (
-    <div className="mt-5 rounded-2xl border border-gray-200 bg-white overflow-hidden">
-      <div className="flex items-center gap-2.5 px-5 py-3.5 border-b border-gray-100 bg-gray-50/70">
-        <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg" style={{ background: `${color}1a` }}>
+    <div className="mt-5 rounded-2xl border overflow-hidden" style={{ borderColor: `${r.color}40` }}>
+      <div className={`flex items-center gap-2.5 px-5 py-3.5 border-b ${r.tint}`} style={{ borderColor: `${r.color}26` }}>
+        <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-white px-2.5 py-1 rounded-full flex-shrink-0" style={{ background: r.color }}>
           {isAdmin ? (
-            <svg className="w-4 h-4" style={{ color }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
             </svg>
           ) : (
-            <svg className="w-4 h-4" style={{ color }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 10-4-4 4 4 0 004 4zm6 0a4 4 0 00-3-3.87" />
             </svg>
           )}
+          {r.label}
         </span>
         <h3 className="font-bold text-gray-900 text-sm">{title}</h3>
       </div>
-      <div className="px-5 py-5">{children}</div>
+      <div className="px-5 py-5 bg-white">{children}</div>
     </div>
   );
 }
@@ -180,12 +187,20 @@ function Checklist({ children }: { children: React.ReactNode; color?: string }) 
   return <div className="space-y-3">{children}</div>;
 }
 
-function Check({ n, title, color = '#635BFF', children }: { n: string; title: string; color?: string; children?: React.ReactNode }) {
+function Check({ n, title, color = '#635BFF', required = false, children }: { n: string; title: string; color?: string; required?: boolean; children?: React.ReactNode }) {
   return (
-    <div className="flex items-start gap-3">
-      <span className="w-6 h-6 rounded-full text-white text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: color }}>{n}</span>
+    <div className={`flex items-start gap-3 ${required ? 'rounded-xl border border-rose-200 bg-rose-50/60 p-3 -mx-0.5' : ''}`}>
+      <span className="w-6 h-6 rounded-full text-white text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: required ? '#E11D48' : color }}>{n}</span>
       <div className="flex-1 min-w-0">
-        <p className="text-sm font-semibold text-gray-900">{title}</p>
+        <p className="text-sm font-semibold text-gray-900 flex items-center gap-2 flex-wrap">
+          {title}
+          {required && (
+            <span className="inline-flex items-center gap-1 text-[10px] font-bold text-white bg-rose-600 px-1.5 py-0.5 rounded">
+              <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" /></svg>
+              필수
+            </span>
+          )}
+        </p>
         {children && <div className="mt-1 text-[13px] text-gray-600 leading-relaxed">{children}</div>}
       </div>
     </div>
