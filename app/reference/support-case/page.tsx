@@ -67,9 +67,13 @@ export default function SupportCaseReferencePage() {
               </div>
             ))}
           </div>
-          <p className="text-sm text-gray-500 leading-relaxed mt-4">
-            Slack 고객지원센터 → Salesforce Portal 로그인 → 본인 Org 기준으로 사례 생성·제출. 언어(한국어/English)에 따라 생성 방식이 다르며, 두 경로를 모두 안내합니다.
-          </p>
+          <div className="flex items-start gap-2 mt-4">
+            <span className="text-[#635BFF] flex-shrink-0 mt-0.5">📌</span>
+            <p className="text-sm text-gray-500 leading-relaxed">
+              Slack 고객지원센터 → Salesforce Portal 로그인 → 본인 Org 기준으로 사례 생성·제출.<br />
+              언어(한국어/English)에 따라 생성 방식이 다르며, 두 경로를 모두 안내합니다.
+            </p>
+          </div>
         </section>
 
         {/* 공통 STEP 1~5 */}
