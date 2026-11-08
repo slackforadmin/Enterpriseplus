@@ -78,6 +78,7 @@ export default function DummySSOPage() {
                 <Callout className="mt-4">
                   조직이 보이지 않는 경우, 이전 워크스페이스 로그인 캐시가 남아 있을 수 있으니 <strong>캐시를 초기화</strong>해 주세요.
                 </Callout>
+                <CacheClearGuide />
               </>
             }
             img={{ src: '/dummy-sso/allow-app.webp', alt: 'Simple IdP 앱 액세스 허용 - 조직 대상 선택', width: 2000, height: 1023 }}
@@ -203,6 +204,38 @@ function Arrow() {
     <svg className="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
     </svg>
+  );
+}
+
+function CacheClearGuide() {
+  return (
+    <details className="mt-3 rounded-lg border border-gray-200 bg-gray-50/70 overflow-hidden group open:bg-white open:shadow-sm">
+      <summary className="flex items-center gap-1.5 px-3 py-2 cursor-pointer select-none text-[13px] font-medium text-[#635BFF] list-none [&::-webkit-details-marker]:hidden hover:bg-[#635BFF]/5">
+        <svg className="w-4 h-4 flex-shrink-0 transition-transform group-open:rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+        캐시 초기화 방법 보기
+      </summary>
+      <div className="px-4 pb-4 pt-1 space-y-4 border-t border-gray-100">
+        <div>
+          <h5 className="text-xs font-bold text-gray-800 mb-2 mt-3">데스크톱</h5>
+          <ul className="space-y-1.5 text-[13px] text-gray-600 leading-relaxed">
+            <li><strong className="text-gray-900">Mac</strong> : Slack 데스크톱 앱 → <Chip>도움말</Chip> → <Chip>문제 해결</Chip> → <Chip>캐시 지우기 및 재시작</Chip></li>
+            <li><strong className="text-gray-900">Windows</strong> : 왼쪽 상단 ☰ 세 줄 아이콘 → <Chip>도움말</Chip> → <Chip>문제 해결</Chip> → <Chip>캐시 지우기 및 재시작</Chip></li>
+          </ul>
+          <div className="mt-3 rounded-lg border border-gray-200 overflow-hidden bg-white shadow-sm">
+            <ZoomableImage src={asset('/dummy-sso/cache-clear-mac.png')} alt="Mac - 도움말 > 문제 해결 > 캐시 지우기 및 재시작" width={1868} height={858} className="w-full h-auto" />
+          </div>
+        </div>
+        <div>
+          <h5 className="text-xs font-bold text-gray-800 mb-2">모바일</h5>
+          <ul className="space-y-1.5 text-[13px] text-gray-600 leading-relaxed">
+            <li><strong className="text-gray-900">iOS</strong> : 설정 → 앱 → Slack → <Chip>다음 실행 시 캐시 재설정</Chip> 활성화 → 앱 강제 종료</li>
+            <li><strong className="text-gray-900">Android</strong> : 설정 → 앱 → Slack → <Chip>저장공간</Chip> → <Chip>캐시 삭제</Chip></li>
+          </ul>
+        </div>
+      </div>
+    </details>
   );
 }
 
