@@ -62,13 +62,6 @@ export default function SsoExceptionModal({ open, onClose }: { open: boolean; on
             </p>
           </div>
 
-          <div className="flex items-start gap-3 bg-sky-50 border border-sky-200 rounded-xl p-4">
-            <span className="text-sky-500 flex-shrink-0 mt-0.5">💡</span>
-            <p className="text-sm text-sky-800 leading-relaxed">
-              마이그레이션 이후에는 사용자가 다시 로그인해야 하며, 이때 <strong>비밀번호 재설정</strong>이 필요합니다.
-            </p>
-          </div>
-
           {/* 단계 */}
           <div className="space-y-4">
             <Step n="1">
