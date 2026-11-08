@@ -62,19 +62,34 @@ export default function FaqReferencePage() {
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-[11px] font-bold text-white bg-[#635BFF] px-2 py-0.5 rounded-full">조직 관리 화면</span>
               </div>
-              <p className="text-xs text-gray-500 mb-2">
-                주소: <code className="bg-gray-100 px-1.5 py-0.5 rounded">app.slack.com/manage/<span className="text-[#635BFF]">E…</span></code>
-              </p>
               <Figure src="/faq/org-admin.webp" alt="조직 관리 화면" width={2000} height={1296} />
+              <div className="mt-3 space-y-3">
+                <div>
+                  <Label text="[홈] 클릭 시의 URL" color="indigo" />
+                  <code className="block mt-1.5 text-xs bg-gray-100 px-2 py-1.5 rounded break-all">https://app.slack.com/manage/<span className="text-[#635BFF] font-semibold">[Ent+ Org Encoded ID]</span>/</code>
+                  <p className="mt-1.5 text-xs text-gray-500 flex items-start gap-1.5"><Dot /> Ent+ Org Encoded ID : <strong className="text-gray-700">E</strong>로 시작하는 Ent+ Org ID</p>
+                </div>
+                <div>
+                  <Label text="메뉴 항목" color="indigo" />
+                  <p className="mt-1.5 text-[13px] text-gray-600 leading-relaxed">여러 워크스페이스 목록, SSO 설정, 전체 사용자 관리, 조직 전체 정책(DLP·데이터 리텐션 등)</p>
+                </div>
+              </div>
             </div>
             <div>
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-[11px] font-bold text-white bg-[#0EA5E9] px-2 py-0.5 rounded-full">워크스페이스 관리 화면</span>
               </div>
-              <p className="text-xs text-gray-500 mb-2">
-                주소: <code className="bg-gray-100 px-1.5 py-0.5 rounded"><span className="text-[#0EA5E9]">[워크스페이스]</span>.slack.com/home</code>
-              </p>
               <Figure src="/faq/ws-admin.webp" alt="워크스페이스 관리 화면" width={2000} height={1314} />
+              <div className="mt-3 space-y-3">
+                <div>
+                  <Label text="[홈] 클릭 시의 URL" color="sky" />
+                  <code className="block mt-1.5 text-xs bg-gray-100 px-2 py-1.5 rounded break-all">https://<span className="text-[#0EA5E9] font-semibold">[워크스페이스도메인명]</span>.slack.com/home</code>
+                </div>
+                <div>
+                  <Label text="메뉴 항목" color="sky" />
+                  <p className="mt-1.5 text-[13px] text-gray-600 leading-relaxed">해당 워크스페이스 내 채널/멤버 관리, 워크스페이스 단위 앱 설정</p>
+                </div>
+              </div>
             </div>
           </div>
         </FaqItem>
@@ -102,8 +117,13 @@ function FaqItem({ q, children }: { q: string; children: React.ReactNode }) {
   );
 }
 
-function Label({ text, color }: { text: string; color: 'gray' | 'indigo' }) {
-  const cls = color === 'indigo' ? 'bg-[#635BFF]/10 text-[#635BFF]' : 'bg-gray-100 text-gray-500';
+function Label({ text, color }: { text: string; color: 'gray' | 'indigo' | 'sky' }) {
+  const cls =
+    color === 'indigo'
+      ? 'bg-[#635BFF]/10 text-[#635BFF]'
+      : color === 'sky'
+        ? 'bg-[#0EA5E9]/10 text-[#0EA5E9]'
+        : 'bg-gray-100 text-gray-500';
   return <span className={`inline-block text-[11px] font-bold px-2 py-0.5 rounded ${cls}`}>{text}</span>;
 }
 
