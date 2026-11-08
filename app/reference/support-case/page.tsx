@@ -92,9 +92,9 @@ export default function SupportCaseReferencePage() {
             최초 1회만 계정을 생성하면 이후 재사용합니다. 아래 <strong className="text-gray-900">A → B → C</strong> 순서로 진행하세요.
           </p>
           <div className="ml-10 grid sm:grid-cols-3 gap-4">
-            <CaptionedShot step="A" caption={<>로그인 승인 → <Chip>승인하고 계속</Chip></>} img={{ src: '/support-case/step3a-approve.png', alt: 'Salesforce 로그인 승인 화면', width: 504, height: 444 }} />
-            <CaptionedShot step="B" caption={<>지역 선택·약관 동의 → <Chip>Next</Chip></>} img={{ src: '/support-case/step3b-region.png', alt: '지역 선택 및 약관 동의 (Step 2 of 3)', width: 474, height: 722 }} />
-            <CaptionedShot step="C" caption={<>이름·회사·역할 입력 → <Chip>Next</Chip></>} img={{ src: '/support-case/step3c-info.png', alt: '이름·회사·역할 입력 (Step 3 of 3)', width: 440, height: 720 }} />
+            <CaptionedShot step="A" caption={<>로그인 승인 → <Chip>승인하고 계속</Chip></>} img={{ src: '/support-case/step3a-approve.png', alt: 'Salesforce 로그인 승인 화면', width: 584, height: 646 }} />
+            <CaptionedShot step="B" caption={<>지역 선택·약관 동의 → <Chip>Next</Chip></>} img={{ src: '/support-case/step3b-region.png', alt: '지역 선택 및 약관 동의 (Step 2 of 3)', width: 428, height: 726 }} />
+            <CaptionedShot step="C" caption={<>이름·회사·역할 입력 → <Chip>Next</Chip></>} img={{ src: '/support-case/step3c-info.png', alt: '이름·회사·역할 입력 (Step 3 of 3)', width: 424, height: 730 }} />
           </div>
         </div>
 
