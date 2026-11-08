@@ -84,6 +84,7 @@ export default function FaqReferencePage() {
                 <div>
                   <Label text="[홈] 클릭 시의 URL" color="sky" />
                   <code className="block mt-1.5 text-xs bg-gray-100 px-2 py-1.5 rounded break-all">https://<span className="text-[#0EA5E9] font-semibold">[워크스페이스도메인명]</span>.slack.com/home</code>
+                  <p className="mt-1.5 text-xs text-gray-500 flex items-start gap-1.5"><Dot /> 워크스페이스도메인명 : 워크스페이스별 고유 주소</p>
                 </div>
                 <div>
                   <Label text="메뉴 항목" color="sky" />
