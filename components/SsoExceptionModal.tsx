@@ -55,12 +55,9 @@ export default function SsoExceptionModal({ open, onClose }: { open: boolean; on
 
         {/* Body */}
         <div className="px-6 py-5 space-y-5 overflow-y-auto">
-          <div className="flex items-start gap-3 bg-amber-50 border border-amber-200 rounded-xl p-4">
-            <span className="text-amber-500 flex-shrink-0 mt-0.5">⚠️</span>
-            <p className="text-sm text-amber-800 leading-relaxed">
-              Dummy SSO를 설정한 경우, <strong>모든 사용자에 대해 예외 설정이 반드시 필요</strong>합니다. <strong>새 사용자를 초대할 때마다</strong>, 그리고 <strong>마이그레이션 이후 전체 사용자</strong>에 대해 예외를 설정해야 하며, 설정하지 않으면 해당 사용자는 로그인할 수 없습니다.
-            </p>
-          </div>
+          <p className="text-sm text-gray-500 leading-relaxed">
+            Dummy SSO를 설정한 경우, <strong className="text-gray-900">모든 사용자에 대해 예외 설정이 반드시 필요</strong>합니다. <strong className="text-gray-900">새 사용자를 초대할 때마다</strong>, 그리고 <strong className="text-gray-900">마이그레이션 이후 전체 사용자</strong>에 대해 예외를 설정해야 하며, 설정하지 않으면 해당 사용자는 로그인할 수 없습니다.
+          </p>
 
           {/* 단계 */}
           <div className="space-y-4">
