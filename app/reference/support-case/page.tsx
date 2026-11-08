@@ -135,18 +135,16 @@ export default function SupportCaseReferencePage() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 items-start mb-8">
-          <div>
-            <div className="flex items-center gap-3 mb-2">
-              <span className="w-7 h-7 rounded-full bg-gray-900 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">7</span>
-              <h3 className="font-semibold text-gray-900 text-sm">(한국어) 사례 정보 입력</h3>
-            </div>
-            <div className="text-sm text-gray-600 leading-relaxed ml-10">
-              <span className="block mb-2"><strong className="text-gray-900">필수 입력</strong>: 사례 제목·설명, 제품(Slack)·주제, 인스턴스 유형·연락 가능 시간대, 심각도(기본 Lv4)·Slack ID(자동)</span>
-              <span className="block">선택 입력: 협업자·파일 첨부 → 입력 후 <Chip>사례 만들기</Chip> 클릭</span>
-            </div>
+        <div className="mb-8">
+          <div className="flex items-center gap-3 mb-2">
+            <span className="w-7 h-7 rounded-full bg-gray-900 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">7</span>
+            <h3 className="font-semibold text-gray-900 text-sm">(한국어) 사례 정보 입력</h3>
           </div>
-          <div className="space-y-3">
+          <div className="text-sm text-gray-600 leading-relaxed ml-10 mb-3">
+            <span className="block mb-2"><strong className="text-gray-900">필수 입력</strong>: 사례 제목·설명, 제품(Slack)·주제, 인스턴스 유형·연락 가능 시간대, 심각도(기본 Lv4)·Slack ID(자동)</span>
+            <span className="block">선택 입력: 협업자·파일 첨부 → 입력 후 <Chip>사례 만들기</Chip> 클릭</span>
+          </div>
+          <div className="ml-10 grid sm:grid-cols-2 gap-4">
             <Figure img={{ src: '/support-case/step7-form-1.png', alt: '사례 생성 양식 - 제목·설명·제품·주제', width: 684, height: 708 }} />
             <Figure img={{ src: '/support-case/step7-form-2.png', alt: '사례 생성 양식 - 인스턴스·심각도·Slack ID·파일', width: 698, height: 646 }} />
           </div>
