@@ -28,11 +28,11 @@ export default function CacheClearModal({ open, onClose }: { open: boolean; onCl
       aria-label="캐시 초기화 방법"
     >
       <div
-        className="w-full max-w-3xl max-h-[85vh] overflow-y-auto rounded-2xl bg-white shadow-2xl"
+        className="w-full max-w-3xl max-h-[85vh] flex flex-col overflow-hidden rounded-2xl bg-white shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="sticky top-0 flex items-center justify-between px-6 py-4 border-b border-gray-100 bg-white rounded-t-2xl">
+        <div className="flex-none flex items-center justify-between px-6 py-4 border-b border-gray-100 bg-white">
           <div className="flex items-center gap-2.5">
             <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-[#635BFF]/10">
               <svg className="w-4 h-4 text-[#635BFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -54,7 +54,7 @@ export default function CacheClearModal({ open, onClose }: { open: boolean; onCl
         </div>
 
         {/* Body */}
-        <div className="px-6 py-5 space-y-5">
+        <div className="px-6 py-5 space-y-5 overflow-y-auto">
           <p className="text-sm text-gray-500 leading-relaxed">
             조직이 보이지 않거나 로그인 상태가 꼬인 경우, 이전 워크스페이스 캐시를 초기화하면 해결되는 경우가 많습니다.
           </p>

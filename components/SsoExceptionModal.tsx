@@ -28,11 +28,11 @@ export default function SsoExceptionModal({ open, onClose }: { open: boolean; on
       aria-label="사용자 SSO 인증 예외처리"
     >
       <div
-        className="w-full max-w-3xl max-h-[85vh] overflow-y-auto rounded-2xl bg-white shadow-2xl"
+        className="w-full max-w-3xl max-h-[85vh] flex flex-col overflow-hidden rounded-2xl bg-white shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="sticky top-0 flex items-center justify-between px-6 py-4 border-b border-gray-100 bg-white rounded-t-2xl">
+        <div className="flex-none flex items-center justify-between px-6 py-4 border-b border-gray-100 bg-white">
           <div className="flex items-center gap-2.5">
             <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-[#635BFF]/10">
               <svg className="w-4 h-4 text-[#635BFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -54,7 +54,7 @@ export default function SsoExceptionModal({ open, onClose }: { open: boolean; on
         </div>
 
         {/* Body */}
-        <div className="px-6 py-5 space-y-5">
+        <div className="px-6 py-5 space-y-5 overflow-y-auto">
           <div className="flex items-start gap-3 bg-amber-50 border border-amber-200 rounded-xl p-4">
             <span className="text-amber-500 flex-shrink-0 mt-0.5">⚠️</span>
             <p className="text-sm text-amber-800 leading-relaxed">
