@@ -157,6 +157,15 @@ export default function DummySSOPage() {
             img={{ src: '/dummy-sso/login-preview.png', alt: '변경된 로그인 버튼 미리보기', width: 1140, height: 528 }}
           />
         </Section>
+
+        <div className="mt-12">
+          <Link
+            href="/migration"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#635BFF] text-white rounded-lg text-sm font-medium hover:bg-[#4F46E5] transition-colors"
+          >
+            다음: 마이그레이션 →
+          </Link>
+        </div>
       </div>
     </div>
   );

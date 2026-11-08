@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { asset } from '@/lib/asset';
 import ZoomableImage from '@/components/ZoomableImage';
 import HeroBadge from '@/components/HeroBadge';
@@ -184,6 +185,15 @@ export default function EntraSSOPage() {
             </a>
             를 참고해주세요.
           </p>
+        </div>
+
+        <div className="mt-12">
+          <Link
+            href="/migration"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#635BFF] text-white rounded-lg text-sm font-medium hover:bg-[#4F46E5] transition-colors"
+          >
+            다음: 마이그레이션 →
+          </Link>
         </div>
       </div>
     </div>
