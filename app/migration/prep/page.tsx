@@ -106,7 +106,7 @@ export default function MigrationPrepPage() {
                 <Link href="/reference/retention" className="text-[#635BFF] font-medium hover:underline">데이터 보존 정책</Link> 화면을 참고하세요.
               </InfoNote>
             </PrepStep>
-            <PrepStep n="6" img={{ src: '/migration-prep/08-schedule.png', alt: '이전 예약 — 날짜·시간 선택 (KST 기준)', width: 850, height: 756 }}>
+            <PrepStep n="6" parallel img={{ src: '/migration-prep/08-schedule.png', alt: '이전 예약 — 날짜·시간 선택 (KST 기준)', width: 850, height: 756 }}>
               <strong className="text-gray-900">이전 예약</strong> — 6단계까지 완료되면 <Chip>이전 예약</Chip> 버튼이 활성화됩니다. 희망하는 마이그레이션 날짜와 시간을 선택합니다. (선택 불가한 날짜는 표시되지 않으며, 소요시간이 "2시간"으로 표시되면 실제로는 2시간~2시간 59분 범위입니다.)
               <WarnNote className="mt-3">
                 예약은 <strong>Slack 계정에 설정된 타임존 기준</strong>으로 적용됩니다. 한국 시간으로 예약하려면 계정 타임존이 <strong>KST</strong>로 설정되어 있는지 먼저 확인하세요.
@@ -147,18 +147,26 @@ function PrepPhase({ label, title, children }: { label: string; title: string; c
 
 type StepImg = { src: string; alt: string; width: number; height: number };
 
-function PrepStep({ n, img, children }: { n: string; img?: StepImg; children: React.ReactNode }) {
+function PrepStep({ n, img, parallel = false, children }: { n: string; img?: StepImg; parallel?: boolean; children: React.ReactNode }) {
+  const figure = img && (
+    <div className="rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm">
+      <ZoomableImage src={asset(img.src)} alt={img.alt} width={img.width} height={img.height} className="w-full h-auto" />
+    </div>
+  );
   return (
     <div className="flex items-start gap-3">
       <span className="w-6 h-6 rounded-full bg-gray-900 text-white text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">{n}</span>
-      <div className="text-gray-700 leading-relaxed pt-0.5 text-sm flex-1 min-w-0">
-        {children}
-        {img && (
-          <div className="mt-3 rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm">
-            <ZoomableImage src={asset(img.src)} alt={img.alt} width={img.width} height={img.height} className="w-full h-auto" />
-          </div>
-        )}
-      </div>
+      {parallel && img ? (
+        <div className="flex-1 min-w-0 grid md:grid-cols-2 gap-5 items-start">
+          <div className="text-gray-700 leading-relaxed pt-0.5 text-sm">{children}</div>
+          {figure}
+        </div>
+      ) : (
+        <div className="text-gray-700 leading-relaxed pt-0.5 text-sm flex-1 min-w-0">
+          {children}
+          {img && <div className="mt-3">{figure}</div>}
+        </div>
+      )}
     </div>
   );
 }
