@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { asset } from '@/lib/asset';
 import { faqs, searchFaqs, type FaqItem } from '@/lib/faq';
+import { searchSite, type SearchEntry } from '@/lib/searchIndex';
 
 export default function ChatbotWidget() {
   const [open, setOpen] = useState(false);
@@ -12,6 +13,8 @@ export default function ChatbotWidget() {
   const [submitted, setSubmitted] = useState(false);
 
   const results: FaqItem[] = submitted ? searchFaqs(query) : [];
+  const pages: SearchEntry[] = submitted ? searchSite(query) : [];
+  const nothing = submitted && results.length === 0 && pages.length === 0;
   const suggestions = faqs.slice(0, 4);
 
   const onSubmit = (e: React.FormEvent) => {
@@ -47,7 +50,7 @@ export default function ChatbotWidget() {
             </div>
             <div>
               <div className="text-white font-semibold text-sm">런치 도우미</div>
-              <div className="text-white/60 text-xs">궁금한 점을 검색해보세요</div>
+              <div className="text-white/60 text-xs">사이트 내용을 키워드로 검색하세요</div>
             </div>
           </div>
 
@@ -73,7 +76,7 @@ export default function ChatbotWidget() {
               </>
             )}
 
-            {submitted && results.length === 0 && (
+            {nothing && (
               <div className="text-center py-6">
                 <p className="text-sm text-gray-500 mb-1">검색 결과가 없어요.</p>
                 <p className="text-xs text-gray-400">다른 키워드로 검색하거나 사이드바 메뉴를 확인해보세요.</p>
@@ -106,6 +109,35 @@ export default function ChatbotWidget() {
                   )}
                 </div>
               ))}
+
+            {submitted && pages.length > 0 && (
+              <div className="pt-1">
+                <p className="text-[11px] font-bold uppercase tracking-wider text-gray-400 mb-2">페이지 바로가기</p>
+                <div className="space-y-2">
+                  {pages.map((p) => (
+                    <Link
+                      key={p.href}
+                      href={p.href}
+                      onClick={() => setOpen(false)}
+                      className="group flex items-start gap-2.5 rounded-xl border border-gray-100 p-3 hover:border-[#635BFF]/40 hover:bg-[#635BFF]/[0.03] transition-colors"
+                    >
+                      <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-[#635BFF]/10 flex-shrink-0 mt-0.5">
+                        <svg className="w-3.5 h-3.5 text-[#635BFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                      </span>
+                      <span className="flex-1 min-w-0">
+                        <span className="flex items-center gap-1.5">
+                          <span className="text-sm font-semibold text-gray-900 group-hover:text-[#635BFF]">{p.title}</span>
+                          <span className="text-[10px] font-medium text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded">{p.category}</span>
+                        </span>
+                        <span className="block text-xs text-gray-500 leading-relaxed mt-0.5">{p.desc}</span>
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Input */}

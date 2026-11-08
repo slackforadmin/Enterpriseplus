@@ -10,7 +10,6 @@ const guide: Group[] = [
     label: '사용 · 구성',
     color: '#635BFF',
     items: [
-      { title: '홈', en: 'Home', desc: '워크스페이스 현황·멤버 수·신규 기능 릴리스를 한눈에 보는 대시보드입니다. 운영보다는 현황 파악용으로 활용하세요.' },
       {
         title: '워크스페이스', en: 'Workspaces',
         desc: <>생성·변경은 여기서 진행합니다. 단, <strong className="text-gray-900">삭제는 워크스페이스 주 소유자만</strong> 해당 워크스페이스 설정 화면에서 가능합니다.</>,
