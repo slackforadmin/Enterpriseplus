@@ -23,7 +23,7 @@ export default function FaqReferencePage() {
 
       <div className="px-6 md:px-12 py-12 max-w-4xl space-y-4">
         {/* 404 */}
-        <FaqItem q="‘결함이 있습니다…’ 화면이 떠요">
+        <FaqItem q="[결함이 있습니다…] 화면이 떠요">
           <p>
             해당 화면은 Slack의 일반적인 <strong className="text-gray-900">404 오류 페이지</strong>입니다.
           </p>
@@ -54,7 +54,7 @@ export default function FaqReferencePage() {
         {/* 조직 vs 워크스페이스 */}
         <FaqItem q="조직 관리 화면 vs 워크스페이스 관리 화면, 어디로 들어온 거죠?">
           <p>
-            지금 어느 화면에 들어와 있는지 먼저 확인하세요. <strong className="text-gray-900">Ent+ 조직 설정은 주로 ‘조직 관리 화면’</strong>에서 진행합니다. 두 화면은 주소(URL)로 구분할 수 있습니다.
+            지금 어느 화면에 들어와 있는지 먼저 확인하세요. <strong className="text-gray-900">Ent+ 조직 설정은 주로 [조직 관리 화면]</strong>에서 진행합니다. 두 화면은 주소(URL)로 구분할 수 있습니다.
           </p>
 
           <div className="grid md:grid-cols-2 gap-5 mt-3">
