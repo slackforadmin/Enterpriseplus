@@ -110,7 +110,7 @@ export default function Sidebar() {
       </div>
 
       {/* Nav items */}
-      <div className="flex-1 pt-10 pb-2 px-3">
+      <div className="flex-1 min-h-0 overflow-y-auto pt-10 pb-2 px-3">
         {navItems.map((item) => (
           <div key={item.href} className="mb-0.5">
             <Link

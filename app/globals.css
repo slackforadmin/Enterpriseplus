@@ -39,11 +39,11 @@ body {
 .sidebar {
   background: var(--sidebar-bg);
   width: 260px;
-  min-height: 100vh;
+  height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
-  overflow-y: auto;
+  overflow: hidden;
   z-index: 10;
   transition: transform 0.25s ease;
 }
