@@ -88,7 +88,7 @@ export default function SsoExceptionModal({ open, onClose }: { open: boolean; on
           </div>
 
           <p className="text-xs text-gray-500 leading-relaxed">
-            사용자가 로그인할 때 Dummy SSO를 거치지 않고 ID/비밀번호로 로그인하도록 하는 설정입니다.
+            사용자가 로그인할 때 SSO를 거치지 않고 ID/비밀번호로 로그인하도록 하는 설정입니다.
           </p>
         </div>
       </div>
