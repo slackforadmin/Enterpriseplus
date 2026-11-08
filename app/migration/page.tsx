@@ -122,13 +122,13 @@ export default function MigrationPage() {
         {selected === 'no' && (
           <div className="bg-gray-50 border border-gray-200 rounded-xl p-5">
             <p className="text-sm text-gray-600">
-              마이그레이션 없이 진행합니다. 다음 단계인 <strong>관리자 세션</strong>으로 이동하세요.
+              마이그레이션 없이 진행합니다. 다음 단계인 <strong>조직 관리자 설정</strong>으로 이동하세요.
             </p>
             <button
-              onClick={() => router.push('/admin-session')}
+              onClick={() => router.push('/org-setup')}
               className="mt-3 px-4 py-2 bg-[#635BFF] text-white rounded-lg text-sm font-medium hover:bg-[#4F46E5] transition-colors"
             >
-              관리자 세션으로 →
+              조직 관리자 설정으로 →
             </button>
           </div>
         )}
