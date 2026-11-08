@@ -20,6 +20,12 @@ export default function KickoffPage() {
           <p className="text-white/70 leading-relaxed">
             런치를 시작하기 전, Kick-Off 영상으로 전체 과정과 핵심 포인트를 먼저 확인하세요.
           </p>
+          <div className="mt-4 inline-flex items-center gap-1.5 bg-white/10 backdrop-blur text-white text-xs font-medium px-3 py-1.5 rounded-full border border-white/10">
+            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            약 8분 소요
+          </div>
         </div>
       </div>
 

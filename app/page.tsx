@@ -10,6 +10,7 @@ type Phase = {
   badge?: string;
   links?: SubLink[];
   note?: string;
+  duration?: string;
 };
 
 const phases: Phase[] = [
@@ -18,6 +19,7 @@ const phases: Phase[] = [
     title: 'Kick-Off 영상 시청',
     description: '런치를 시작하기 전, Kick-Off 영상을 통해 전체 과정과 핵심 포인트를 먼저 확인합니다.',
     note: '영상 준비 중',
+    duration: '약 8분 소요',
     links: [{ label: 'Kick-Off 영상', href: '/kickoff' }],
   },
   {
@@ -125,6 +127,14 @@ export default function Home() {
                       {phase.note && (
                         <span className="text-[11px] font-medium text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">
                           {phase.note}
+                        </span>
+                      )}
+                      {phase.duration && (
+                        <span className="inline-flex items-center gap-1 text-[11px] font-medium text-[#635BFF] bg-[#635BFF]/10 px-2 py-0.5 rounded-full">
+                          <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          {phase.duration}
                         </span>
                       )}
                     </div>
