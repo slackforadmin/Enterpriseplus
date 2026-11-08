@@ -177,9 +177,38 @@ export default function RolesReferencePage() {
       </div>
 
       <div className="px-6 md:px-12 py-12 max-w-5xl">
-        <p className="text-gray-600 leading-relaxed mb-10">
+        <p className="text-gray-600 leading-relaxed mb-6">
           설정을 진행하며 역할별 권한이 궁금할 때 참고하세요. 조직 소유자부터 채널 관리자까지 역할 계층과 권한을 확인할 수 있습니다.
         </p>
+
+        {/* 역할 계층 구조도 */}
+        <div className="mb-12 rounded-2xl border border-gray-200 bg-white p-5 md:p-6">
+          <div className="flex items-start gap-2.5 mb-5">
+            <svg className="w-5 h-5 text-[#635BFF] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+            </svg>
+            <div>
+              <h2 className="text-base font-bold text-gray-900">역할 계층 한눈에 보기</h2>
+              <p className="text-sm text-gray-500 mt-0.5"><strong className="text-gray-700">상위 역할은 하위 역할의 모든 권한을 포함</strong>하며, 각 단계에서 추가 권한을 가집니다.</p>
+            </div>
+          </div>
+
+          <div className="space-y-0">
+            <TierRow color="#635BFF" tier="조직 (Organization)" roles={['조직 주 소유자', '조직 소유자', '조직 관리자']} />
+            <TierConnector />
+            <TierRow color="#0EA5E9" tier="워크스페이스 (Workspace)" roles={['워크스페이스 주 소유자', '워크스페이스 소유자', '워크스페이스 관리자']} />
+            <TierConnector />
+            <div className="grid sm:grid-cols-2 gap-3">
+              <TierRow color="#10B981" tier="채널 (Channel)" roles={['채널 관리자']} />
+              <TierRow color="#94A3B8" tier="멤버 (Member)" roles={['일반 멤버']} />
+            </div>
+          </div>
+
+          <div className="mt-4 flex items-start gap-2 text-xs text-gray-500 bg-gray-50 rounded-lg px-3 py-2.5">
+            <span className="text-[#ECB22E] flex-shrink-0">★</span>
+            <span><strong className="text-gray-700">시스템 역할</strong>(분석·감사 로그·콘텐츠·DLP·내보내기 관리자 등)은 위 계층과 별개로, 소유자/관리자가 멤버에게 개별 부여할 수 있습니다.</span>
+          </div>
+        </div>
 
         {/* Role groups */}
         <div className="space-y-12">
@@ -276,6 +305,42 @@ export default function RolesReferencePage() {
           </section>
         </div>
       </div>
+    </div>
+  );
+}
+
+function TierRow({ color, tier, roles }: { color: string; tier: string; roles: string[] }) {
+  return (
+    <div className="rounded-xl border bg-white px-4 py-3" style={{ borderColor: `${color}40` }}>
+      <div className="flex items-center gap-2 mb-2">
+        <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: color }} />
+        <span className="text-xs font-bold" style={{ color }}>{tier}</span>
+      </div>
+      <div className="flex flex-wrap items-center gap-x-1 gap-y-1.5">
+        {roles.map((r, i) => (
+          <span key={r} className="inline-flex items-center gap-1">
+            <span className="text-sm font-semibold text-gray-800 rounded-md px-2 py-0.5" style={{ background: `${color}14` }}>{r}</span>
+            {i < roles.length - 1 && (
+              <svg className="w-3.5 h-3.5 text-gray-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            )}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function TierConnector() {
+  return (
+    <div className="flex items-center justify-center py-1.5">
+      <span className="inline-flex items-center gap-1 text-[11px] font-medium text-gray-400">
+        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+        권한 포함
+      </span>
     </div>
   );
 }
