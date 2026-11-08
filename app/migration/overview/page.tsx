@@ -20,6 +20,15 @@ export default function MigrationOverviewPage() {
       </div>
 
       <div className="px-6 md:px-12 py-12 max-w-5xl">
+        <div className="flex items-center gap-2 mb-4">
+          <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-[#635BFF]/10">
+            <svg className="w-4 h-4 text-[#635BFF]" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M6.3 2.841A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
+            </svg>
+          </span>
+          <h2 className="text-lg font-bold text-gray-900">마이그레이션 오버뷰 영상</h2>
+        </div>
+
         <div className="rounded-2xl border-2 border-dashed border-gray-300 bg-white aspect-video max-w-[64%] flex flex-col items-center justify-center text-center p-8">
           <div className="w-14 h-14 rounded-full bg-[#635BFF]/10 flex items-center justify-center mb-4">
             <svg className="w-7 h-7 text-[#635BFF]" fill="currentColor" viewBox="0 0 20 20">
@@ -29,6 +38,7 @@ export default function MigrationOverviewPage() {
           <p className="font-semibold text-gray-700 mb-1">오버뷰 영상 준비 중</p>
           <p className="text-sm text-gray-400">영상이 업로드되면 이 자리에서 바로 재생됩니다.</p>
         </div>
+        <p className="text-xs text-gray-400 mt-3">영상으로 마이그레이션 전체 과정을 이해한 뒤, 사전작업을 진행하세요.</p>
 
         <div className="mt-8">
           <Link
