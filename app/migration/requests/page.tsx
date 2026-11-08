@@ -118,6 +118,48 @@ export default function MigrationRequestsPage() {
           </>
         )}
 
+        {/* 공통: 마이그레이션 후 관리자 필수 확인 (SSO 유무 무관) */}
+        <div className="mt-12 pt-10 border-t-2 border-gray-200">
+          <div className="flex items-center gap-2.5 mb-2">
+            <span className="text-[11px] font-bold text-white bg-[#0A2540] px-2.5 py-1 rounded-full">공통</span>
+            <h2 className="text-xl font-bold text-gray-900">마이그레이션 후 관리자 확인 사항</h2>
+          </div>
+          <p className="text-sm text-gray-500 mb-5">SSO 설정 여부와 관계없이 마이그레이션 후 관리자가 공통으로 확인해야 하는 항목입니다.</p>
+
+          <div className="rounded-2xl border overflow-hidden" style={{ borderColor: '#635BFF40' }}>
+            <div className="flex items-center gap-2.5 px-5 py-3.5 border-b bg-[#635BFF]/[0.06]" style={{ borderColor: '#635BFF26' }}>
+              <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-white px-2.5 py-1 rounded-full flex-shrink-0 bg-[#635BFF]">
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+                관리자
+              </span>
+              <h3 className="font-bold text-gray-900 text-sm">마이그레이션 후 필수 점검</h3>
+            </div>
+            <div className="px-5 py-5 bg-white">
+              <Checklist>
+                <Check n="1" title="사용자 SSO 인증 예외처리">
+                  <strong className="text-gray-900">멤버 전원을 예외처리해야 로그인할 수 있습니다.</strong> 설정 방법은 좌측 사이드바의 <strong className="text-gray-900">사용자 SSO 예외처리</strong>를 참고하세요.
+                </Check>
+                <Check n="2" title="기본 상태 점검">
+                  아래 3가지 중 <strong className="text-gray-900">하나라도 해당되면 피드백팀에 접수</strong>해주세요.
+                  <ul className="mt-2 space-y-1.5 border-l-2 border-[#635BFF]/30 pl-3 text-[13px]">
+                    <li>마이그레이션 이전에 작성된 채널 내용 검색이 되지 않음</li>
+                    <li>비공개 채널의 채널 매니저임에도 사용자 초대 버튼이 나타나지 않음</li>
+                    <li>자신의 메시지 삭제가 되지 않는 현상 발생</li>
+                  </ul>
+                </Check>
+                <Check n="3" title="앱 & 웹훅 상태 점검">
+                  기본적으로는 연동되어 넘어오지만 간혹 연동이 끊길 수 있으니, 주요 앱·웹훅의 연동 상태를 확인해주세요.
+                </Check>
+                <Check n="4" title="사용자 로그인 확인">
+                  사용자가 로그인되면 큰 이슈는 없는 것으로 판단하셔도 됩니다.
+                </Check>
+              </Checklist>
+            </div>
+          </div>
+        </div>
+
         {/* Next */}
         <div className="mt-12">
           <Link
