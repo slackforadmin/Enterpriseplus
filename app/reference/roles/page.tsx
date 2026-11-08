@@ -310,12 +310,12 @@ export default function RolesReferencePage() {
 
 function TierRow({ color, tier, roles }: { color: string; tier: string; roles: string[] }) {
   return (
-    <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-      <span className="inline-flex items-center gap-2 sm:w-48 flex-shrink-0">
-        <span className="w-3 h-3 rounded-full flex-shrink-0 ring-4 ring-white" style={{ background: color }} />
-        <span className="text-xs font-bold whitespace-nowrap" style={{ color }}>{tier}</span>
-      </span>
-      <span className="text-sm text-gray-700">{roles.join(' › ')}</span>
+    <div className="flex items-start gap-3">
+      <span className="w-3 h-3 rounded-full flex-shrink-0 ring-4 ring-white mt-1" style={{ background: color }} />
+      <div className="flex flex-col sm:flex-row sm:items-baseline gap-x-3 gap-y-1 min-w-0">
+        <span className="text-xs font-bold whitespace-nowrap sm:w-40 flex-shrink-0" style={{ color }}>{tier}</span>
+        <span className="text-sm text-gray-700 leading-relaxed">{roles.join(' › ')}</span>
+      </div>
     </div>
   );
 }
