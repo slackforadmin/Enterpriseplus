@@ -75,7 +75,7 @@ export default function Home() {
             </h1>
             <p className="text-lg text-white/70 leading-relaxed max-w-xl">
               처음 Slack을 도입하시나요? 아래 여정을 따라<br />
-              Kick-Off부터 사용자 온보딩까지 차근차근 진행하세요.
+              Kick-Off부터 관리자 온보딩까지 차근차근 진행하세요.
             </p>
           </div>
           <div className="flex-shrink-0 hidden md:block">
