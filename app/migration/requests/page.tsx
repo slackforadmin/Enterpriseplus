@@ -44,6 +44,7 @@ export default function MigrationRequestsPage() {
         <BranchHeader badge="Dummy SSO" title="Dummy SSO를 설정한 경우" />
 
         <RoleBlock role="user" title="사용자 마이그레이션 전 / 후 확인 사항">
+          <NoticeBanner>아래 사용자 진행사항은 <strong>마이그레이션 전에 사내 공지를 통해</strong> 사용자에게 전달해주세요.</NoticeBanner>
           <PhaseTag label="마이그레이션 전" />
           <StepGroup title="마이그레이션 전 패스워드 추가">
             <Step n="1">데스크톱에서 프로필 사진을 클릭합니다.</Step>
@@ -90,6 +91,7 @@ export default function MigrationRequestsPage() {
         <BranchHeader badge="SSO" title="SSO를 설정한 경우" color="#0EA5E9" />
 
         <RoleBlock role="user" title="사용자 마이그레이션 후 확인 사항">
+          <NoticeBanner>아래 사용자 진행사항은 <strong>마이그레이션 전에 사내 공지를 통해</strong> 사용자에게 전달해주세요.</NoticeBanner>
           <PhaseTag label="마이그레이션 후" color="#0EA5E9" />
           <Checklist>
             <Check n="1" title="캐시 초기화" color="#0EA5E9" required>
@@ -187,6 +189,17 @@ function Step({ n, children }: { n: string; children: React.ReactNode }) {
     <div className="flex items-start gap-3">
       <span className="w-5 h-5 rounded-full bg-gray-200 text-gray-600 text-[11px] font-bold flex items-center justify-center flex-shrink-0 mt-0.5">{n}</span>
       <div className="text-[13px] text-gray-700 leading-relaxed">{children}</div>
+    </div>
+  );
+}
+
+function NoticeBanner({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex items-start gap-2.5 bg-sky-50 border border-sky-200 rounded-xl px-4 py-3 mb-4">
+      <svg className="w-4 h-4 text-sky-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+      </svg>
+      <p className="text-[13px] text-sky-800 leading-relaxed">{children}</p>
     </div>
   );
 }
