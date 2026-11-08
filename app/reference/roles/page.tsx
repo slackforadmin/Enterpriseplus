@@ -193,14 +193,14 @@ export default function RolesReferencePage() {
             </div>
           </div>
 
-          <div className="space-y-0">
-            <TierRow color="#635BFF" tier="조직 (Organization)" roles={['조직 주 소유자', '조직 소유자', '조직 관리자']} />
-            <TierConnector />
-            <TierRow color="#0EA5E9" tier="워크스페이스 (Workspace)" roles={['워크스페이스 주 소유자', '워크스페이스 소유자', '워크스페이스 관리자']} />
-            <TierConnector />
-            <TierRow color="#10B981" tier="채널 (Channel)" roles={['채널 관리자']} />
-            <TierConnector />
-            <TierRow color="#94A3B8" tier="멤버 (Member)" roles={['일반 멤버']} />
+          <div className="relative">
+            <div className="absolute left-[5px] top-2 bottom-2 w-0.5 bg-gradient-to-b from-[#635BFF] via-[#0EA5E9] to-gray-300" aria-hidden="true" />
+            <div className="relative space-y-4">
+              <TierRow color="#635BFF" tier="조직 (Organization)" roles={['조직 주 소유자', '조직 소유자', '조직 관리자']} />
+              <TierRow color="#0EA5E9" tier="워크스페이스 (Workspace)" roles={['워크스페이스 주 소유자', '워크스페이스 소유자', '워크스페이스 관리자']} />
+              <TierRow color="#10B981" tier="채널 (Channel)" roles={['채널 관리자']} />
+              <TierRow color="#94A3B8" tier="멤버 (Member)" roles={['일반 멤버']} />
+            </div>
           </div>
 
           <div className="mt-4 flex items-start gap-2 text-xs text-gray-500 bg-gray-50 rounded-lg px-3 py-2.5">
@@ -310,22 +310,12 @@ export default function RolesReferencePage() {
 
 function TierRow({ color, tier, roles }: { color: string; tier: string; roles: string[] }) {
   return (
-    <div className="flex flex-wrap items-center gap-x-2 gap-y-1 py-1.5">
-      <span className="inline-flex items-center gap-1.5 sm:w-48 flex-shrink-0">
-        <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: color }} />
+    <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+      <span className="inline-flex items-center gap-2 sm:w-48 flex-shrink-0">
+        <span className="w-3 h-3 rounded-full flex-shrink-0 ring-4 ring-white" style={{ background: color }} />
         <span className="text-xs font-bold whitespace-nowrap" style={{ color }}>{tier}</span>
       </span>
       <span className="text-sm text-gray-700">{roles.join(' › ')}</span>
-    </div>
-  );
-}
-
-function TierConnector() {
-  return (
-    <div className="flex items-center pl-[7px] py-0.5">
-      <svg className="w-3.5 h-3.5 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-      </svg>
     </div>
   );
 }
