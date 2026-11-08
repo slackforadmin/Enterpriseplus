@@ -102,6 +102,19 @@ export default function MigrationPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </button>
+              <button
+                onClick={() => router.push('/migration/requests')}
+                className="w-full flex items-center gap-4 p-4 rounded-lg border border-gray-100 hover:border-[#635BFF] hover:bg-[#635BFF]/5 transition-all text-left group"
+              >
+                <div className="w-7 h-7 rounded-full bg-[#635BFF] text-white text-xs font-bold flex items-center justify-center flex-shrink-0">3</div>
+                <div>
+                  <div className="font-medium text-gray-900 text-sm group-hover:text-[#635BFF]">마이그레이션 전/후 진행 요청 사항</div>
+                  <div className="text-xs text-gray-400 mt-0.5">전·후로 관리자·사용자가 확인할 요청 사항을 안내합니다.</div>
+                </div>
+                <svg className="w-4 h-4 text-gray-300 group-hover:text-[#635BFF] ml-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
             </div>
           </div>
         )}
