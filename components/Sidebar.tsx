@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import CacheClearModal from '@/components/CacheClearModal';
+import SsoExceptionModal from '@/components/SsoExceptionModal';
 
 const navItems = [
   {
@@ -57,6 +58,7 @@ export default function Sidebar() {
   const pathname = usePathname();
   const [collapsed, setCollapsed] = useState(false);
   const [cacheOpen, setCacheOpen] = useState(false);
+  const [ssoExcOpen, setSsoExcOpen] = useState(false);
 
   useEffect(() => {
     document.body.classList.toggle('sidebar-collapsed', collapsed);
@@ -191,6 +193,16 @@ export default function Sidebar() {
 
         <button
           type="button"
+          onClick={() => setSsoExcOpen(true)}
+          className="w-full flex items-center gap-2 px-3 py-2 mb-0.5 rounded-lg text-[13px] font-medium text-[var(--sidebar-text)] hover:bg-white/5 hover:text-white transition-all text-left"
+        >
+          <svg className="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          사용자 SSO 예외처리
+        </button>
+        <button
+          type="button"
           onClick={() => setCacheOpen(true)}
           className="w-full flex items-center gap-2 px-3 py-2 mb-0.5 rounded-lg text-[13px] font-medium text-[var(--sidebar-text)] hover:bg-white/5 hover:text-white transition-all text-left"
         >
@@ -201,6 +213,7 @@ export default function Sidebar() {
         </button>
       </div>
     </nav>
+    <SsoExceptionModal open={ssoExcOpen} onClose={() => setSsoExcOpen(false)} />
     <CacheClearModal open={cacheOpen} onClose={() => setCacheOpen(false)} />
     </>
   );
