@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
+import CacheClearModal from '@/components/CacheClearModal';
 
 const navItems = [
   {
@@ -55,6 +56,7 @@ const referenceItems = [
 export default function Sidebar() {
   const pathname = usePathname();
   const [collapsed, setCollapsed] = useState(false);
+  const [cacheOpen, setCacheOpen] = useState(false);
 
   useEffect(() => {
     document.body.classList.toggle('sidebar-collapsed', collapsed);
@@ -186,8 +188,20 @@ export default function Sidebar() {
             {item.label}
           </Link>
         ))}
+
+        <button
+          type="button"
+          onClick={() => setCacheOpen(true)}
+          className="w-full flex items-center gap-2 px-3 py-2 mb-0.5 rounded-lg text-[13px] font-medium text-[var(--sidebar-text)] hover:bg-white/5 hover:text-white transition-all text-left"
+        >
+          <svg className="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+          </svg>
+          캐시 초기화 방법
+        </button>
       </div>
     </nav>
+    <CacheClearModal open={cacheOpen} onClose={() => setCacheOpen(false)} />
     </>
   );
 }
