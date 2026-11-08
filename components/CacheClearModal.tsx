@@ -28,7 +28,7 @@ export default function CacheClearModal({ open, onClose }: { open: boolean; onCl
       aria-label="캐시 초기화 방법"
     >
       <div
-        className="w-full max-w-lg max-h-[85vh] overflow-y-auto rounded-2xl bg-white shadow-2xl"
+        className="w-full max-w-3xl max-h-[85vh] overflow-y-auto rounded-2xl bg-white shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
