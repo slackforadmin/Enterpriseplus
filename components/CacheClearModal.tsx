@@ -71,8 +71,8 @@ export default function CacheClearModal({ open, onClose }: { open: boolean; onCl
                 <span>왼쪽 상단 ☰ 세 줄 아이콘 → <Pill>도움말</Pill> → <Pill>문제 해결</Pill> → <Pill>캐시 지우기 및 재시작</Pill></span>
               </li>
             </ul>
-            <div className="mt-3 rounded-lg border border-gray-200 overflow-hidden bg-white">
-              <img src={asset('/dummy-sso/cache-clear-mac.png')} alt="Mac - 도움말 > 문제 해결 > 캐시 지우기 및 재시작" className="w-full h-auto" />
+            <div className="mt-3 rounded-xl overflow-hidden">
+              <img src={asset('/dummy-sso/cache-clear-mac.png')} alt="Mac - 도움말 > 문제 해결 > 캐시 지우기 및 재시작" className="block w-full h-auto" />
             </div>
           </div>
 
