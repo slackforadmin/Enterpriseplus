@@ -119,9 +119,17 @@ export default function SupportCaseReferencePage() {
         {/* 한국어 경로 */}
         <SectionLabel color="#007a5a" text="STEP 6–7 · 한국어 경로" />
 
-        <StepRow n="6" title="(한국어) 사례 생성" img={{ src: '/support-case/step6-caselist.png', alt: '진행 중인 내 사례 목록', width: 2019, height: 564 }}>
-          내 사례 화면에서 중앙 하단 또는 우측 <Chip>사례 생성</Chip>을 클릭해 입력 양식으로 이동합니다.
-        </StepRow>
+        <div className="mb-8">
+          <div className="flex items-center gap-3 mb-2">
+            <span className="w-7 h-7 rounded-full bg-gray-900 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">6</span>
+            <h3 className="font-semibold text-gray-900 text-sm">(한국어) 사례 생성</h3>
+          </div>
+          <p className="text-sm text-gray-600 leading-relaxed ml-10 mb-3">내 사례 화면에서 중앙 하단 또는 우측 <Chip>사례 생성</Chip>을 클릭해 입력 양식으로 이동합니다.</p>
+          <div className="ml-10 grid sm:grid-cols-2 gap-4">
+            <Figure img={{ src: '/support-case/step6-caselist-empty.png', alt: '생성된 사례가 없습니다 - 사례 생성 버튼', width: 1310, height: 772 }} />
+            <Figure img={{ src: '/support-case/step6-portal-create.png', alt: '포털 홈 - 사례 생성 버튼', width: 1306, height: 746 }} />
+          </div>
+        </div>
 
         <div className="grid md:grid-cols-2 gap-6 items-start mb-8">
           <div>
