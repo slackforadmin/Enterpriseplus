@@ -108,7 +108,7 @@ export default function MigrationPrepPage() {
               <ul className="mt-3 space-y-2">
                 <li className="flex items-start gap-2 text-sm text-gray-600">
                   <span className="text-[#635BFF] font-bold flex-shrink-0">·</span>
-                  <span><strong className="text-gray-900">충돌 없음</strong> (이메일 일치) — 사용자 이전 탭에서 목록을 검토하고 <strong>통합(병합)에 동의</strong>하면 완료됩니다. 이메일이 일치하면 두 계정이 병합되고, 중복이 없으면 새 계정이 생성됩니다.</span>
+                  <span><strong className="text-gray-900">충돌 없음</strong> (이메일 일치) — 사용자 이전 탭에서 목록을 검토하고 문제가 없으면 <Chip>일치하는 이메일 병합</Chip> 버튼을 눌러 <Chip>동의</Chip>하면 완료됩니다. 이메일이 일치하면 두 계정이 병합되고, 중복이 없으면 새 계정이 생성됩니다.</span>
                 </li>
                 <li className="flex items-start gap-2 text-sm text-gray-600">
                   <span className="text-[#635BFF] font-bold flex-shrink-0">·</span>
