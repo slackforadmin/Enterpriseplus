@@ -90,9 +90,17 @@ export default function MigrationPrepPage() {
             <p className="text-sm text-gray-500 leading-relaxed mb-5 ml-1">
               대시보드로 들어가면 6단계가 표시되며, <strong className="text-gray-700">앞의 2단계는 보통 자동으로 완료</strong>되어 있습니다. 아래는 직접 진행해야 하는 단계입니다.
             </p>
-            <PrepStep n="1" parallel img={{ src: '/migration-prep/04-dashboard.png', alt: '사전작업 대시보드 6단계 — 이메일 업데이트', width: 2048, height: 1297 }}>
-              <strong className="text-gray-900">이전하는 사용자 이메일 업데이트</strong> — 이메일 변경이 필요한 경우 마이그레이션을 진행하며 일괄 업데이트할 수 있습니다. 전체 이메일 목록은 CSV 파일로 확인합니다.
+            <PrepStep n="1">
+              <strong className="text-gray-900">이전하는 사용자 이메일 업데이트</strong> — <strong className="text-gray-900">이메일 변경이 필요한 경우</strong> 마이그레이션을 진행하며 일괄 업데이트할 수 있습니다. 전체 이메일 목록은 CSV 파일로 확인합니다.
               <InfoNote className="mt-3">다운로드한 CSV는 <strong>UTF-8 인코딩</strong>으로 변환하여 저장한 뒤 열어야 한글이 깨지지 않습니다.</InfoNote>
+              <div className="mt-3 grid sm:grid-cols-2 gap-4 items-start">
+                <div className="rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm">
+                  <ZoomableImage src={asset('/migration-prep/04-dashboard.png')} alt="사전작업 대시보드 — 이메일 업데이트" width={2048} height={1297} className="w-full h-auto" />
+                </div>
+                <div className="rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm">
+                  <ZoomableImage src={asset('/migration-prep/04b-email-update-modal.png')} alt="이전하는 사용자 이메일 업데이트 모달 - 도메인 변경/CSV 업로드" width={1072} height={942} className="w-full h-auto" />
+                </div>
+              </div>
             </PrepStep>
             <PrepStep n="2" parallel img={{ src: '/migration-prep/05-account-review.png', alt: '이전 중인 사용자 계정 검토 — 일치하는 이메일 병합', width: 2048, height: 1290 }}>
               <strong className="text-gray-900">이전 중인 사용자 계정 검토</strong> — 두 가지 경우로 나뉩니다.
