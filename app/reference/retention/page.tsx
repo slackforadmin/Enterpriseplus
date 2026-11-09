@@ -53,9 +53,11 @@ const wsOverrideOptions: Opt[] = [
 ];
 
 // 신청 시 정할 값 요약 (조직 레벨 기준 권장값)
-const summary: { item: string; rec: string }[] = [
+const summary: { item: string; rec: string; choose?: boolean }[] = [
   { item: '공개 채널', rec: '개정 내역을 포함한 모든 메시지 보관' },
+  { item: '공개 채널 · 워크스페이스 고정(Lock)', rec: '예 / 아니오 중 선택', choose: true },
   { item: '비공개 채널', rec: '개정 내역을 포함한 모든 메시지 보관' },
+  { item: '비공개 채널 · 워크스페이스 고정(Lock)', rec: '예 / 아니오 중 선택', choose: true },
   { item: '다이렉트 메시지 (DM)', rec: '개정 내역을 포함한 모든 메시지 보관' },
   { item: '보존 재정의', rec: '관리자 재정의 - 항상 재정의 허용' },
   { item: '파일 보존', rec: '삭제된 파일을 포함하여 모든 파일 보관' },
@@ -96,19 +98,19 @@ export default function RetentionReferencePage() {
             <h2 className="text-lg font-bold text-gray-900">신청 시 정할 값 (요약)</h2>
           </div>
           <p className="text-sm text-gray-500 mb-4">
-            조직 레벨 기준 권장 값입니다. 아래 상세 카드에서 각 항목의 다른 옵션도 확인한 뒤 신청해주세요.
+            조직 레벨 기준으로 <strong className="text-gray-700">총 8개 항목</strong>을 선택합니다. 대부분은 권장 값이 있으며, 공개·비공개 채널의 <strong className="text-gray-700">워크스페이스 고정(Lock)</strong>은 예/아니오 중 하나를 선택합니다. 아래 상세 카드에서 각 항목의 다른 옵션도 확인한 뒤 신청해주세요.
           </p>
           <div className="rounded-2xl border border-gray-200 overflow-hidden bg-white">
             <div className="grid grid-cols-[1fr_1.4fr] px-5 py-3 bg-gray-50 border-b border-gray-100 text-[11px] font-bold uppercase tracking-wider text-gray-400">
               <span>항목</span>
-              <span>권장 값</span>
+              <span>권장 값 / 선택</span>
             </div>
             <ul className="divide-y divide-gray-50">
               {summary.map((s) => (
                 <li key={s.item} className="grid grid-cols-[1fr_1.4fr] items-center px-5 py-3 gap-3">
                   <span className="text-sm font-semibold text-gray-900">{s.item}</span>
                   <span className="inline-flex items-start gap-1.5 text-sm text-gray-700">
-                    <span className="text-[10px] font-bold text-white bg-[#635BFF] px-1.5 py-0.5 rounded flex-shrink-0 mt-0.5">권장</span>
+                    <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded flex-shrink-0 mt-0.5 ${s.choose ? 'text-gray-600 bg-gray-100' : 'text-white bg-[#635BFF]'}`}>{s.choose ? '택1' : '권장'}</span>
                     {s.rec}
                   </span>
                 </li>
