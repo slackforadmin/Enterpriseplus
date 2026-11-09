@@ -181,8 +181,11 @@ export default function RetentionReferencePage() {
           </div>
         </ItemCard>
 
-        <ItemCard n="2" level="org" title="비공개 채널" decide="메시지를 어떻게 보존할지 선택합니다." note="공개 채널과 동일한 메시지 보존 옵션이 적용됩니다. 위 공개 채널의 워크스페이스 고정(Lock) 설정은 공개·비공개 채널에 함께 적용됩니다.">
-          <OptionGrid options={messageOptions} />
+        <ItemCard n="2" level="org" title="비공개 채널" decide="보존 방식을 선택합니다. (공개 채널과 동일한 옵션)" note="워크스페이스 고정(Lock)은 위 공개 채널 설정을 공개·비공개 채널에 함께 적용하므로, 비공개 채널은 보존 방식만 선택합니다.">
+          <div>
+            <StepLabel n="1" text="보존 방식 (4가지 중 하나 선택)" />
+            <OptionGrid options={messageOptions} />
+          </div>
         </ItemCard>
 
         <ItemCard n="3" level="org" title="다이렉트 메시지 (DM)" decide="메시지를 어떻게 보존할지 선택합니다." note="DM은 Org(조직) 레벨 데이터이므로 워크스페이스 레벨 설정이 불가능합니다.">
