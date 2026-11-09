@@ -129,17 +129,20 @@ export default function OrgSetupPage() {
             </p>
           </div>
 
-          <div className="mt-4 rounded-2xl border border-gray-200 overflow-hidden bg-white">
-            <div className="px-5 py-3 bg-[#635BFF]/5 border-b border-gray-100">
-              <span className="text-sm font-bold text-gray-900">권장 설정 값 (총 8개 항목)</span>
-              <p className="text-xs text-gray-500 mt-0.5">대부분은 권장 값이 있으며, 공개·비공개 채널의 워크스페이스 고정(Lock)은 예/아니오 중 하나를 선택합니다.</p>
+          <p className="text-sm text-gray-500 mt-4">
+            대부분은 권장 값이 있으며, 공개·비공개 채널의 <strong className="text-gray-700">워크스페이스 고정(Lock)</strong>은 예/아니오 중 하나를 선택합니다.
+          </p>
+          <div className="mt-3 rounded-2xl border border-gray-200 overflow-hidden bg-white">
+            <div className="grid grid-cols-[1fr_1.4fr] px-5 py-3 bg-gray-50 border-b border-gray-100 text-[11px] font-bold uppercase tracking-wider text-gray-400">
+              <span>항목 (총 8개)</span>
+              <span>권장 값 / 선택</span>
             </div>
-            <ul className="divide-y divide-gray-50 overflow-x-auto">
+            <ul className="divide-y divide-gray-50">
               {recommended.map((r) => (
-                <li key={r.label} className="flex items-center gap-3 px-5 py-3">
-                  <span className="text-sm text-gray-500 w-72 flex-shrink-0 whitespace-nowrap">{r.label}</span>
-                  <span className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-900 whitespace-nowrap">
-                    <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded flex-shrink-0 ${r.choose ? 'text-gray-600 bg-gray-100' : 'text-white bg-[#635BFF]'}`}>{r.choose ? '택1' : '권장'}</span>
+                <li key={r.label} className="grid grid-cols-[1fr_1.4fr] items-center px-5 py-3 gap-3">
+                  <span className="text-sm font-semibold text-gray-900">{r.label}</span>
+                  <span className="inline-flex items-start gap-1.5 text-sm text-gray-700">
+                    <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded flex-shrink-0 mt-0.5 ${r.choose ? 'text-gray-600 bg-gray-100' : 'text-white bg-[#635BFF]'}`}>{r.choose ? '택1' : '권장'}</span>
                     {r.value}
                   </span>
                 </li>
