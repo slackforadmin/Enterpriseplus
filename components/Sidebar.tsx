@@ -12,7 +12,7 @@ const navItems = [
     href: '/',
   },
   {
-    label: 'Kick-Off 영상',
+    label: 'Kick-Off',
     href: '/kickoff',
   },
   {

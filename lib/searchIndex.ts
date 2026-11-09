@@ -13,7 +13,7 @@ export type SearchEntry = {
 export const searchIndex: SearchEntry[] = [
   // 런치 단계
   { title: '런치 가이드 (홈)', category: '런치', href: '/', keywords: ['홈', 'home', '런치', '가이드', '여정', '시작', '온보딩', '관리자 온보딩', '단계', '프로세스'], desc: 'Kick-Off부터 관리자 온보딩까지 전체 런치 여정을 안내하는 홈 화면입니다.' },
-  { title: 'Kick-Off 영상', category: '런치 1단계', href: '/kickoff', keywords: ['kickoff', '킥오프', '영상', '시청', '시작', '아키텍처', '조직 구조', '워크스페이스', '슬랙 커넥트', 'connect', '스폰서드', '관리자 타입', '역할', '사용자 타입', '게스트', '멤버', 'dm', '디엠'], desc: '런치 시작 전 Enterprise+ 조직 구조·관리자 역할·사용자 타입을 담은 Kick-Off 영상(약 8분).' },
+  { title: 'Kick-Off', category: '런치 1단계', href: '/kickoff', keywords: ['kickoff', '킥오프', '영상', '시청', '시작', '아키텍처', '조직 구조', '워크스페이스', '슬랙 커넥트', 'connect', '스폰서드', '관리자 타입', '역할', '사용자 타입', '게스트', '멤버', 'dm', '디엠'], desc: '런치 시작 전 Enterprise+ 조직 구조·관리자 역할·사용자 타입을 담은 Kick-Off 영상(약 8분).' },
   { title: 'Day 1 조직 초기 설정', category: '런치 2단계', href: '/day1-setup', keywords: ['day1', 'day 1', '조직', '초기', '설정', '시작일', '계약', '계약 시작일', '이메일 확인', 'account setting', 'enterprise setup', '조직 도메인', '워크스페이스 생성', '주 소유자'], desc: '계약 시작일에 조직의 기본 환경을 설정하는 단계별 가이드입니다.' },
   { title: 'SSO 설정', category: '런치 2단계', href: '/sso', keywords: ['sso', '싱글사인온', '로그인', 'saml', '인증', 'idp', 'sso 없음', 'sso 사용', 'dummy', 'google', 'okta', 'entra'], desc: '조직 구성원의 로그인 방식을 설정합니다. 사용 여부와 IdP를 선택하세요.' },
   { title: 'Dummy SSO 설정', category: 'SSO', href: '/sso/dummy', keywords: ['dummy', '더미', 'sso', 'simple idp', '시크릿', '시크릿 모드', '예외처리', 'add to slack', 'sso 구성', 'setup instructions', '버튼명 변경', '미사용 버튼', '조직 설치', '앱 액세스 허용'], desc: 'SSO를 사용하지 않는 경우 Simple IdP로 Dummy SSO를 설정합니다.' },
