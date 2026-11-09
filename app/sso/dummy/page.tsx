@@ -75,11 +75,8 @@ export default function DummySSOPage() {
               <>
                 <p><strong className="text-gray-900">조직 대상</strong>의 <strong className="text-gray-900">Enterprise+ Org</strong>를 선택한 후 <Chip>허용</Chip> 버튼을 클릭합니다.</p>
                 <Callout className="mt-4">
-                  조직이 보이지 않는 경우, 이전 워크스페이스 로그인 캐시가 남아 있을 수 있으니 <strong>캐시를 초기화</strong>해 주세요. 초기화 방법은 좌측 사이드바의 <strong>캐시 초기화 방법</strong>을 참고하세요.
+                  개별 워크스페이스가 아닌 <strong>Enterprise+ 조직(Org)</strong>을 선택해야 합니다. 조직이 보이지 않는 경우, 이전 워크스페이스 로그인 캐시가 남아 있을 수 있으니 <strong>캐시를 초기화</strong>해 주세요. 초기화 방법은 좌측 사이드바의 <strong>캐시 초기화 방법</strong>을 참고하세요.
                 </Callout>
-                <InfoCallout className="mt-3">
-                  개별 워크스페이스가 아닌 <strong>Enterprise+ 조직(Org)</strong>에 설치해야 합니다.
-                </InfoCallout>
               </>
             }
             img={{ src: '/dummy-sso/allow-app.webp', alt: 'Simple IdP 앱 액세스 허용 - 조직 대상 선택', width: 2000, height: 1023 }}
