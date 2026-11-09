@@ -59,7 +59,7 @@ export default function KickoffPage() {
             </div>
           )}
         </div>
-        <p className="text-xs text-gray-400 mt-3">영상을 시청한 뒤, 다음 단계인 Day 1 설정을 진행하세요.</p>
+        <p className="text-xs text-gray-400 mt-3">영상을 시청한 뒤, 계약 시작일에 다음 단계인 Day 1 설정을 진행하세요.</p>
 
         {/* Next */}
         <div className="mt-8">
