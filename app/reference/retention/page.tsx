@@ -167,12 +167,18 @@ export default function RetentionReferencePage() {
           <Figure src="/retention/org-settings.png" alt="조직 관리 - 데이터 보존 내역 화면" width={1509} height={1452} />
         </div>
 
-        <ItemCard n="1" level="org" title="공개 채널" decide="메시지를 어떻게 보존할지 선택합니다.">
-          <OptionGrid options={messageOptions} />
-          <SubDecision title="이 정책을 워크스페이스 수준에 고정(Lock)하시겠습니까?">
-            <YesNo yes label="예 (잠금)" desc="조직의 채널 보존 정책이 모든 워크스페이스의 모든 채널에 적용됩니다. 워크스페이스 소유자는 개별 설정을 할 수 없습니다." />
-            <YesNo label="아니오 (잠그지 않음)" desc="워크스페이스 채널 보존은 기본적으로 조직 정책과 동일하게 설정됩니다. 워크스페이스 소유자가 각 워크스페이스별 정책을 설정할 수 있습니다." />
-          </SubDecision>
+        <ItemCard n="1" level="org" title="공개 채널" decide="아래 두 가지를 각각 선택합니다.">
+          <div>
+            <StepLabel n="1" text="보존 방식 (4가지 중 하나 선택)" />
+            <OptionGrid options={messageOptions} />
+          </div>
+          <div>
+            <StepLabel n="2" text="워크스페이스 고정(Lock) 여부 (예 / 아니오 중 선택)" />
+            <SubDecision title="이 정책을 워크스페이스 수준에 고정(Lock)하시겠습니까?">
+              <YesNo yes label="예 (잠금)" desc="조직의 공개 채널 보존 정책이 모든 워크스페이스의 모든 공개 채널에 적용됩니다. 워크스페이스 소유자는 개별 설정을 할 수 없습니다." />
+              <YesNo label="아니오 (잠그지 않음)" desc="워크스페이스 공개 채널 보존은 기본적으로 조직 정책과 동일하게 설정됩니다. 워크스페이스 소유자가 각 워크스페이스별 정책을 설정할 수 있습니다." />
+            </SubDecision>
+          </div>
         </ItemCard>
 
         <ItemCard n="2" level="org" title="비공개 채널" decide="메시지를 어떻게 보존할지 선택합니다." note="공개 채널과 동일한 메시지 보존 옵션이 적용됩니다. 위 공개 채널의 워크스페이스 고정(Lock) 설정은 공개·비공개 채널에 함께 적용됩니다.">
@@ -328,6 +334,15 @@ function OptionGrid({ options }: { options: Opt[] }) {
           <p className="text-xs text-gray-500 leading-relaxed">{o.desc}</p>
         </div>
       ))}
+    </div>
+  );
+}
+
+function StepLabel({ n, text }: { n: string; text: string }) {
+  return (
+    <div className="flex items-center gap-2 mb-2.5">
+      <span className="w-5 h-5 rounded-full bg-[#635BFF] text-white text-[11px] font-bold flex items-center justify-center flex-shrink-0">{n}</span>
+      <span className="text-sm font-semibold text-gray-800">{text}</span>
     </div>
   );
 }
