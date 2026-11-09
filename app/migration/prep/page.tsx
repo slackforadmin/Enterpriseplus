@@ -62,11 +62,19 @@ export default function MigrationPrepPage() {
 
           {/* Phase A: 이전 요청 & 동의 */}
           <PrepPhase label="STEP 0" title="이전 요청 및 동의">
-            <PrepStep n="1" parallel img={{ src: '/migration-prep/01-transfer-button.png', alt: '이전 화면 우측 상단 워크스페이스 이전 버튼', width: 2048, height: 1277 }}>
+            <PrepStep n="1">
               Migration 화면 우측 상단의 <Chip>워크스페이스 이전</Chip> 버튼을 클릭하고, 이전 대상 워크스페이스의 <strong className="text-gray-900">워크스페이스 ID</strong>와 <strong className="text-gray-900">주소</strong>를 입력한 뒤 전송합니다.
               <InfoNote className="mt-3">
                 워크스페이스 ID와 주소는 <strong>마이그레이션 체크리스트 캔버스</strong>에서 확인할 수 있습니다. 또는 해당 워크스페이스를 웹 브라우저로 접속해 URL에서 확인 가능합니다. (예: <code className="text-xs bg-white border border-gray-200 px-1.5 py-0.5 rounded">app.slack.com/client/<span className="text-[#635BFF]">T…</span></code> — 스탠드얼론 워크스페이스 ID는 <strong>T</strong>, Enterprise+ 조직 ID는 <strong>E</strong>로 시작합니다. 지원 티켓의 "조직 ID"는 이 <strong>E로 시작하는 ID</strong>입니다.)
               </InfoNote>
+              <div className="mt-3 grid sm:grid-cols-2 gap-4 items-start">
+                <div className="rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm">
+                  <ZoomableImage src={asset('/migration-prep/01-transfer-button.png')} alt="이전 화면 우측 상단 워크스페이스 이전 버튼" width={2048} height={1277} className="w-full h-auto" />
+                </div>
+                <div className="rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm">
+                  <ZoomableImage src={asset('/migration-prep/01b-transfer-modal.png')} alt="워크스페이스 이전 모달 - 워크스페이스 ID·URL 입력" width={878} height={702} className="w-full h-auto" />
+                </div>
+              </div>
             </PrepStep>
             <PrepStep n="2" parallel img={{ src: '/migration-prep/02-approval-request.png', alt: 'Slack 앱으로 전달된 이전 승인 요청 메시지', width: 1916, height: 1046 }}>
               전송하면 이전 대상 워크스페이스의 <strong className="text-gray-900">주 소유자</strong>에게 Slack 앱으로 승인 요청 메시지가 전달됩니다. 주 소유자가 <Chip>이전 승인</Chip> 버튼을 클릭해야 사전작업을 진행할 수 있습니다.
