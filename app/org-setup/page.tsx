@@ -61,7 +61,34 @@ export default function OrgSetupPage() {
 
         {/* 4. 데이터 내보내기 */}
         <Section num={4} title="데이터 내보내기 권한 요청" badge="피드백팀 요청">
-          <p className="text-gray-600 leading-relaxed">데이터 내보내기 권한은 피드백팀에 요청해야 합니다.</p>
+          <p className="text-gray-600 leading-relaxed">
+            데이터 내보내기 권한은 피드백팀에 요청해야 합니다.<br />
+            다음 내보내기 기능 중 활성화를 희망하시는 기능을 함께 지정해 요청해주세요.
+          </p>
+          <ul className="space-y-2 ml-2">
+            <li className="flex items-start gap-2 text-gray-600 leading-relaxed">
+              <span className="text-[#635BFF] font-bold flex-shrink-0 mt-0.5">·</span>
+              <span><strong className="text-gray-900">모든 채널과 대화</strong></span>
+            </li>
+            <li className="flex items-start gap-2 text-gray-600 leading-relaxed">
+              <span className="text-[#635BFF] font-bold flex-shrink-0 mt-0.5">·</span>
+              <span><strong className="text-gray-900">사용자 지정 데이터 내보내기</strong> <span className="text-sm text-gray-500">(‘모든 채널과 대화’가 활성화되어야 함께 활성화할 수 있습니다.)</span></span>
+            </li>
+            <li className="flex items-start gap-2 text-gray-600 leading-relaxed">
+              <span className="text-[#635BFF] font-bold flex-shrink-0 mt-0.5">·</span>
+              <span><strong className="text-gray-900">채널 감사</strong></span>
+            </li>
+          </ul>
+          <div className="flex items-start gap-2 ml-2">
+            <span className="text-[#635BFF] flex-shrink-0 mt-0.5">📄</span>
+            <p className="text-gray-600 leading-relaxed">
+              각 기능에 대한 자세한 내용은{' '}
+              <a href="https://slack.com/intl/ko-kr/help/articles/201658943" target="_blank" rel="noopener noreferrer" className="text-[#635BFF] hover:underline font-medium">
+                워크스페이스 데이터 내보내기
+              </a>{' '}
+              고객지원센터 페이지를 참고해주세요.
+            </p>
+          </div>
         </Section>
 
         {/* 5. Data Retention */}
