@@ -138,7 +138,7 @@ export default function OrgSetupPage() {
               {recommended.map((r) => (
                 <li key={r.label} className="flex items-center gap-3 px-5 py-3">
                   <span className="text-sm text-gray-500 min-w-36 flex-shrink-0 whitespace-nowrap">{r.label}</span>
-                  <span className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-900">
+                  <span className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-900 whitespace-nowrap">
                     <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded flex-shrink-0 ${r.choose ? 'text-gray-600 bg-gray-100' : 'text-white bg-[#635BFF]'}`}>{r.choose ? '택1' : '권장'}</span>
                     {r.value}
                   </span>
