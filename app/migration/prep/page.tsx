@@ -81,7 +81,7 @@ export default function MigrationPrepPage() {
               <WarnNote className="mt-3">동의하지 않으면 마이그레이션 사전작업을 진행할 수 없습니다.</WarnNote>
             </PrepStep>
             <PrepStep n="3" parallel img={{ src: '/migration-prep/03-prestep-needed.png', alt: '이전 목록에서 사전 이전 단계 필요 상태', width: 2048, height: 1274 }}>
-              승인이 완료되면 상태가 <StateChip>사전 이전 단계 필요</StateChip>로 변경되고, <strong className="text-gray-900">이전 보고서(사전작업 대시보드)</strong>가 자동 생성됩니다.
+              승인이 완료되면 상태가 <StateChip>사전 이전 단계 필요</StateChip>로 변경되고, <strong className="text-gray-900">사전작업 대시보드</strong>가 자동 생성됩니다.
             </PrepStep>
           </PrepPhase>
 
