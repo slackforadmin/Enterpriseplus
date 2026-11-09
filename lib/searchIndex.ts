@@ -11,7 +11,7 @@ export const searchIndex: SearchEntry[] = [
   // 런치 단계
   { title: '런치 가이드 (홈)', category: '런치', href: '/', keywords: ['홈', 'home', '런치', '가이드', '여정', '시작'], desc: 'Kick-Off부터 관리자 온보딩까지 전체 런치 여정을 안내하는 홈 화면입니다.' },
   { title: 'Kick-Off 영상', category: '런치 1단계', href: '/kickoff', keywords: ['kickoff', '킥오프', '영상', '시청', '시작'], desc: '런치 시작 전 전체 과정과 핵심 포인트를 담은 Kick-Off 영상(약 8분).' },
-  { title: 'Day 1 조직 초기 설정', category: '런치 2단계', href: '/day1-setup', keywords: ['day1', 'day 1', '조직', '초기', '설정', '시작일', '계약'], desc: '서비스 시작일에 조직의 기본 환경을 설정하는 단계별 가이드입니다.' },
+  { title: 'Day 1 조직 초기 설정', category: '런치 2단계', href: '/day1-setup', keywords: ['day1', 'day 1', '조직', '초기', '설정', '시작일', '계약'], desc: '계약 시작일에 조직의 기본 환경을 설정하는 단계별 가이드입니다.' },
   { title: 'SSO 설정', category: '런치 2단계', href: '/sso', keywords: ['sso', '싱글사인온', '로그인', 'saml', '인증', 'idp'], desc: '조직 구성원의 로그인 방식을 설정합니다. 사용 여부와 IdP를 선택하세요.' },
   { title: 'Dummy SSO 설정', category: 'SSO', href: '/sso/dummy', keywords: ['dummy', '더미', 'sso', 'simple idp', '시크릿', '예외처리'], desc: 'SSO를 사용하지 않는 경우 Simple IdP로 Dummy SSO를 설정합니다.' },
   { title: 'Google SSO 설정', category: 'SSO', href: '/sso/google', keywords: ['google', '구글', 'workspace', 'sso', 'saml'], desc: 'Google Workspace와 SAML 기반으로 SSO를 연동합니다.' },

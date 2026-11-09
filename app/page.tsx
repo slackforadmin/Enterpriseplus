@@ -24,8 +24,8 @@ const phases: Phase[] = [
   },
   {
     number: '02',
-    title: '서비스 시작일 · Day 1 설정',
-    description: '서비스 시작일에 조직의 기본 환경과 로그인 방식을 설정합니다. 조직 초기 설정을 완료한 뒤 SSO를 구성하세요.',
+    title: '계약 시작일 · Day 1 설정',
+    description: '계약 시작일에 조직의 기본 환경과 로그인 방식을 설정합니다. 조직 초기 설정을 완료한 뒤 SSO를 구성하세요.',
     links: [
       { label: 'Day 1 조직 초기 설정', href: '/day1-setup' },
       { label: 'SSO 설정', href: '/sso' },

@@ -34,7 +34,7 @@ export const faqs: FaqItem[] = [
   {
     q: 'Day 1에 무엇을 설정하나요?',
     keywords: ['day1', 'day 1', '조직', '초기', '설정', '시작일'],
-    a: '서비스 시작일에 조직 초기 설정(이메일 확인 → Enterprise+ Setup → Account Setting → 조직 설정)을 완료한 뒤 SSO를 구성합니다.',
+    a: '계약 시작일에 조직 초기 설정(이메일 확인 → Enterprise+ Setup → Account Setting → 조직 설정)을 완료한 뒤 SSO를 구성합니다.',
     link: { label: 'Day 1 설정 보기', href: '/day1-setup' },
   },
   {
