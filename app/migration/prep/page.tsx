@@ -63,7 +63,7 @@ export default function MigrationPrepPage() {
           {/* Phase A: 이전 요청 & 동의 */}
           <PrepPhase label="STEP 0" title="이전 요청 및 동의">
             <PrepStep n="1">
-              Migration 화면 우측 상단의 <Chip>워크스페이스 이전</Chip> 버튼을 클릭하고,<br /> 이전 대상 워크스페이스의 <strong className="text-gray-900">워크스페이스 ID</strong>(<strong className="text-gray-900">T로 시작</strong>)와 <strong className="text-gray-900">주소</strong>를 입력한 뒤 전송합니다.
+              Migration 화면 우측 상단의 <Chip>워크스페이스 이전</Chip> 버튼을 클릭하고,<br /> 이전 대상 워크스페이스의 <strong className="text-gray-900">워크스페이스 ID</strong>(<strong className="text-gray-900">T로 시작</strong>)와 <strong className="text-gray-900">주소</strong>를 입력한 뒤 이전 요청을 합니다.
               <InfoNote className="mt-3">
                 워크스페이스 ID는 해당 워크스페이스를 웹 브라우저로 접속한 URL에서 확인 가능합니다. (예: <code className="text-xs bg-[#635BFF]/10 text-[#635BFF] px-1.5 py-0.5 rounded">https://app.slack.com/client/<span className="font-bold">T…</span></code> )
               </InfoNote>
