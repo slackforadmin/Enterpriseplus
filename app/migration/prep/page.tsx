@@ -63,7 +63,7 @@ export default function MigrationPrepPage() {
           {/* Phase A: 이전 요청 & 동의 */}
           <PrepPhase label="STEP 0" title="이전 요청 및 동의">
             <PrepStep n="1">
-              Migration 화면 우측 상단의 <Chip>워크스페이스 이전</Chip> 버튼을 클릭하고, 이전 대상 워크스페이스의 <strong className="text-gray-900">워크스페이스 ID</strong>와 <strong className="text-gray-900">주소</strong>를 입력한 뒤 전송합니다.
+              Migration 화면 우측 상단의 <Chip>워크스페이스 이전</Chip> 버튼을 클릭하고, 이전 대상 워크스페이스의 <strong className="text-gray-900">워크스페이스 ID</strong>(<strong className="text-gray-900">T로 시작</strong>)와 <strong className="text-gray-900">주소</strong>를 입력한 뒤 전송합니다.
               <InfoNote className="mt-3">
                 워크스페이스 ID와 주소는 <strong>마이그레이션 체크리스트 캔버스</strong>에서 확인할 수 있습니다. 또는 해당 워크스페이스를 웹 브라우저로 접속해 URL에서 확인 가능합니다. (예: <code className="text-xs bg-white border border-gray-200 px-1.5 py-0.5 rounded">app.slack.com/client/<span className="text-[#635BFF]">T…</span></code> — 스탠드얼론 워크스페이스 ID는 <strong>T</strong>, Enterprise+ 조직 ID는 <strong>E</strong>로 시작합니다. 지원 티켓의 "조직 ID"는 이 <strong>E로 시작하는 ID</strong>입니다.)
               </InfoNote>
