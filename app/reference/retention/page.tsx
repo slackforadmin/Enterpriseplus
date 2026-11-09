@@ -125,7 +125,9 @@ export default function RetentionReferencePage() {
         <SectionHeader color="#0A2540" text="시작 전 알아두기" />
         <div className="space-y-4">
           <InfoCallout>
-            <strong>조직 레벨로 설정하면</strong> 하위 워크스페이스의 공개/비공개 채널 설정은 전부 무효화됩니다. 조직 레벨 설정은 <strong>조직 주 소유자</strong>가 <strong>지원 포털</strong>에 요청해야 하며, Slack Connect 채널은 내 조직에만 적용되고 UI에서 직접 수정할 수 없습니다. 지원 포털 요청 방법은 좌측 사이드바의 <strong>Support Case 신청</strong>을 참고하세요.
+            <strong>조직 레벨로 설정하면</strong> 하위 워크스페이스의 공개/비공개 채널 설정은 전부 무효화됩니다.<br />
+            조직 레벨 설정은 <strong>조직 주 소유자</strong>가 <strong>지원 포털</strong>에 요청해야 하며, Slack Connect 채널은 내 조직에만 적용되고 UI에서 직접 수정할 수 없습니다.<br />
+            지원 포털 요청 방법은 좌측 사이드바의 <strong>Support Case 신청</strong>을 참고하세요.
           </InfoCallout>
           <Figure src="/retention/org-diagram.png" alt="Locking retention down Org-wide 다이어그램" width={1455} height={876} />
           <p className="text-xs text-gray-400 text-center">
