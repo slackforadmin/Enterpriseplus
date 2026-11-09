@@ -80,13 +80,13 @@ export default function MigrationPrepPage() {
           {/* Phase B: 대시보드 6단계 */}
           <PrepPhase label="대시보드" title="사전작업 6단계">
             <p className="text-sm text-gray-500 leading-relaxed mb-5 ml-1">
-              대시보드로 들어가면 진행해야 할 6단계가 표시됩니다. <strong className="text-gray-700">1 · 2단계는 보통 자동으로 완료</strong>되어 있습니다.
+              대시보드로 들어가면 6단계가 표시되며, <strong className="text-gray-700">앞의 2단계는 보통 자동으로 완료</strong>되어 있습니다. 아래는 직접 진행해야 하는 단계입니다.
             </p>
-            <PrepStep n="3" parallel img={{ src: '/migration-prep/04-dashboard.png', alt: '사전작업 대시보드 6단계 — 이메일 업데이트', width: 2048, height: 1297 }}>
+            <PrepStep n="1" parallel img={{ src: '/migration-prep/04-dashboard.png', alt: '사전작업 대시보드 6단계 — 이메일 업데이트', width: 2048, height: 1297 }}>
               <strong className="text-gray-900">이전하는 사용자 이메일 업데이트</strong> — 이메일 변경이 필요한 경우 마이그레이션을 진행하며 일괄 업데이트할 수 있습니다. 전체 이메일 목록은 CSV 파일로 확인합니다.
               <InfoNote className="mt-3">다운로드한 CSV는 <strong>UTF-8 인코딩</strong>으로 변환하여 저장한 뒤 열어야 한글이 깨지지 않습니다.</InfoNote>
             </PrepStep>
-            <PrepStep n="4" parallel img={{ src: '/migration-prep/05-account-review.png', alt: '이전 중인 사용자 계정 검토 — 일치하는 이메일 병합', width: 2048, height: 1290 }}>
+            <PrepStep n="2" parallel img={{ src: '/migration-prep/05-account-review.png', alt: '이전 중인 사용자 계정 검토 — 일치하는 이메일 병합', width: 2048, height: 1290 }}>
               <strong className="text-gray-900">이전 중인 사용자 계정 검토</strong> — 두 가지 경우로 나뉩니다.
               <ul className="mt-3 space-y-2">
                 <li className="flex items-start gap-2 text-sm text-gray-600">
@@ -99,15 +99,15 @@ export default function MigrationPrepPage() {
                 </li>
               </ul>
             </PrepStep>
-            <PrepStep n="5" parallel img={{ src: '/migration-prep/07-setting-compare.png', alt: '충돌하는 설정 검토 — 기존 워크스페이스와 조직 설정 비교', width: 2048, height: 1296 }}>
+            <PrepStep n="3" parallel img={{ src: '/migration-prep/07-setting-compare.png', alt: '충돌하는 설정 검토 — 기존 워크스페이스와 조직 설정 비교', width: 2048, height: 1296 }}>
               <strong className="text-gray-900">충돌하는 설정 검토</strong> — <Chip>설정 충돌 검토</Chip> 버튼을 클릭하면 좌측에 기존 워크스페이스 설정, 우측에 Enterprise+ 설정이 나란히 표시됩니다. 차이를 확인한 뒤 <Chip>설정 확인</Chip>을 클릭합니다.
               <InfoNote className="mt-3">
                 SSO·멤버 제외 등은 확인만 하면 됩니다. <strong>데이터 보존 정책</strong>은 기존 설정을 보며 향후 정책을 어떻게 가져갈지 결정해야 하며, 데이터 감사·관리를 위해 <strong>모든 변경사항을 보관</strong>하도록 설정하는 것을 권장합니다. 자세한 내용은{' '}
                 <Link href="/reference/retention" className="text-[#635BFF] font-medium hover:underline">데이터 보존 정책</Link> 화면을 참고하세요.
               </InfoNote>
             </PrepStep>
-            <PrepStep n="6" parallel img={{ src: '/migration-prep/08-schedule.png', alt: '이전 예약 — 날짜·시간 선택 (KST 기준)', width: 850, height: 756 }}>
-              <strong className="text-gray-900">이전 예약</strong> — 5단계까지 완료되면 <Chip>이전 예약</Chip> 버튼이 활성화됩니다. 희망하는 마이그레이션 날짜와 시간을 선택합니다. (선택 불가한 날짜는 표시되지 않으며, 소요시간이 2시간으로 표시되면 실제로는 2시간~2시간 59분 범위입니다.)
+            <PrepStep n="4" parallel img={{ src: '/migration-prep/08-schedule.png', alt: '이전 예약 — 날짜·시간 선택 (KST 기준)', width: 850, height: 756 }}>
+              <strong className="text-gray-900">이전 예약</strong> — 3단계까지 완료되면 <Chip>이전 예약</Chip> 버튼이 활성화됩니다. 희망하는 마이그레이션 날짜와 시간을 선택합니다. (선택 불가한 날짜는 표시되지 않으며, 소요시간이 2시간으로 표시되면 실제로는 2시간~2시간 59분 범위입니다.)
               <WarnNote className="mt-3">
                 예약은 <strong>Slack 계정에 설정된 타임존 기준</strong>으로 적용됩니다. 한국 시간으로 예약하려면 계정 타임존이 <strong>KST</strong>로 설정되어 있는지 먼저 확인하세요.
               </WarnNote>
