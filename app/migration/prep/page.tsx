@@ -112,7 +112,7 @@ export default function MigrationPrepPage() {
                 </li>
                 <li className="flex items-start gap-2 text-sm text-gray-600">
                   <span className="text-[#635BFF] font-bold flex-shrink-0">·</span>
-                  <span><strong className="text-gray-900">충돌 있음</strong> (이름은 같으나 이메일·역할 불일치) — 충돌 건수가 표시되며, 각 사용자에 대해 <strong>계정 병합</strong> 또는 <strong>새 계정으로 이전</strong>을 선택합니다. 조직 주 소유자만 있는 경우 추가 작업은 없습니다.</span>
+                  <span><strong className="text-gray-900">충돌 있음</strong> (이름은 같으나 이메일·역할 불일치) — 충돌 건수가 표시되며, 각 사용자에 대해 <Chip>계정 병합</Chip> 또는 병합할 계정이 없으면 <Chip>새 계정으로 이전</Chip>을 선택합니다.</span>
                 </li>
               </ul>
             </PrepStep>
