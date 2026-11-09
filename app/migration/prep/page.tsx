@@ -65,7 +65,7 @@ export default function MigrationPrepPage() {
             <PrepStep n="1">
               Migration 화면 우측 상단의 <Chip>워크스페이스 이전</Chip> 버튼을 클릭하고,<br /> 이전 대상 워크스페이스의 <strong className="text-gray-900">워크스페이스 ID</strong>(<strong className="text-gray-900">T로 시작</strong>)와 <strong className="text-gray-900">주소</strong>를 입력한 뒤 전송합니다.
               <InfoNote className="mt-3">
-                워크스페이스 ID와 주소는 <strong>마이그레이션 체크리스트 캔버스</strong>에서 확인할 수 있습니다. 해당 워크스페이스를 웹 브라우저로 접속해 URL에서 확인 가능합니다. (예: <code className="text-xs bg-[#635BFF]/10 text-[#635BFF] px-1.5 py-0.5 rounded">https://app.slack.com/client/<span className="font-bold">T…</span></code> )
+                워크스페이스 ID는 해당 워크스페이스를 웹 브라우저로 접속해 URL에서 확인 가능합니다. (예: <code className="text-xs bg-[#635BFF]/10 text-[#635BFF] px-1.5 py-0.5 rounded">https://app.slack.com/client/<span className="font-bold">T…</span></code> )
               </InfoNote>
               <div className="mt-3 grid sm:grid-cols-2 gap-4 items-start">
                 <div className="rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm">
