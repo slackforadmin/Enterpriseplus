@@ -9,7 +9,7 @@ const steps: Step[] = [
   { title: 'SSO 구성 진입', caption: 'Slack 관리자: 보안 → SSO 설정 → SSO 구성을 선택합니다. (Business+는 인증 → SAML 인증)' },
   { title: 'Okta 앱 카탈로그', caption: 'Okta 관리자: Applications → Browse App Catalog에서 Slack을 검색해 선택합니다.' },
   { title: 'Add Integration', caption: 'Slack을 검색한 후 Add Integration을 선택합니다.' },
-  { title: 'Application Label 입력', caption: 'Application Label은 사용자에게 보일 이름입니다. Domain은 Slack 접속 주소에서 .slack.com(조직은 .enterprise.slack.com) 앞의 도메인 부분을 입력합니다. (예: acme.enterprise.slack.com → acme)' },
+  { title: 'Application Label 입력', caption: 'Application Label은 사용자에게 보일 이름입니다.\nDomain은 Slack 접속 주소에서 .slack.com 앞의 도메인 부분을 입력합니다. (예: acme.enterprise.slack.com → acme.enterprise)' },
   { title: 'SAML 2.0 선택', caption: 'Sign-On Method에서 SAML 2.0을 선택합니다.' },
   { title: 'View Setup Instructions', caption: 'View Setup Instructions를 클릭하면 새 창으로 안내 윈도우가 열립니다.' },
   { title: 'Done 클릭', caption: 'Done을 클릭합니다.' },
@@ -103,7 +103,7 @@ export default function OktaSSOPage() {
                   )}
                 </div>
               </div>
-              <p className="text-sm text-gray-600 leading-relaxed mb-4 ml-10">{step.caption}</p>
+              <p className="text-sm text-gray-600 leading-relaxed mb-4 ml-10 whitespace-pre-line">{step.caption}</p>
               <div className="ml-10 rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm">
                 <ZoomableImage
                   src={asset(`/okta-sso/step${String(i + 1).padStart(2, '0')}.png`)}
