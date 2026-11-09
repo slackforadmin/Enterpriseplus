@@ -65,18 +65,27 @@ export default function OrgSetupPage() {
             데이터 내보내기 권한은 피드백팀에 요청해야 합니다.<br />
             다음 내보내기 기능 중 활성화를 희망하시는 기능을 함께 지정해 요청해주세요.
           </p>
-          <ul className="space-y-2 ml-2">
+          <ul className="space-y-3 ml-2">
             <li className="flex items-start gap-2 text-gray-600 leading-relaxed">
               <span className="text-[#635BFF] font-bold flex-shrink-0 mt-0.5">·</span>
-              <span><strong className="text-gray-900">모든 채널과 대화</strong></span>
+              <span>
+                <strong className="text-gray-900">모든 채널과 대화</strong>
+                <span className="block text-sm text-gray-500 mt-0.5">법률과 규정을 준수하기 위해 공개 채널, 비공개 채널, DM의 메시지와 파일 링크를 JSON 형식으로 내보냅니다.</span>
+              </span>
             </li>
             <li className="flex items-start gap-2 text-gray-600 leading-relaxed">
               <span className="text-[#635BFF] font-bold flex-shrink-0 mt-0.5">·</span>
-              <span><strong className="text-gray-900">사용자 지정 데이터 내보내기</strong> <span className="text-sm text-gray-500">(‘모든 채널과 대화’가 활성화되어야 함께 활성화할 수 있습니다.)</span></span>
+              <span>
+                <strong className="text-gray-900">사용자 지정 데이터 내보내기</strong>
+                <span className="block text-sm text-gray-500 mt-0.5">대화 유형, 멤버 또는 특정 워크스페이스별로 내보낼 데이터를 JSON 또는 TXT 파일 형식으로 선택합니다. (‘모든 채널과 대화’가 활성화되어야 함께 활성화할 수 있습니다.)</span>
+              </span>
             </li>
             <li className="flex items-start gap-2 text-gray-600 leading-relaxed">
               <span className="text-[#635BFF] font-bold flex-shrink-0 mt-0.5">·</span>
-              <span><strong className="text-gray-900">채널 감사</strong></span>
+              <span>
+                <strong className="text-gray-900">채널 감사</strong>
+                <span className="block text-sm text-gray-500 mt-0.5">이전 계획 또는 기타 워크스페이스 관리 요구 사항에 대한 채널의 CSV 리스트와 해당 세부정보를 내보냅니다.</span>
+              </span>
             </li>
           </ul>
           <div className="flex items-start gap-2 ml-2">
