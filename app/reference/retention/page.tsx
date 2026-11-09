@@ -392,7 +392,7 @@ function LinkCallout({ children }: { children: React.ReactNode }) {
 
 function Figure({ src, alt, width, height }: { src: string; alt: string; width: number; height: number }) {
   return (
-    <div className="rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm">
+    <div className="w-4/5 rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm">
       <ZoomableImage src={asset(src)} alt={alt} width={width} height={height} className="w-full h-auto" />
     </div>
   );
