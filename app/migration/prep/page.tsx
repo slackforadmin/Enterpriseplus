@@ -72,7 +72,7 @@ export default function MigrationPrepPage() {
                   <ZoomableImage src={asset('/migration-prep/01-transfer-button.png')} alt="이전 화면 우측 상단 워크스페이스 이전 버튼" width={2048} height={1277} className="w-full h-auto" />
                 </div>
                 <div className="w-4/5 rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm">
-                  <ZoomableImage src={asset('/migration-prep/01b-transfer-modal.png')} alt="워크스페이스 이전 모달 - 워크스페이스 ID·URL 입력" width={878} height={702} className="w-full h-auto" />
+                  <ZoomableImage src={asset('/migration-prep/01b-transfer-modal.png')} alt="워크스페이스 이전 모달 - 워크스페이스 ID·URL 입력" width={1614} height={1278} className="w-full h-auto" />
                 </div>
               </div>
             </PrepStep>
@@ -99,7 +99,7 @@ export default function MigrationPrepPage() {
                   <ZoomableImage src={asset('/migration-prep/04-dashboard.png')} alt="사전작업 대시보드 — 이메일 업데이트" width={2048} height={1297} className="w-full h-auto" />
                 </div>
                 <div className="w-4/5 rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm">
-                  <ZoomableImage src={asset('/migration-prep/04b-email-update-modal.png')} alt="이전하는 사용자 이메일 업데이트 모달 - 도메인 변경/CSV 업로드" width={1072} height={942} className="w-full h-auto" />
+                  <ZoomableImage src={asset('/migration-prep/04b-email-update-modal.png')} alt="이전하는 사용자 이메일 업데이트 모달 - 도메인 변경/CSV 업로드" width={1520} height={1336} className="w-full h-auto" />
                 </div>
               </div>
             </PrepStep>
