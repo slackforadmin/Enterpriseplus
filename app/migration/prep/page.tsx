@@ -77,7 +77,7 @@ export default function MigrationPrepPage() {
               </div>
             </PrepStep>
             <PrepStep n="2" parallel img={{ src: '/migration-prep/02-approval-request.png', alt: 'Slack 앱으로 전달된 이전 승인 요청 메시지', width: 1916, height: 1046 }}>
-              전송하면 이전 대상 워크스페이스의 <strong className="text-gray-900">주 소유자</strong>에게 Slack 앱으로 승인 요청 메시지가 전달됩니다. 주 소유자가 <Chip>이전 승인</Chip> 버튼을 클릭해야 사전작업을 진행할 수 있습니다.
+              요청하면 이전 대상 워크스페이스의 <strong className="text-gray-900">주 소유자</strong>에게 Slack 앱으로 승인 요청 메시지가 전달됩니다. 주 소유자가 <Chip>이전 승인</Chip> 버튼을 클릭해야 사전작업을 진행할 수 있습니다.
               <WarnNote className="mt-3">동의하지 않으면 마이그레이션 사전작업을 진행할 수 없습니다.</WarnNote>
             </PrepStep>
             <PrepStep n="3" parallel img={{ src: '/migration-prep/03-prestep-needed.png', alt: '이전 목록에서 사전 이전 단계 필요 상태', width: 2048, height: 1274 }}>
@@ -91,7 +91,7 @@ export default function MigrationPrepPage() {
               대시보드로 들어가면 6단계가 표시되며, <strong className="text-gray-700">앞의 2단계는 보통 자동으로 완료</strong>되어 있습니다. 아래는 직접 진행해야 하는 단계입니다.
             </p>
             <PrepStep n="1">
-              <strong className="text-gray-900">이전하는 사용자 이메일 업데이트</strong> — <strong className="text-gray-900">이메일 변경이 필요한 경우</strong> 마이그레이션을 진행하며 일괄 업데이트할 수 있습니다. <strong className="text-gray-900">변경할 필요없는 경우</strong>, <Chip>이 단계 건너뛰기</Chip> 링크 클릭하시면 됩니다.<br />전체 이메일 목록은 CSV 파일로 확인합니다.
+              <strong className="text-gray-900">이전하는 사용자 이메일 업데이트</strong> — <strong className="text-gray-900">이메일 변경이 필요한 경우</strong>, 마이그레이션을 진행하며 일괄 업데이트할 수 있습니다.<br /><strong className="text-gray-900">변경할 필요없는 경우</strong>, <Chip>이 단계 건너뛰기</Chip> 링크 클릭하시면 됩니다.<br />전체 이메일 목록은 CSV 파일로 확인합니다.
               <WarnNote tone="red" className="mt-3"><strong>모든 이전 사용자에 대해 도메인 변경</strong>하는 경우에는 <strong>게스트를 포함한</strong> <strong>모든 사용자의 도메인이 변경</strong>되므로 주의 부탁드립니다.</WarnNote>
               <InfoNote className="mt-3">다운로드한 CSV는 <strong>UTF-8 인코딩</strong>으로 변환하여 저장한 뒤 열어야 한글이 깨지지 않습니다.</InfoNote>
               <div className="mt-3 grid sm:grid-cols-2 gap-4 items-start">
