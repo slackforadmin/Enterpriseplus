@@ -54,7 +54,7 @@ export default function SsoExceptionModal({ open, onClose }: { open: boolean; on
         </div>
 
         {/* Body */}
-        <div className="px-6 py-5 space-y-5 overflow-y-auto">
+        <div className="px-6 py-5 space-y-5 overflow-y-auto no-scrollbar">
           {/* 단계 */}
           <div className="space-y-4">
             <Step n="1">

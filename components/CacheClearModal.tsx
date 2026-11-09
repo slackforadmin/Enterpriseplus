@@ -54,7 +54,7 @@ export default function CacheClearModal({ open, onClose }: { open: boolean; onCl
         </div>
 
         {/* Body */}
-        <div className="px-6 py-5 space-y-5 overflow-y-auto">
+        <div className="px-6 py-5 space-y-5 overflow-y-auto no-scrollbar">
           <p className="text-sm text-gray-500 leading-relaxed">
             조직이 보이지 않거나 로그인 상태가 꼬인 경우, 이전 워크스페이스 캐시를 초기화하면 해결되는 경우가 많습니다.
           </p>
