@@ -1,3 +1,5 @@
+import { searchBodies } from './searchBodies.generated';
+
 export type SearchEntry = {
   title: string;
   category: string;
@@ -44,7 +46,8 @@ export function searchSite(query: string): SearchEntry[] {
   return searchIndex
     .map((item) => {
       let score = 0;
-      const hay = normalize(item.title + ' ' + item.category + ' ' + item.keywords.join(' ') + ' ' + item.desc);
+      const body = searchBodies[item.href] || '';
+      const hay = normalize(item.title + ' ' + item.category + ' ' + item.keywords.join(' ') + ' ' + item.desc + ' ' + body);
       for (const kw of item.keywords) {
         if (q.includes(normalize(kw)) || normalize(kw).includes(q)) score += 3;
       }
