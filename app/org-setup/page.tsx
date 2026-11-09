@@ -129,10 +129,7 @@ export default function OrgSetupPage() {
             </p>
           </div>
 
-          <p className="text-sm text-gray-500 mt-4">
-            대부분은 권장 값이 있으며, 공개·비공개 채널의 <strong className="text-gray-700">워크스페이스 고정(Lock)</strong>은 예/아니오 중 하나를 선택합니다.
-          </p>
-          <div className="mt-3 rounded-2xl border border-gray-200 overflow-hidden bg-white">
+          <div className="mt-4 rounded-2xl border border-gray-200 overflow-hidden bg-white">
             <div className="grid grid-cols-[1fr_1.4fr] px-5 py-3 bg-gray-50 border-b border-gray-100 text-[11px] font-bold uppercase tracking-wider text-gray-400">
               <span>항목 (총 8개)</span>
               <span>권장 값 / 선택</span>
