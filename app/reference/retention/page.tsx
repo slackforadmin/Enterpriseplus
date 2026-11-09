@@ -250,7 +250,7 @@ export default function RetentionReferencePage() {
 
         <ItemCard n="2" level="ws" title="재정의 (워크스페이스)" decide="멤버·소유자의 채널 재정의 허용 여부를 선택합니다.">
           <OptionGrid options={wsOverrideOptions} />
-          <Figure src="/retention/channel-settings.png" alt="채널 설정 - 메시지 내역" width={1176} height={1461} />
+          <Figure src="/retention/channel-settings.png" alt="채널 설정 - 메시지 내역" width={1176} height={1461} w="w-[70%]" />
           <div className="flex items-start gap-3 bg-emerald-50 border border-emerald-200 rounded-xl p-4">
             <span className="text-emerald-500 flex-shrink-0 mt-0.5">💡</span>
             <div className="text-sm text-emerald-800 leading-relaxed">
@@ -415,9 +415,9 @@ function LinkCallout({ children }: { children: React.ReactNode }) {
   );
 }
 
-function Figure({ src, alt, width, height }: { src: string; alt: string; width: number; height: number }) {
+function Figure({ src, alt, width, height, w = 'w-4/5' }: { src: string; alt: string; width: number; height: number; w?: string }) {
   return (
-    <div className="w-4/5 rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm">
+    <div className={`${w} rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm`}>
       <ZoomableImage src={asset(src)} alt={alt} width={width} height={height} className="w-full h-auto" />
     </div>
   );
