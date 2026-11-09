@@ -165,7 +165,7 @@ export default function RetentionReferencePage() {
           <Figure src="/retention/org-settings.png" alt="조직 관리 - 데이터 보존 내역 화면" width={1509} height={1452} />
         </div>
 
-        <ItemCard n="1" level="org" title="공개 채널 / 비공개 채널" decide="메시지를 어떻게 보존할지 선택합니다.">
+        <ItemCard n="1" level="org" title="공개 채널" decide="메시지를 어떻게 보존할지 선택합니다.">
           <OptionGrid options={messageOptions} />
           <SubDecision title="이 정책을 워크스페이스 수준에 고정(Lock)하시겠습니까?">
             <YesNo yes label="예 (잠금)" desc="조직의 채널 보존 정책이 모든 워크스페이스의 모든 채널에 적용됩니다. 워크스페이스 소유자는 개별 설정을 할 수 없습니다." />
@@ -173,11 +173,15 @@ export default function RetentionReferencePage() {
           </SubDecision>
         </ItemCard>
 
-        <ItemCard n="2" level="org" title="다이렉트 메시지 (DM)" decide="메시지를 어떻게 보존할지 선택합니다." note="DM은 Org(조직) 레벨 데이터이므로 워크스페이스 레벨 설정이 불가능합니다.">
+        <ItemCard n="2" level="org" title="비공개 채널" decide="메시지를 어떻게 보존할지 선택합니다." note="공개 채널과 동일한 메시지 보존 옵션이 적용됩니다. 위 공개 채널의 워크스페이스 고정(Lock) 설정은 공개·비공개 채널에 함께 적용됩니다.">
           <OptionGrid options={messageOptions} />
         </ItemCard>
 
-        <ItemCard n="3" level="org" title="보존 재정의 (Override)" decide="멤버 재정의와 관리자 재정의 중 설정합니다. 한 번에 하나만 가능합니다.">
+        <ItemCard n="3" level="org" title="다이렉트 메시지 (DM)" decide="메시지를 어떻게 보존할지 선택합니다." note="DM은 Org(조직) 레벨 데이터이므로 워크스페이스 레벨 설정이 불가능합니다.">
+          <OptionGrid options={messageOptions} />
+        </ItemCard>
+
+        <ItemCard n="4" level="org" title="보존 재정의 (Override)" decide="멤버 재정의와 관리자 재정의 중 설정합니다. 한 번에 하나만 가능합니다.">
           <SubDecision title="멤버 재정의">
             <YesNo label="조직 전체 정책 없음" desc="워크스페이스 멤버가 보존을 중단하는 옵션은 잠겨 있지 않으며, 워크스페이스 소유자가 수정할 수 있습니다." />
             <YesNo label="멤버 - 항상 재정의 허용" desc="멤버는 비공개 채널·DM 보존 설정을 중단할 수 있고, 워크스페이스 소유자는 공개 채널 설정을 재정의할 수 있습니다. 항상 활성화되며 워크스페이스 수준에서 수정 불가." />
@@ -194,11 +198,11 @@ export default function RetentionReferencePage() {
           </Callout>
         </ItemCard>
 
-        <ItemCard n="4" level="org" title="파일 보존" decide="공유된 파일을 어떻게 보존할지 선택합니다." note="파일은 Org(조직) 레벨 데이터이므로 워크스페이스 레벨 설정이 불가능합니다.">
+        <ItemCard n="5" level="org" title="파일 보존" decide="공유된 파일을 어떻게 보존할지 선택합니다." note="파일은 Org(조직) 레벨 데이터이므로 워크스페이스 레벨 설정이 불가능합니다.">
           <OptionGrid options={fileOptions} />
         </ItemCard>
 
-        <ItemCard n="5" level="org" title="캔버스 및 리스트 보존" decide="캔버스·리스트를 어떻게 보존할지 선택합니다." note="캔버스/리스트는 Org(조직) 레벨 데이터이므로 워크스페이스 레벨 설정이 불가능합니다.">
+        <ItemCard n="6" level="org" title="캔버스 및 리스트 보존" decide="캔버스·리스트를 어떻게 보존할지 선택합니다." note="캔버스/리스트는 Org(조직) 레벨 데이터이므로 워크스페이스 레벨 설정이 불가능합니다.">
           <OptionGrid options={canvasOptions} />
           <Callout>캔버스와 리스트가 편집/수정되는 경우, 리텐션 기간은 리셋됩니다.</Callout>
         </ItemCard>
