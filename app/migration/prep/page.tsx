@@ -93,7 +93,7 @@ export default function MigrationPrepPage() {
             <PrepStep n="1">
               <strong className="text-gray-900">이전하는 사용자 이메일 업데이트</strong> — <strong className="text-gray-900">이메일 변경이 필요한 경우</strong> 마이그레이션을 진행하며 일괄 업데이트할 수 있습니다. 전체 이메일 목록은 CSV 파일로 확인합니다.
               <InfoNote className="mt-3">다운로드한 CSV는 <strong>UTF-8 인코딩</strong>으로 변환하여 저장한 뒤 열어야 한글이 깨지지 않습니다.</InfoNote>
-              <WarnNote className="mt-3"><strong>모든 이전 사용자에 대해 도메인 변경</strong>하는 경우에는 게스트를 포함한 <strong>모든 사용자의 도메인이 변경</strong>되므로 주의 부탁드립니다.</WarnNote>
+              <WarnNote tone="red" className="mt-3"><strong>모든 이전 사용자에 대해 도메인 변경</strong>하는 경우에는 <strong>게스트를 포함한</strong> <strong>모든 사용자의 도메인이 변경</strong>되므로 주의 부탁드립니다.</WarnNote>
               <div className="mt-3 grid sm:grid-cols-2 gap-4 items-start">
                 <div className="rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm">
                   <ZoomableImage src={asset('/migration-prep/04-dashboard.png')} alt="사전작업 대시보드 — 이메일 업데이트" width={2048} height={1297} className="w-full h-auto" />
@@ -209,11 +209,12 @@ function InfoNote({ children, className = '' }: { children: React.ReactNode; cla
   );
 }
 
-function WarnNote({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+function WarnNote({ children, className = '', tone = 'amber' }: { children: React.ReactNode; className?: string; tone?: 'amber' | 'red' }) {
+  const red = tone === 'red';
   return (
-    <div className={`flex items-start gap-2.5 bg-amber-50 border border-amber-200 rounded-lg px-3.5 py-2.5 ${className}`}>
-      <span className="text-amber-500 flex-shrink-0 mt-0.5 text-sm">⚠️</span>
-      <p className="text-[13px] text-amber-800 leading-relaxed">{children}</p>
+    <div className={`flex items-start gap-2.5 rounded-lg px-3.5 py-2.5 ${red ? 'bg-rose-50 border border-rose-200' : 'bg-amber-50 border border-amber-200'} ${className}`}>
+      <span className={`flex-shrink-0 mt-0.5 text-sm ${red ? 'text-rose-500' : 'text-amber-500'}`}>⚠️</span>
+      <p className={`text-[13px] leading-relaxed ${red ? 'text-rose-800' : 'text-amber-800'}`}>{children}</p>
     </div>
   );
 }
