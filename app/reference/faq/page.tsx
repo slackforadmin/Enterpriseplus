@@ -1,3 +1,6 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
 import { asset } from '@/lib/asset';
 import ZoomableImage from '@/components/ZoomableImage';
 import HeroBadge from '@/components/HeroBadge';
@@ -52,7 +55,7 @@ export default function FaqReferencePage() {
         </FaqItem>
 
         {/* 조직 vs 워크스페이스 */}
-        <FaqItem q="조직 관리 화면 vs 워크스페이스 관리 화면, 어디로 들어온 거죠?">
+        <FaqItem id="org-vs-ws" q="조직 관리 화면 vs 워크스페이스 관리 화면, 어디로 들어온 거죠?">
           <p>
             지금 어느 화면에 들어와 있는지 먼저 확인하세요. <strong className="text-gray-900">Ent+ 조직 설정은 주로 조직 관리 화면</strong>에서 진행합니다. 두 화면은 주소(URL)로 구분할 수 있습니다.
           </p>
@@ -99,9 +102,16 @@ export default function FaqReferencePage() {
   );
 }
 
-function FaqItem({ q, children }: { q: string; children: React.ReactNode }) {
+function FaqItem({ q, id, children }: { q: string; id?: string; children: React.ReactNode }) {
+  const ref = useRef<HTMLDetailsElement>(null);
+  useEffect(() => {
+    if (id && typeof window !== 'undefined' && window.location.hash.slice(1) === id && ref.current) {
+      ref.current.open = true;
+      ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [id]);
   return (
-    <details className="rounded-2xl border border-gray-200 bg-white overflow-hidden group">
+    <details ref={ref} id={id} className="rounded-2xl border border-gray-200 bg-white overflow-hidden group scroll-mt-6">
       <summary className="flex items-center gap-3 px-5 py-4 cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden hover:bg-gray-50">
         <svg className="w-4 h-4 flex-shrink-0 text-gray-400 transition-transform group-open:rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />

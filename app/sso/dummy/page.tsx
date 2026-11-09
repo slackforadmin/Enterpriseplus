@@ -105,8 +105,8 @@ export default function DummySSOPage() {
             img={{ src: '/dummy-sso/sso-config.png', alt: 'SSO 구성 Copy & Paste 화면', width: 781, height: 473 }}
           />
           <InfoCallout>
-            <strong>SSO 인증 예외처리</strong>는 사용자 로그인 활성화에 필수입니다. 사용자 SSO 인증 예외처리를 해주세요!
-            마이그레이션을 진행할 경우, 사용자 데이터 이전 완료 후 예외처리를 진행해주세요.
+            <strong>SSO 인증 예외처리</strong>는 사용자 로그인 활성화에 <strong>필수</strong>입니다. 사용자 SSO 인증 예외처리를 해주세요!
+            마이그레이션을 진행할 경우, 사용자 데이터 이전 완료 후 예외처리를 진행해주세요. 설정 방법은 좌측 사이드바의 <strong>사용자 SSO 예외처리</strong>를 참고하세요.
           </InfoCallout>
           <StepRow
             n="참고"
@@ -121,9 +121,8 @@ export default function DummySSOPage() {
             Dummy SSO는 초록 버튼을 사용하지 않으므로, 혼란 방지를 위해 버튼명 변경을 권장합니다.
           </p>
           <LinkCallout>
-            조직 관리 화면 URL — <code className="text-xs bg-white/60 px-1.5 py-0.5 rounded">https://[Ent+조직도메인].enterprise.slack.com/manage</code>
-            <br />
-            워크스페이스 관리 화면과 헷갈리지 않도록 주의하세요!
+            조직 관리 화면과 워크스페이스 관리 화면을 헷갈리지 않도록 주의하세요!{' '}
+            <Link href="/reference/faq#org-vs-ws" className="text-[#635BFF] font-medium hover:underline">두 화면 구분 방법 보기</Link>
           </LinkCallout>
           <StepRow
             n="1"
