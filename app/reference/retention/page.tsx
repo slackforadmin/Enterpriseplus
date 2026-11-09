@@ -215,7 +215,7 @@ export default function RetentionReferencePage() {
             <YesNo yes label="관리자 재정의 - 항상 재정의 허용" desc="채널을 관리하는 조직 소유자·관리자가 기본 보존 정책을 재정의하는 개별 채널(DM 제외)에 사용자 지정 정책을 설정할 수 있습니다. 보존 재정의는 조직 채널 관리 대시보드에서 설정합니다." />
             <YesNo label="관리자 재정의 - 재정의 허용 안 함" desc="채널을 관리하는 조직 소유자·관리자가 보존을 재정의할 수 없습니다." />
           </SubDecision>
-          <Figure src="/retention/channel-menu.png" alt="조직 채널 관리 - 메시지 내역 편집 메뉴" width={1215} height={933} />
+          <Figure src="/retention/channel-menu.png" alt="조직 채널 관리 - 메시지 내역 편집 메뉴" width={1215} height={933} w="w-[70%]" />
           <Callout>
             관리자 재정의 - 항상 재정의 허용인 경우, DM에는 별도 재정의 정책을 설정할 수 없습니다. 단,{' '}
             <a href="https://api.slack.com/methods/admin.conversations.setCustomRetention" target="_blank" rel="noopener noreferrer" className="text-[#635BFF] hover:underline">admin.conversations.setCustomRetention</a> API로 설정 가능합니다.
@@ -249,7 +249,7 @@ export default function RetentionReferencePage() {
         </div>
 
         <div className="mb-6">
-          <Figure src="/retention/ws-settings.png" alt="워크스페이스 데이터 보존 설정 화면" width={1485} height={798} />
+          <Figure src="/retention/ws-settings.png" alt="워크스페이스 데이터 보존 설정 화면" width={1485} height={798} w="w-[70%]" />
         </div>
 
         <ItemCard n="1" level="ws" title="데이터 보존" decide="워크스페이스 메시지의 보존 방식을 선택합니다.">
