@@ -107,7 +107,7 @@ export default function MigrationPrepPage() {
               </InfoNote>
             </PrepStep>
             <PrepStep n="4" parallel img={{ src: '/migration-prep/08-schedule.png', alt: '이전 예약 — 날짜·시간 선택 (KST 기준)', width: 850, height: 756 }}>
-              <strong className="text-gray-900">이전 예약</strong> — 3단계까지 완료되면 <Chip>이전 예약</Chip> 버튼이 활성화됩니다. 희망하는 마이그레이션 날짜와 시간을 선택합니다. (선택 불가한 날짜는 표시되지 않으며, 소요시간이 2시간으로 표시되면 실제로는 2시간~2시간 59분 범위입니다.)
+              <strong className="text-gray-900">이전 예약</strong> — 5단계까지 완료되면 <Chip>이전 예약</Chip> 버튼이 활성화됩니다. 희망하는 마이그레이션 날짜와 시간을 선택합니다. (선택 불가한 날짜는 표시되지 않으며, 소요시간이 2시간으로 표시되면 실제로는 2시간~2시간 59분 범위입니다.)
               <WarnNote className="mt-3">
                 예약은 <strong>Slack 계정에 설정된 타임존 기준</strong>으로 적용됩니다. 한국 시간으로 예약하려면 계정 타임존이 <strong>KST</strong>로 설정되어 있는지 먼저 확인하세요.
               </WarnNote>

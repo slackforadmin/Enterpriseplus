@@ -110,7 +110,7 @@ export default function MigrationRequestsPage() {
           <PhaseTag label="마이그레이션 전" />
           <PreMigrationAdmin />
           <PhaseTag label="마이그레이션 후" className="mt-6" />
-          <AdminChecklist />
+          <AdminChecklist ssoNote="설정한 SSO를 사용하지 않는 인원에 대해서는 예외처리해야 로그인할 수 있습니다." />
         </RoleBlock>
           </>
         )}
@@ -208,11 +208,11 @@ function NoticeBanner({ children }: { children: React.ReactNode }) {
   );
 }
 
-function AdminChecklist() {
+function AdminChecklist({ ssoNote = '멤버 전원을 예외처리해야 로그인할 수 있습니다.' }: { ssoNote?: React.ReactNode }) {
   return (
     <Checklist>
       <Check n="1" title="사용자 SSO 인증 예외처리">
-        <strong className="text-gray-900">멤버 전원을 예외처리해야 로그인할 수 있습니다.</strong> 설정 방법은 좌측 사이드바의 <strong className="text-gray-900">사용자 SSO 예외처리</strong>를 참고하세요.
+        <strong className="text-gray-900">{ssoNote}</strong> 설정 방법은 좌측 사이드바의 <strong className="text-gray-900">사용자 SSO 예외처리</strong>를 참고하세요.
       </Check>
       <Check n="2" title="기본 상태 점검">
         아래 3가지 중 <strong className="text-gray-900">하나라도 해당되면 피드백팀에 접수</strong>해주세요.
