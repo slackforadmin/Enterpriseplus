@@ -65,6 +65,16 @@ export default function Sidebar() {
     document.body.classList.toggle('sidebar-collapsed', collapsed);
   }, [collapsed]);
 
+  useEffect(() => {
+    const onOpenModal = (e: Event) => {
+      const detail = (e as CustomEvent).detail;
+      if (detail === 'cache') setCacheOpen(true);
+      else if (detail === 'sso-exception') setSsoExcOpen(true);
+    };
+    window.addEventListener('open-modal', onOpenModal);
+    return () => window.removeEventListener('open-modal', onOpenModal);
+  }, []);
+
   const isActive = (href: string) => pathname === href;
   const isParentActive = (item: typeof navItems[0]) => {
     if (isActive(item.href)) return true;

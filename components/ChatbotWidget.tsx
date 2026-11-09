@@ -114,27 +114,45 @@ export default function ChatbotWidget() {
               <div className="pt-1">
                 <p className="text-[11px] font-bold uppercase tracking-wider text-gray-400 mb-2">페이지 바로가기</p>
                 <div className="space-y-2">
-                  {pages.map((p) => (
-                    <Link
-                      key={p.href}
-                      href={p.href}
-                      onClick={() => setOpen(false)}
-                      className="group flex items-start gap-2.5 rounded-xl border border-gray-100 p-3 hover:border-[#635BFF]/40 hover:bg-[#635BFF]/[0.03] transition-colors"
-                    >
-                      <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-[#635BFF]/10 flex-shrink-0 mt-0.5">
-                        <svg className="w-3.5 h-3.5 text-[#635BFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                        </svg>
-                      </span>
-                      <span className="flex-1 min-w-0">
-                        <span className="flex items-center gap-1.5">
-                          <span className="text-sm font-semibold text-gray-900 group-hover:text-[#635BFF]">{p.title}</span>
-                          <span className="text-[10px] font-medium text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded">{p.category}</span>
+                  {pages.map((p) => {
+                    const inner = (
+                      <>
+                        <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-[#635BFF]/10 flex-shrink-0 mt-0.5">
+                          <svg className="w-3.5 h-3.5 text-[#635BFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                          </svg>
                         </span>
-                        <span className="block text-xs text-gray-500 leading-relaxed mt-0.5">{p.desc}</span>
-                      </span>
-                    </Link>
-                  ))}
+                        <span className="flex-1 min-w-0 text-left">
+                          <span className="flex items-center gap-1.5">
+                            <span className="text-sm font-semibold text-gray-900 group-hover:text-[#635BFF]">{p.title}</span>
+                            <span className="text-[10px] font-medium text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded">{p.category}</span>
+                          </span>
+                          <span className="block text-xs text-gray-500 leading-relaxed mt-0.5">{p.desc}</span>
+                        </span>
+                      </>
+                    );
+                    const cls = 'group w-full flex items-start gap-2.5 rounded-xl border border-gray-100 p-3 hover:border-[#635BFF]/40 hover:bg-[#635BFF]/[0.03] transition-colors';
+                    if (p.action) {
+                      return (
+                        <button
+                          key={p.href}
+                          type="button"
+                          onClick={() => {
+                            setOpen(false);
+                            window.dispatchEvent(new CustomEvent('open-modal', { detail: p.action }));
+                          }}
+                          className={cls}
+                        >
+                          {inner}
+                        </button>
+                      );
+                    }
+                    return (
+                      <Link key={p.href} href={p.href} onClick={() => setOpen(false)} className={cls}>
+                        {inner}
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
             )}
