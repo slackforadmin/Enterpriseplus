@@ -76,8 +76,8 @@ export default function OrgSetupPage() {
             <li className="flex items-start gap-2 text-gray-600 leading-relaxed">
               <span className="text-[#635BFF] font-bold flex-shrink-0 mt-0.5">·</span>
               <span>
-                <strong className="text-gray-900">사용자 지정 데이터 내보내기</strong>
-                <span className="block text-sm text-gray-500 mt-0.5">대화 유형, 멤버 또는 특정 워크스페이스별로 내보낼 데이터를 JSON 또는 TXT 파일 형식으로 선택합니다. (‘모든 채널과 대화’가 활성화되어야 함께 활성화할 수 있습니다.)</span>
+                <strong className="text-gray-900">사용자 지정 데이터 내보내기</strong> <span className="text-sm text-gray-500">(‘모든 채널과 대화’가 활성화되어야 함께 활성화할 수 있습니다.)</span>
+                <span className="block text-sm text-gray-500 mt-0.5">대화 유형, 멤버 또는 특정 워크스페이스별로 내보낼 데이터를 JSON 또는 TXT 파일 형식으로 선택합니다.</span>
               </span>
             </li>
             <li className="flex items-start gap-2 text-gray-600 leading-relaxed">
