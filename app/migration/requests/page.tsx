@@ -77,8 +77,10 @@ export default function MigrationRequestsPage() {
           </Checklist>
         </RoleBlock>
 
-        <RoleBlock role="admin" title="관리자 마이그레이션 후 확인 사항">
-          <PhaseTag label="마이그레이션 후" />
+        <RoleBlock role="admin" title="관리자 마이그레이션 전 / 후 진행 요청 사항">
+          <PhaseTag label="마이그레이션 전" />
+          <PreMigrationAdmin />
+          <PhaseTag label="마이그레이션 후" className="mt-6" />
           <AdminChecklist />
         </RoleBlock>
 
@@ -104,8 +106,10 @@ export default function MigrationRequestsPage() {
           </Checklist>
         </RoleBlock>
 
-        <RoleBlock role="admin" title="관리자 마이그레이션 후 확인 사항">
-          <PhaseTag label="마이그레이션 후" />
+        <RoleBlock role="admin" title="관리자 마이그레이션 전 / 후 진행 요청 사항">
+          <PhaseTag label="마이그레이션 전" />
+          <PreMigrationAdmin />
+          <PhaseTag label="마이그레이션 후" className="mt-6" />
           <AdminChecklist />
         </RoleBlock>
           </>
@@ -224,17 +228,25 @@ function AdminChecklist() {
       <Check n="4" title="사용자 로그인 확인">
         사용자가 로그인되면 큰 이슈는 없는 것으로 판단하셔도 됩니다.
       </Check>
-      <Check n="5" title="워크플로 커넥터 사전 승인">
-        마이그레이션 후 워크플로에 연결된 써드파티를 바로 사용할 수 있도록, <strong className="text-gray-900">마이그레이션 전에</strong> 조직 환경에서 커넥터를 사전 승인해 두 환경의 승인 상태를 동일하게 맞춰주세요.
-        <ul className="mt-2 space-y-1.5 border-l-2 border-[#635BFF]/30 pl-3 text-[13px]">
-          <li><strong className="text-gray-900">Ent+</strong> : 조직 관리 화면 <Chip>통합</Chip> → <Chip>워크플로 단계, 트리거, 통합</Chip></li>
-          <li><strong className="text-gray-900">Biz+</strong> : 워크스페이스 관리 화면 <Chip>통합</Chip> → <Chip>워크플로 단계, 트리거, 통합</Chip></li>
-        </ul>
-        <div className="mt-3">
-          <Figure src="/migration-requests/workflow-connector-approval.png" alt="워크플로 커넥터 사전 승인 - Ent+ 조직 관리 화면(승인됨)과 Biz+ 워크스페이스 관리 화면(승인 필요)의 상태 비교" width={1719} height={881} />
-        </div>
-      </Check>
     </Checklist>
+  );
+}
+
+function PreMigrationAdmin() {
+  return (
+    <div className="rounded-xl bg-gray-50 border border-gray-100 p-4">
+      <h4 className="text-sm font-semibold text-gray-800 mb-2">워크플로 커넥터 사전 승인</h4>
+      <p className="text-[13px] text-gray-600 leading-relaxed">
+        마이그레이션 후 워크플로에 연결된 써드파티를 바로 사용할 수 있도록, <strong className="text-gray-900">마이그레이션 전에</strong> 조직 환경에서 커넥터를 사전 승인해 두 환경의 승인 상태를 동일하게 맞춰주세요.
+      </p>
+      <ul className="mt-2 space-y-1.5 border-l-2 border-[#635BFF]/30 pl-3 text-[13px] text-gray-600">
+        <li><strong className="text-gray-900">Ent+</strong> : 조직 관리 화면 <Chip>통합</Chip> → <Chip>워크플로 단계, 트리거, 통합</Chip></li>
+        <li><strong className="text-gray-900">Biz+</strong> : 워크스페이스 관리 화면 <Chip>통합</Chip> → <Chip>워크플로 단계, 트리거, 통합</Chip></li>
+      </ul>
+      <div className="mt-3">
+        <Figure src="/migration-requests/workflow-connector-approval.png" alt="워크플로 커넥터 사전 승인 - Ent+ 조직 관리 화면(승인됨)과 Biz+ 워크스페이스 관리 화면(승인 필요)의 상태 비교" width={1719} height={881} />
+      </div>
+    </div>
   );
 }
 
