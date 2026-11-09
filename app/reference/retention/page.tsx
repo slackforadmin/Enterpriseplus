@@ -27,16 +27,18 @@ const messageOptions: Opt[] = [
 
 const fileOptions: Opt[] = [
   { label: '파일 보관', desc: 'Slack은 공유된 파일을 모두 보관합니다. 단, 삭제된 파일은 포함되지 않습니다.' },
-  { label: '특정 기간(일) 동안만 파일 보관', desc: '선택한 기간보다 오래된 파일(코드조각·포스트·업로드 파일·타사 앱 공유 파일)을 영구 삭제합니다. 타사 앱 파일은 원본에 영향 없음.' },
-  { label: '삭제된 파일을 포함하여 모든 파일 보관', desc: '워크스페이스 수명 기간 동안 모든 파일을 보관합니다. 삭제된 파일은 내보내기·Discovery API로 이용 가능합니다.', recommended: true },
-  { label: '삭제된 파일 포함, 일정 기간(일) 동안만 보관', desc: '선택 기간보다 오래된 파일을 영구 삭제합니다. 수동 삭제 파일은 지정 시간까지 내보내기·Discovery API로 이용 가능합니다.' },
+  { label: '특정 기간(일) 동안만 파일 보관', desc: '선택한 기간보다 오래된 파일(코드조각·포스트·업로드 파일·타사 앱(Google Drive·Box·Dropbox) 공유 파일)을 영구 삭제합니다. 타사 앱 파일은 해당 앱에 남아 있어 Slack에서 삭제해도 원본에는 영향이 없습니다.' },
+  { label: '삭제된 파일을 포함하여 모든 파일 보관', desc: '워크스페이스 수명 기간 동안 모든 파일을 보관합니다. 삭제된 파일은 모든 대화 내보내기·Discovery API로 이용 가능합니다.', recommended: true },
+  { label: '삭제된 파일 포함, 일정 기간(일) 동안만 보관', desc: '선택 기간보다 오래된 파일(코드조각·포스트·업로드 파일·타사 앱 공유 파일)을 영구 삭제합니다. 수동으로 삭제된 파일은 모든 대화 내보내기·Discovery API로 확인할 수 있습니다.' },
+  { label: '메시지 보존 기간과 일치', desc: '해당 파일을 공유한 메시지가 삭제될 때까지 모든 파일을 보관합니다. 공유되지 않은 파일은 30일의 유예 기간 후 영구 삭제됩니다.' },
+  { label: '메시지 보존 기간과 일치, 삭제된 파일 유지', desc: '해당 파일을 공유한 메시지가 삭제될 때까지 모든 파일을 보관합니다. 공유되지 않은 파일은 30일의 유예 기간 후 조직에서 숨겨집니다.' },
 ];
 
 const canvasOptions: Opt[] = [
-  { label: '캔버스 및 리스트 보관', desc: 'Slack은 모든 캔버스·리스트를 보관하지만 삭제된 항목은 보관하지 않습니다.' },
+  { label: '캔버스 및 리스트 보관', desc: 'Slack은 모든 캔버스·리스트를 보관하지만 삭제된 캔버스·리스트는 보관하지 않습니다.' },
   { label: '정해진 일수 동안만 보관', desc: '정한 일수가 경과된 캔버스·리스트는 모두 영구 삭제합니다.' },
-  { label: '삭제된 캔버스 포함하여 모두 보관', desc: '워크스페이스 수명 기간 동안 모든 캔버스·리스트를 보관합니다. 삭제된 항목은 내보내기·Discovery API로 이용 가능합니다.', recommended: true },
-  { label: '삭제 포함, 정해진 일수 동안만 보관', desc: '선택 일수가 경과된 항목을 영구 삭제합니다. 수동 삭제 항목은 내보내기·Discovery API로 이용 가능합니다.' },
+  { label: '삭제된 캔버스를 포함하여 캔버스 및 리스트 보관', desc: '워크스페이스 수명 기간 동안 모든 캔버스·리스트를 보관합니다. 삭제된 캔버스·리스트는 모든 대화 내보내기·Discovery API로 이용 가능합니다.', recommended: true },
+  { label: '삭제된 캔버스 포함, 정해진 일수 동안만 보관', desc: '선택한 일수가 경과된 캔버스·리스트를 영구 삭제합니다. 수동으로 삭제한 캔버스·리스트는 모든 대화 내보내기·Discovery API로 이용 가능합니다.' },
 ];
 
 const wsDataOptions: Opt[] = [
@@ -214,6 +216,9 @@ export default function RetentionReferencePage() {
             관리자 재정의 - 항상 재정의 허용인 경우, DM에는 별도 재정의 정책을 설정할 수 없습니다. 단,{' '}
             <a href="https://api.slack.com/methods/admin.conversations.setCustomRetention" target="_blank" rel="noopener noreferrer" className="text-[#635BFF] hover:underline">admin.conversations.setCustomRetention</a> API로 설정 가능합니다.
           </Callout>
+          <InfoCallout>
+            채널 재정의는 파일이 아닌, 채널에서 공유된 메시지에 적용됩니다. 조직 내에서 공유되는 모든 파일은 단일 파일 보존 정책(아래 파일 보존 참조)으로 관리되며, 조직 수준의 파일 보존 정책은 재정의할 수 없습니다.
+          </InfoCallout>
         </ItemCard>
 
         <ItemCard n="5" level="org" title="파일 보존" decide="공유된 파일을 어떻게 보존할지 선택합니다." note="파일은 Org(조직) 레벨 데이터이므로 워크스페이스 레벨 설정이 불가능합니다.">
