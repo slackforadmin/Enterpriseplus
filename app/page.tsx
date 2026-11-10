@@ -11,6 +11,7 @@ type Phase = {
   links?: SubLink[];
   note?: string;
   duration?: string;
+  required?: boolean;
 };
 
 const phases: Phase[] = [
@@ -24,6 +25,7 @@ const phases: Phase[] = [
   {
     number: '02',
     title: '계약 시작일 · Day 1 설정',
+    required: true,
     description: '계약 시작일에 조직의 기본 환경과 로그인 방식을 설정합니다. 조직 초기 설정을 완료한 뒤 SSO를 구성하세요.',
     links: [
       { label: 'Day 1 조직 초기 설정', href: '/day1-setup' },
@@ -118,6 +120,12 @@ export default function Home() {
                   <div className="flex-1 pb-2">
                     <div className="flex items-center gap-2 mb-1.5">
                       <h3 className="font-semibold text-[var(--foreground)] text-base">{phase.title}</h3>
+                      {phase.required && (
+                        <span className="inline-flex items-center gap-1 text-[11px] font-bold text-white bg-rose-600 px-2 py-0.5 rounded-full">
+                          <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" /></svg>
+                          필수
+                        </span>
+                      )}
                       {phase.badge && (
                         <span className="text-[11px] font-medium text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full">
                           {phase.badge}
