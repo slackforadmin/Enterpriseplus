@@ -105,7 +105,7 @@ export default function OrgSetupPage() {
         {/* 5. Data Retention */}
         <Section num={5} title="Data Retention 설정 요청" badge="피드백팀 요청" last>
           <p className="text-gray-600 leading-relaxed">
-            Enterprise+ 플랜의 데이터 보존 정책은 관리자 화면에서 설정할 수 없어 Support Case 접수를 통해 <strong className="text-gray-900">피드백팀에 요청</strong>해야 합니다.<br />요청 시 다음 정보가 필요합니다.
+            Enterprise+ 플랜의 데이터 보존 정책은 관리자 화면에서 설정할 수 없어 <strong className="text-gray-900">피드백팀에 요청</strong>해야 합니다.<br />요청 시 다음 정보가 필요합니다.
           </p>
           <ul className="space-y-2 ml-2">
             <li className="flex items-start gap-3 text-gray-600 leading-relaxed">
