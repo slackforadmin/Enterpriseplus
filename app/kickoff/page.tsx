@@ -38,10 +38,10 @@ export default function KickoffPage() {
           <h2 className="text-lg font-bold text-gray-900">Kick-Off 영상 보기</h2>
         </div>
 
-        <div className="max-w-[64%]">
+        <div className="max-w-full md:max-w-[64%]">
           {VIDEO_READY ? (
             <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-sm bg-black">
-              <video controls playsInline preload="metadata" className="w-full h-auto">
+              <video controls playsInline preload="metadata" className="w-full h-auto aspect-video">
                 <source src={asset('/kickoff/kickoff.mp4')} type="video/mp4" />
                 브라우저가 영상 재생을 지원하지 않습니다.
               </video>
