@@ -218,7 +218,7 @@ export default function RetentionReferencePage() {
           <Figure src="/retention/channel-menu.png" alt="조직 채널 관리 - 메시지 내역 편집 메뉴" width={1215} height={933} w="w-[70%]" />
           <Callout>
             관리자 재정의 - 항상 재정의 허용인 경우, DM에는 별도 재정의 정책을 설정할 수 없습니다. 단,{' '}
-            <a href="https://api.slack.com/methods/admin.conversations.setCustomRetention" target="_blank" rel="noopener noreferrer" className="text-[#635BFF] hover:underline">admin.conversations.setCustomRetention</a> API로 설정 가능합니다.
+            <a href="https://api.slack.com/methods/admin.conversations.setCustomRetention" target="_blank" rel="noopener noreferrer" className="text-[#635BFF] hover:underline break-all">admin.conversations.setCustomRetention</a> API로 설정 가능합니다.
           </Callout>
           <InfoCallout>
             채널 재정의는 파일이 아닌, 채널에서 공유된 메시지에 적용됩니다. 조직 내에서 공유되는 모든 파일은 단일 파일 보존 정책(아래 파일 보존 참조)으로 관리되며, 조직 수준의 파일 보존 정책은 재정의할 수 없습니다.
