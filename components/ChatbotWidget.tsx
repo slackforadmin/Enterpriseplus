@@ -36,7 +36,7 @@ export default function ChatbotWidget() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
         ) : (
-          <Image src={asset('/slackbot.png')} alt="도우미" width={40} height={40} className="rounded-xl" />
+          <Image src={asset('/slackbot.png')} alt="도우미" width={48} height={48} className="rounded-xl" />
         )}
       </button>
 
