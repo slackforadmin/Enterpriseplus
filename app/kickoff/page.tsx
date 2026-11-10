@@ -1,9 +1,8 @@
 import Link from 'next/link';
+import { asset } from '@/lib/asset';
 import HeroBadge from '@/components/HeroBadge';
 
-// 영상 파일이 준비되면 public/kickoff/kickoff.mp4 로 넣고
-// 아래 VIDEO_READY 를 true 로 바꾸면 플레이어가 표시됩니다.
-const VIDEO_READY = false;
+const VIDEO_READY = true;
 
 export default function KickoffPage() {
   return (
@@ -43,7 +42,7 @@ export default function KickoffPage() {
           {VIDEO_READY ? (
             <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-sm bg-black">
               <video controls preload="metadata" className="w-full h-auto">
-                <source src="/kickoff/kickoff.mp4" type="video/mp4" />
+                <source src={asset('/kickoff/kickoff.mp4')} type="video/mp4" />
                 브라우저가 영상 재생을 지원하지 않습니다.
               </video>
             </div>
