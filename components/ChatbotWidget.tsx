@@ -28,7 +28,7 @@ export default function ChatbotWidget() {
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
-        className="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full shadow-lg hover:scale-105 transition-transform bg-white border border-gray-200 flex items-center justify-center overflow-hidden"
+        className="fixed bottom-6 right-6 z-40 w-16 h-16 rounded-full shadow-lg hover:scale-105 transition-transform bg-white border border-gray-200 flex items-center justify-center overflow-hidden"
         aria-label={open ? '도우미 닫기' : '도우미 열기'}
       >
         {open ? (
