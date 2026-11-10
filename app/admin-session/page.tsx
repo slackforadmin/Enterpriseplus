@@ -188,7 +188,7 @@ const guide: Group[] = [
       },
       { title: '엔터프라이즈 검색', en: 'Enterprise Search', desc: <>GitHub·Confluence 등 외부 서비스를 Slack 검색과 연결합니다. 도메인 설정·사용자 인증 완료 후 검색 결과에 외부 콘텐츠가 함께 표시됩니다. Jira·Confluence는 이제 <strong className="text-gray-900">멀티 도메인 연동</strong>을 지원합니다.</>, tip: <>회사 계정만 연동되도록 하려면 <strong>허용된 도메인에 회사 도메인을 등록</strong>하세요.</> },
       { title: '채널 관리', en: 'Channel Management', desc: '기본 조직 전체 채널 설정으로, 신규 멤버 합류 시 자동으로 특정 채널에 추가됩니다. 멤버십을 필수로 설정하면 임의 탈퇴를 막을 수 있습니다.' },
-      { title: '내역', en: 'Retention', desc: '조직 레벨의 데이터 보존 설정을 확인합니다. 변경이 필요한 경우 Support Case 접수를 통해 피드백팀에 설정 요청하세요.' },
+      { title: '내역', en: 'Retention', desc: '조직 레벨의 데이터 보존 설정을 확인합니다. 변경이 필요한 경우 피드백팀에 설정 요청하세요.' },
       { title: '청구', en: 'Billing', desc: '계약 연장·비용 확인 화면입니다. 우측 상단 버튼으로 보고서 생성 가능(조직 주 소유자 전용). 계약 갱신 시 참고 자료로 활용하세요.' },
     ],
   },
