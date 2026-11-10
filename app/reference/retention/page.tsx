@@ -168,7 +168,7 @@ export default function RetentionReferencePage() {
         </div>
 
         {/* ===== 조직 레벨 ===== */}
-        <SectionHeader color="#635BFF" text="조직 레벨 설정 (Org Level)" sub="피드백팀에 요청하여 설정합니다. 현재 보존 기간은 조직 관리 화면 → 설정 → 내역에서 확인할 수 있습니다." />
+        <SectionHeader color="#635BFF" text="조직 레벨 설정 (Org Level)" sub="Support Case 접수를 통해 피드백팀에 요청하여 설정합니다. 현재 보존 기간은 조직 관리 화면 → 설정 → 내역에서 확인할 수 있습니다." />
         <div className="mb-6">
           <Figure src="/retention/org-settings.png" alt="조직 관리 - 데이터 보존 내역 화면" width={1509} height={1452} />
         </div>

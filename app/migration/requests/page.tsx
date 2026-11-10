@@ -215,7 +215,7 @@ function AdminChecklist({ ssoNote = '멤버 전원을 예외처리해야 로그�
         <strong className="text-gray-900">{ssoNote}</strong> 설정 방법은 좌측 사이드바의 <strong className="text-gray-900">사용자 SSO 예외처리</strong>를 참고하세요.
       </Check>
       <Check n="2" title="기본 상태 점검">
-        아래 3가지 중 <strong className="text-gray-900">하나라도 해당되면 피드백팀에 접수</strong>해주세요.
+        아래 3가지 중 <strong className="text-gray-900">하나라도 해당되면 Support Case 접수를 통해 피드백팀에 접수</strong>해주세요.
         <ul className="mt-2 space-y-1.5 border-l-2 border-[#635BFF]/30 pl-3 text-[13px]">
           <li>마이그레이션 이전에 작성된 채널 내용 검색이 되지 않음</li>
           <li>비공개 채널의 채널 매니저임에도 사용자 초대 버튼이 나타나지 않음</li>
