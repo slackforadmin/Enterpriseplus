@@ -126,7 +126,7 @@ export default function Home() {
                         </span>
                       )}
                       {phase.badge && (
-                        <span className="text-[11px] font-medium text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full">
+                        <span className="text-[11px] font-bold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full">
                           {phase.badge}
                         </span>
                       )}
