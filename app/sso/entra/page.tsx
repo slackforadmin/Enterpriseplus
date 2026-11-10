@@ -81,7 +81,7 @@ export default function EntraSSOPage() {
           style={{ background: 'radial-gradient(circle at 85% 15%, rgba(0,120,212,0.5) 0%, transparent 55%)' }}
         />
         <div className="relative max-w-5xl">
-          <HeroBadge>런치 2단계</HeroBadge>
+          <HeroBadge>론치 2단계</HeroBadge>
           <h1 className="text-4xl font-bold text-white mb-3 tracking-tight">Entra ID SSO 설정</h1>
           <p className="text-white/70 leading-relaxed">
             Microsoft Entra ID(Azure AD)를 IdP로 사용하여 SAML 기반 SSO와 사용자 프로비저닝을 설정합니다.

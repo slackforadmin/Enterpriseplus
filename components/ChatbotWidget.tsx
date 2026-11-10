@@ -49,7 +49,7 @@ export default function ChatbotWidget() {
               <Image src={asset('/slackbot.png')} alt="도우미" width={28} height={28} className="rounded-md" />
             </div>
             <div>
-              <div className="text-white font-semibold text-sm">런치 도우미</div>
+              <div className="text-white font-semibold text-sm">론치 도우미</div>
               <div className="text-white/60 text-xs">사이트 내용을 키워드로 검색하세요</div>
             </div>
           </div>

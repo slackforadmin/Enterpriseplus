@@ -8,7 +8,7 @@ import SsoExceptionModal from '@/components/SsoExceptionModal';
 
 const navItems = [
   {
-    label: '런치 가이드',
+    label: '론치 가이드',
     href: '/',
   },
   {

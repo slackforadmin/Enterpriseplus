@@ -18,7 +18,7 @@ const phases: Phase[] = [
   {
     number: '01',
     title: 'Kick-Off 영상 시청',
-    description: '런치를 시작하기 전, Kick-Off 영상을 통해 전체 과정과 핵심 포인트를 먼저 확인합니다.',
+    description: '론치를 시작하기 전, Kick-Off 영상을 통해 전체 과정과 핵심 포인트를 먼저 확인합니다.',
     duration: '약 8분 소요',
     links: [{ label: 'Kick-Off 영상', href: '/kickoff' }],
   },
@@ -75,7 +75,7 @@ export default function Home() {
               Enterprise+ Plan
             </div>
             <h1 className="text-5xl font-bold text-white mb-5 leading-[1.1] tracking-tight">
-              Slack 런치 가이드
+              Slack 론치 가이드
             </h1>
             <p className="text-lg text-white/70 leading-relaxed max-w-xl">
               처음 Slack을 도입하시나요? 아래 여정을 따라<br />
@@ -99,7 +99,7 @@ export default function Home() {
       <div className="px-6 md:px-12 py-14">
         <div className="max-w-3xl">
           <h2 className="text-xs font-semibold text-[var(--muted)] uppercase tracking-wider mb-8">
-            런치 여정
+            론치 여정
           </h2>
 
           <div className="relative">

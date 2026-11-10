@@ -204,7 +204,7 @@ export default function AdminSessionPage() {
       >
         <div className="absolute inset-0 opacity-30" style={{ background: 'radial-gradient(circle at 85% 15%, rgba(99,91,255,0.5) 0%, transparent 55%)' }} />
         <div className="relative max-w-5xl">
-          <HeroBadge>런치 5단계</HeroBadge>
+          <HeroBadge>론치 5단계</HeroBadge>
           <h1 className="text-4xl font-bold text-white mb-3 tracking-tight">관리자 세션</h1>
           <p className="text-white/70 leading-relaxed">
             Slack Enterprise+ 관리자를 위한 핵심 기능과 관리 도구를 영상으로 안내합니다.
@@ -266,20 +266,20 @@ export default function AdminSessionPage() {
           </div>
         </div>
 
-        {/* 런치 프로세스 완료 */}
+        {/* 론치 프로세스 완료 */}
         <div className="mt-14 rounded-2xl border border-gray-200 bg-white px-6 py-8 text-center">
           <div className="inline-flex items-center justify-center w-11 h-11 rounded-full bg-emerald-50 mb-3">
             <svg className="w-6 h-6 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h2 className="text-lg font-bold text-gray-900 mb-1">런치 프로세스를 모두 완료했습니다</h2>
+          <h2 className="text-lg font-bold text-gray-900 mb-1">론치 프로세스를 모두 완료했습니다</h2>
           <p className="text-sm text-gray-500 leading-relaxed">
             Kick-Off부터 관리자 세션까지 모든 단계를 마쳤어요.
           </p>
           <div className="mt-5">
             <Link href="/" className="inline-flex items-center gap-1.5 text-sm font-medium text-[#635BFF] hover:underline">
-              런치 가이드 처음으로
+              론치 가이드 처음으로
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
               </svg>

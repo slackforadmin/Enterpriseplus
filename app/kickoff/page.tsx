@@ -14,10 +14,10 @@ export default function KickoffPage() {
       >
         <div className="absolute inset-0 opacity-30" style={{ background: 'radial-gradient(circle at 85% 15%, rgba(99,91,255,0.5) 0%, transparent 55%)' }} />
         <div className="relative max-w-5xl">
-          <HeroBadge>런치 1단계</HeroBadge>
+          <HeroBadge>론치 1단계</HeroBadge>
           <h1 className="text-4xl font-bold text-white mb-3 tracking-tight">Kick-Off</h1>
           <p className="text-white/70 leading-relaxed">
-            런치를 시작하기 전, Kick-Off 영상으로 전체 과정과 핵심 포인트를 먼저 확인하세요.
+            론치를 시작하기 전, Kick-Off 영상으로 전체 과정과 핵심 포인트를 먼저 확인하세요.
           </p>
           <div className="mt-4 inline-flex items-center gap-1.5 bg-white/10 backdrop-blur text-white text-xs font-medium px-3 py-1.5 rounded-full border border-white/10">
             <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

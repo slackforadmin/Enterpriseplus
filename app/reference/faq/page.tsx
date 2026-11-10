@@ -18,7 +18,7 @@ export default function FaqReferencePage() {
           <HeroBadge>참고 자료</HeroBadge>
           <h1 className="text-4xl font-bold text-white mb-3 tracking-tight mt-1">FAQ &amp; 문제 해결</h1>
           <p className="text-white/70 leading-relaxed">
-            런치 과정에서 자주 겪는 상황과 헷갈리기 쉬운 화면을 모았습니다.<br />
+            론치 과정에서 자주 겪는 상황과 헷갈리기 쉬운 화면을 모았습니다.<br />
             항목을 클릭하면 원인과 해결 방법을 확인할 수 있습니다.
           </p>
         </div>

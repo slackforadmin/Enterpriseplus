@@ -5,7 +5,7 @@ import ChatbotWidget from '@/components/ChatbotWidget';
 
 export const metadata: Metadata = {
   title: 'Slack Enterprise+ Launch Guide',
-  description: 'Slack Enterprise+ 런치 가이드',
+  description: 'Slack Enterprise+ 론치 가이드',
 };
 
 export default function RootLayout({

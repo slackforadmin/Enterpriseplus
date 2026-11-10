@@ -51,7 +51,7 @@ export default function SSOPage() {
           style={{ background: 'radial-gradient(circle at 85% 15%, rgba(99,91,255,0.5) 0%, transparent 55%)' }}
         />
         <div className="relative max-w-3xl">
-          <HeroBadge>런치 2단계</HeroBadge>
+          <HeroBadge>론치 2단계</HeroBadge>
           <h1 className="text-4xl font-bold text-white mb-3 tracking-tight">SSO 설정</h1>
           <p className="text-white/70 leading-relaxed">
             조직 구성원이 어떤 방식으로 로그인할지 설정합니다.<br />
