@@ -18,7 +18,6 @@ const phases: Phase[] = [
     number: '01',
     title: 'Kick-Off 영상 시청',
     description: '런치를 시작하기 전, Kick-Off 영상을 통해 전체 과정과 핵심 포인트를 먼저 확인합니다.',
-    note: '영상 준비 중',
     duration: '약 8분 소요',
     links: [{ label: 'Kick-Off 영상', href: '/kickoff' }],
   },
