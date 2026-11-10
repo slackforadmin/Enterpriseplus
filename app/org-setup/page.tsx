@@ -64,7 +64,7 @@ export default function OrgSetupPage() {
         {/* 4. 데이터 내보내기 */}
         <Section num={4} title="데이터 내보내기 권한 요청" badge="피드백팀 요청">
           <p className="text-gray-600 leading-relaxed">
-            데이터 내보내기 권한은 피드백팀에 요청해야 합니다.<br />
+            데이터 내보내기 권한은 Support Case 접수를 통해 피드백팀에 요청해야 합니다.<br />
             다음 내보내기 기능 중 활성화를 희망하시는 기능을 함께 지정해 요청해주세요.
           </p>
           <ul className="space-y-3 ml-2">
@@ -105,7 +105,7 @@ export default function OrgSetupPage() {
         {/* 5. Data Retention */}
         <Section num={5} title="Data Retention 설정 요청" badge="피드백팀 요청" last>
           <p className="text-gray-600 leading-relaxed">
-            Enterprise+ 플랜의 데이터 보존 정책은 관리자 화면에서 설정할 수 없어 <strong className="text-gray-900">피드백팀에 요청</strong>해야 합니다.<br />요청 시 다음 정보가 필요합니다.
+            Enterprise+ 플랜의 데이터 보존 정책은 관리자 화면에서 설정할 수 없어 Support Case 접수를 통해 <strong className="text-gray-900">피드백팀에 요청</strong>해야 합니다.<br />요청 시 다음 정보가 필요합니다.
           </p>
           <ul className="space-y-2 ml-2">
             <li className="flex items-start gap-3 text-gray-600 leading-relaxed">
@@ -125,7 +125,7 @@ export default function OrgSetupPage() {
               <Link href="/reference/retention" className="text-[#635BFF] hover:underline font-medium">
                 데이터 보존 정책
               </Link>{' '}
-              화면을 참조하여 정한 뒤 피드백팀에 요청해주세요.
+              화면을 참조하여 정한 뒤 Support Case 접수를 통해 피드백팀에 요청해주세요.
             </p>
           </div>
 
