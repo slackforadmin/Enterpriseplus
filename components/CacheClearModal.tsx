@@ -69,7 +69,7 @@ export default function CacheClearModal({ open, onClose }: { open: boolean; onCl
             <ul className="space-y-2 text-[13px] text-gray-600 leading-relaxed">
               <li className="flex gap-2">
                 <span className="font-semibold text-gray-900 w-16 flex-shrink-0">Mac</span>
-                <span>Slack 데스크톱 앱 → <Pill>도움말</Pill> → <Pill>문제 해결</Pill> → <Pill>캐시 지우기 및 재시작</Pill></span>
+                <span>Slack 데스크톱 앱을 열고, <Pill>도움말</Pill> → <Pill>문제 해결</Pill> → <Pill>캐시 지우기 및 재시작</Pill></span>
               </li>
               <li className="flex gap-2">
                 <span className="font-semibold text-gray-900 w-16 flex-shrink-0">Windows</span>
