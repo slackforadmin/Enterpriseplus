@@ -236,7 +236,7 @@ export default function AdminSessionPage() {
           </video>
         </div>
 
-        <div className="mt-4 flex items-start gap-2.5 bg-sky-50 border border-sky-200 rounded-xl px-4 py-3 max-w-[64%]">
+        <div className="mt-4 flex items-start gap-2.5 bg-sky-50 border border-sky-200 rounded-xl px-4 py-3 max-w-full md:max-w-[64%]">
           <span className="text-sky-500 flex-shrink-0 mt-0.5">📌</span>
           <p className="text-[13px] text-sky-800 leading-relaxed">아래 내용은 <strong>영상에서 설명하는 내용을 정리한 자료</strong>입니다. 영상과 함께 참고하세요.</p>
         </div>
