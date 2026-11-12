@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import HeroBadge from '@/components/HeroBadge';
+import { asset } from '@/lib/asset';
 
 export default function MigrationOverviewPage() {
   return (
@@ -16,6 +17,12 @@ export default function MigrationOverviewPage() {
           <p className="text-white/70 leading-relaxed">
             마이그레이션 전체 과정과 주요 고려사항을 영상과 함께 안내합니다.
           </p>
+          <div className="mt-4 inline-flex items-center gap-1.5 bg-white/10 backdrop-blur text-white text-xs font-medium px-3 py-1.5 rounded-full border border-white/10">
+            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            약 12분 소요
+          </div>
         </div>
       </div>
 
@@ -29,14 +36,11 @@ export default function MigrationOverviewPage() {
           <h2 className="text-lg font-bold text-gray-900">마이그레이션 오버뷰 영상</h2>
         </div>
 
-        <div className="rounded-2xl border-2 border-dashed border-gray-300 bg-white aspect-video max-w-[64%] flex flex-col items-center justify-center text-center p-8">
-          <div className="w-14 h-14 rounded-full bg-[#635BFF]/10 flex items-center justify-center mb-4">
-            <svg className="w-7 h-7 text-[#635BFF]" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M6.3 2.841A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
-            </svg>
-          </div>
-          <p className="font-semibold text-gray-700 mb-1">오버뷰 영상 준비 중</p>
-          <p className="text-sm text-gray-400">영상이 업로드되면 이 자리에서 바로 재생됩니다.</p>
+        <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-sm bg-black max-w-full md:max-w-[64%]">
+          <video controls playsInline preload="metadata" className="w-full h-auto aspect-video">
+            <source src={asset('/migration/overview.mp4')} type="video/mp4" />
+            브라우저가 영상 재생을 지원하지 않습니다.
+          </video>
         </div>
         <p className="text-xs text-gray-400 mt-3">영상으로 마이그레이션 전체 과정을 이해한 뒤, 사전작업을 진행하세요.</p>
 
