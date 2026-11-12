@@ -100,19 +100,19 @@ export default function SSOPage() {
           </div>
           <button
             onClick={() => router.push('/sso/dummy')}
-            className="group relative w-full flex items-center gap-5 text-left p-6 rounded-2xl border border-gray-200 bg-white hover:border-[#635BFF] hover:shadow-[0_12px_40px_rgba(99,91,255,0.12)] hover:-translate-y-0.5 transition-all overflow-hidden"
+            className="group relative w-full flex items-center gap-4 sm:gap-5 text-left p-4 sm:p-6 rounded-2xl border border-gray-200 bg-white hover:border-[#635BFF] hover:shadow-[0_12px_40px_rgba(99,91,255,0.12)] hover:-translate-y-0.5 transition-all overflow-hidden"
           >
-            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#635BFF] to-[#0EA5E9] flex items-center justify-center flex-shrink-0 shadow-sm">
-              <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-[#635BFF] to-[#0EA5E9] flex items-center justify-center flex-shrink-0 shadow-sm">
+              <svg className="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9.879 7.519C11.05 6.494 12.95 6.494 14.121 7.519c1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
               </svg>
             </div>
-            <div className="flex-1">
-              <div className="inline-flex items-center gap-1.5 mb-1">
-                <h3 className="font-semibold text-gray-900 text-base">Dummy SSO 설정</h3>
-                <span className="text-[11px] font-medium text-[#635BFF] bg-[#635BFF]/10 px-2 py-0.5 rounded-full">SSO 미사용</span>
+            <div className="flex-1 min-w-0">
+              <div className="flex flex-col items-start gap-1 sm:flex-row sm:items-center sm:gap-1.5 mb-1">
+                <h3 className="font-semibold text-gray-900 text-base leading-tight">Dummy SSO 설정</h3>
+                <span className="text-[11px] font-medium text-[#635BFF] bg-[#635BFF]/10 px-2 py-0.5 rounded-full whitespace-nowrap">SSO 미사용</span>
               </div>
-              <p className="text-sm text-gray-500">별도의 IdP 없이 Dummy SSO를 설정하여 진행합니다.</p>
+              <p className="text-sm text-gray-500 leading-snug">별도의 IdP 없이 Dummy SSO를 설정하여 진행합니다.</p>
             </div>
             <div className="w-9 h-9 rounded-full bg-white border border-gray-200 flex items-center justify-center flex-shrink-0 group-hover:border-[#635BFF] group-hover:bg-[#635BFF] transition-all">
               <svg className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
