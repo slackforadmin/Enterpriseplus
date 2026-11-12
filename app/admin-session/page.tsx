@@ -230,7 +230,7 @@ export default function AdminSessionPage() {
         </div>
 
         <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-sm bg-black max-w-full md:max-w-[64%]">
-          <video controls playsInline preload="metadata" className="w-full h-auto aspect-video">
+          <video controls playsInline preload="metadata" poster={asset('/admin-session/poster.jpg')} className="w-full h-auto aspect-video">
             <source src={asset('/admin-session/admin-session.mp4')} type="video/mp4" />
             브라우저가 영상 재생을 지원하지 않습니다.
           </video>

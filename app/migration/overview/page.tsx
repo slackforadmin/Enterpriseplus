@@ -37,7 +37,7 @@ export default function MigrationOverviewPage() {
         </div>
 
         <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-sm bg-black max-w-full md:max-w-[64%]">
-          <video controls playsInline preload="metadata" className="w-full h-auto aspect-video">
+          <video controls playsInline preload="metadata" poster={asset('/migration/overview-poster.jpg')} className="w-full h-auto aspect-video">
             <source src={asset('/migration/overview.mp4')} type="video/mp4" />
             브라우저가 영상 재생을 지원하지 않습니다.
           </video>
