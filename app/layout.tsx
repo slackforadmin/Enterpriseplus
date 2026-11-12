@@ -9,10 +9,9 @@ export const metadata: Metadata = {
 };
 
 // Cloudflare Web Analytics (쿠키·저장 없음, 개인 식별 안 함).
-// 토큰은 Cloudflare 대시보드에서 발급받아 .env.local 또는 배포 환경변수에
-//   NEXT_PUBLIC_CF_BEACON_TOKEN=발급받은_토큰
-// 으로 넣으세요. 토큰이 없으면 beacon은 렌더되지 않습니다(사이트 정상 동작).
-const CF_BEACON_TOKEN = process.env.NEXT_PUBLIC_CF_BEACON_TOKEN;
+// 공개 beacon 토큰이라 코드에 직접 넣어도 보안 문제 없음(페이지 HTML에 어차피 노출됨).
+// 토큰을 바꾸려면 아래 값을 교체하거나 NEXT_PUBLIC_CF_BEACON_TOKEN 환경변수로 덮어쓰면 됩니다.
+const CF_BEACON_TOKEN = process.env.NEXT_PUBLIC_CF_BEACON_TOKEN || '2727e91b40d84c4b8e581a93ec3bd2b0';
 
 export default function RootLayout({
   children,
