@@ -27,7 +27,7 @@ export default function DummySSOPage() {
       <div className="px-6 md:px-12 py-12 max-w-5xl">
         <p className="mb-10 text-sm text-gray-600 leading-relaxed">
           Dummy SSO를 구성하면 <strong className="text-gray-900">모든 사용자에 대한 SSO 예외 설정이 필수</strong>입니다.<br />
-          새 사용자를 초대할 때마다, 마이그레이션 이후 전체 사용자에 대해 설정해야 하며 설정하지 않으면 로그인할 수 없습니다.<br />
+          그렇지 않으면 로그인할 수 없습니다.<br />
           설정 방법은 좌측 사이드바의 <strong className="text-gray-900">사용자 SSO 예외처리</strong>를 참고하세요.
         </p>
 
