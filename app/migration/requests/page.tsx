@@ -23,8 +23,7 @@ export default function MigrationRequestsPage() {
           <HeroBadge>론치 3단계</HeroBadge>
           <h1 className="text-4xl font-bold text-white mb-3 tracking-tight">마이그레이션 전 / 후 진행 요청 사항</h1>
           <p className="text-white/70 leading-relaxed">
-            마이그레이션을 진행하는 경우, 전·후로 관리자와 사용자가 확인·진행해야 할 요청 사항입니다.<br />
-            마이그레이션 전에 사내 공지를 통해 안내해주세요.
+            마이그레이션을 진행하는 경우, 전·후로 관리자와 사용자가 확인·진행해야 할 요청 사항입니다.
           </p>
         </div>
       </div>
