@@ -62,8 +62,7 @@ export default function Day1Setup() {
                   <strong className="text-gray-900">조직의 이름과 도메인</strong>을 설정한 후, <Chip>완료</Chip> 버튼을 클릭합니다. <span className="text-gray-400 text-sm">(3/3단계)</span>
                 </p>
                 <Callout className="mt-4">
-                  나중에 변경할 수 있기 때문에 지금은 변경하지 않고 완료하시는 것을 권장합니다.
-                  특히 조직 도메인의 경우 SSO 설정 전까지는 아무때나 변경하셔도 무방합니다.
+                  나중에 변경할 수 있으니 지금은 그대로 완료하세요. 조직 도메인은 SSO 설정 전까지 언제든 변경 가능합니다.
                 </Callout>
               </>
             }
