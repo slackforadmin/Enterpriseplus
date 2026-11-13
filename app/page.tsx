@@ -35,7 +35,7 @@ const phases: Phase[] = [
   {
     number: '03',
     title: '마이그레이션',
-    description: '기존 Slack 데이터를 이전하는 경우, 오버뷰 영상을 먼저 시청한 뒤 사전작업을 직접 진행합니다. 마이그레이션 전·후 사용자/관리자 진행사항을 함께 안내합니다.',
+    description: '기존 Slack 데이터를 이전하는 경우, 오버뷰 영상을 먼저 시청한 뒤 사전작업을 직접 진행합니다.',
     badge: '필요 시',
     links: [
       { label: '마이그레이션 오버뷰 세션', href: '/migration/overview' },
