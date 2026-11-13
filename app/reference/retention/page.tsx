@@ -98,9 +98,7 @@ export default function RetentionReferencePage() {
             <h2 className="text-lg font-bold text-gray-900">신청 시 정할 값 (요약)</h2>
           </div>
           <p className="text-sm text-gray-500 mb-4">
-            조직 레벨 기준으로 <strong className="text-gray-700">총 8개 항목</strong>을 선택합니다.<br />
-            대부분은 권장 값이 있으며, 공개·비공개 채널의 <strong className="text-gray-700">워크스페이스 고정(Lock)</strong>은 예/아니오 중 하나를 선택합니다.<br />
-            아래 상세 카드에서 각 항목의 다른 옵션도 확인한 뒤 신청해주세요.
+            조직 레벨 <strong className="text-gray-700">8개 항목</strong>을 선택합니다. 대부분 권장 값이 있으며, 아래 카드에서 각 옵션을 확인한 뒤 신청하세요.
           </p>
           <div className="rounded-2xl border border-gray-200 overflow-hidden bg-white">
             <div className="grid grid-cols-[1fr_1.4fr] px-5 py-3 bg-gray-50 border-b border-gray-100 text-[11px] font-bold uppercase tracking-wider text-gray-400">
