@@ -104,8 +104,7 @@ export default function DummySSOPage() {
             img={{ src: '/dummy-sso/sso-config.png', alt: 'SSO 구성 Copy & Paste 화면', width: 781, height: 473 }}
           />
           <InfoCallout>
-            <strong>SSO 인증 예외처리</strong>는 사용자 로그인 활성화에 <strong>필수</strong>입니다. 사용자 SSO 인증 예외처리를 해주세요!
-            마이그레이션을 진행할 경우, 사용자 데이터 이전 완료 후 예외처리를 진행해주세요. 설정 방법은 좌측 사이드바의 <strong>사용자 SSO 예외처리</strong>를 참고하세요.
+            <strong>사용자 SSO 인증 예외처리</strong>는 로그인 활성화에 <strong>필수</strong>입니다. 마이그레이션 시에는 데이터 이전 완료 후 진행하세요. 설정 방법은 좌측 사이드바의 <strong>사용자 SSO 예외처리</strong>를 참고하세요.
           </InfoCallout>
           <StepRow
             n="참고"
