@@ -98,7 +98,8 @@ const DATA = {
   visits:    54,   // Visits = 세션 (방문수)
   pageViews: 319,  // Page views (페이지뷰)
   // '페이지/방문' 은 pageViews ÷ visits 로 자동 계산됩니다 (직접 안 적어도 됨)
-  cwvGood:   99,   // 성능: Core Web Vitals LCP 'Good' 비율 (%) — 대시보드 Core Web Vitals > LCP Good
+  guidePages: 18,  // 제공한 가이드 페이지 수 (사이트에 직접 만든 안내 페이지 개수)
+  videos:     6,   // 제공한 안내 영상 개수 (하단 설명에 표기)
 
   // 인기 페이지 TOP (홈 제외) — [ "페이지 이름", 페이지뷰 ]  (Page views by source > Paths)
   topPages: [
@@ -143,9 +144,9 @@ const DATA = {
         <div class="en">Pages / visit</div>
       </div>
       <div class="kpi c-amber"><div class="bar"></div>
-        <div class="lbl">성능 (Good)</div>
-        <div><span class="val" id="k-cwv">0</span><span class="unit">%</span></div>
-        <div class="en">Core Web Vitals · LCP Good</div>
+        <div class="lbl">제공 페이지</div>
+        <div><span class="val" id="k-pages">0</span><span class="unit">개</span></div>
+        <div class="en">Guide pages built</div>
       </div>
     </div>
 
@@ -164,8 +165,8 @@ const DATA = {
           <div class="chip"><div class="n" id="d-mob">0%</div><div class="t">모바일</div></div>
         </div>
         <div style="margin-top:16px;font-size:12px;color:var(--muted);line-height:1.6">
-          기간 내 방문은 모두 <b style="color:var(--body)">직접 접속(Direct)</b>이며,
-          전부 <b style="color:var(--body)">대한민국</b>에서 발생했습니다.
+          <b style="color:var(--body)">가이드 <span id="n-pages">18</span>개 · 안내 영상 <span id="n-videos">6</span>개</b>를 직접 제작해 운영 중입니다.
+          방문은 모두 직접 접속(Direct), 전부 대한민국에서 발생했습니다.
         </div>
       </div>
     </div>
@@ -192,7 +193,9 @@ const DATA = {
   document.getElementById('k-pv').textContent = nf(DATA.pageViews);
   const ppv = DATA.visits > 0 ? (DATA.pageViews / DATA.visits) : 0;
   document.getElementById('k-ppv').textContent = ppv ? ppv.toFixed(1) : "0";
-  document.getElementById('k-cwv').textContent = (Number(DATA.cwvGood)||0);
+  document.getElementById('k-pages').textContent = (Number(DATA.guidePages)||0);
+  document.getElementById('n-pages').textContent = (Number(DATA.guidePages)||0);
+  document.getElementById('n-videos').textContent = (Number(DATA.videos)||0);
   // top pages
   document.getElementById('pages').innerHTML = DATA.topPages.map((p,i)=>
     `<tr><td><span class="rank">${i+1}</span>${p[0]}</td><td>${nf(p[1])}</td></tr>`).join('');
