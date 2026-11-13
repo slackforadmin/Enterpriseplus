@@ -97,9 +97,11 @@ const DATA = {
   // 핵심 지표 (숫자만, 쉼표는 자동으로 붙습니다)
   visits:    54,   // Visits = 세션 (방문수)
   pageViews: 319,  // Page views (페이지뷰)
+  monthlyVisits: 1620,  // 월 평균 방문수. 지금은 24시간 54건 × 30일 ≈ 1,620 (추정).
+                        //  → 대시보드를 '최근 30일'로 보고 그 방문수를 넣으면 실측치가 됩니다.
   // '페이지/방문' 은 pageViews ÷ visits 로 자동 계산됩니다 (직접 안 적어도 됨)
-  guidePages: 18,  // 제공한 가이드 페이지 수 (사이트에 직접 만든 안내 페이지 개수)
-  videos:     6,   // 제공한 안내 영상 개수 (하단 설명에 표기)
+  guidePages: 18,  // (하단 설명에 표기) 제공한 가이드 페이지 수
+  videos:     6,   // (하단 설명에 표기) 제공한 안내 영상 개수
 
   // 인기 페이지 TOP (홈 제외) — [ "페이지 이름", 페이지뷰 ]  (Page views by source > Paths)
   topPages: [
@@ -139,14 +141,14 @@ const DATA = {
         <div class="en">Page views</div>
       </div>
       <div class="kpi c-green"><div class="bar"></div>
+        <div class="lbl">월 평균 방문수</div>
+        <div><span class="val" id="k-monthly">0</span><span class="unit">건</span></div>
+        <div class="en">Monthly visits · 추정</div>
+      </div>
+      <div class="kpi c-amber"><div class="bar"></div>
         <div class="lbl">페이지/방문</div>
         <div><span class="val" id="k-ppv">0</span><span class="unit">쪽</span></div>
         <div class="en">Pages / visit</div>
-      </div>
-      <div class="kpi c-amber"><div class="bar"></div>
-        <div class="lbl">제공 페이지</div>
-        <div><span class="val" id="k-pages">0</span><span class="unit">개</span></div>
-        <div class="en">Guide pages built</div>
       </div>
     </div>
 
@@ -187,9 +189,9 @@ const DATA = {
   // KPIs
   document.getElementById('k-visits').textContent = nf(DATA.visits);
   document.getElementById('k-pv').textContent = nf(DATA.pageViews);
+  document.getElementById('k-monthly').textContent = nf(DATA.monthlyVisits);
   const ppv = DATA.visits > 0 ? (DATA.pageViews / DATA.visits) : 0;
   document.getElementById('k-ppv').textContent = ppv ? ppv.toFixed(1) : "0";
-  document.getElementById('k-pages').textContent = (Number(DATA.guidePages)||0);
   document.getElementById('n-pages').textContent = (Number(DATA.guidePages)||0);
   document.getElementById('n-videos').textContent = (Number(DATA.videos)||0);
   // top pages
