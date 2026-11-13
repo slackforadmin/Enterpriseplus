@@ -38,7 +38,7 @@ export default function SupportCaseReferencePage() {
             </span>
           </div>
           <p className="text-gray-800 leading-relaxed">
-            <code className="text-sm font-medium bg-[#635BFF]/10 text-[#635BFF] px-1.5 py-0.5 rounded">/feedback</code> · <code className="text-sm font-medium bg-[#635BFF]/10 text-[#635BFF] px-1.5 py-0.5 rounded">feedback@slack.com</code> 은 더 이상 동작하지 않습니다. 이제 <strong className="text-gray-900">Slack 고객지원센터</strong>에서 지원 사례(Case)를 생성하세요.
+            <code className="text-sm font-medium bg-[#635BFF]/10 text-[#635BFF] px-1.5 py-0.5 rounded">/feedback</code> · <code className="text-sm font-medium bg-[#635BFF]/10 text-[#635BFF] px-1.5 py-0.5 rounded">feedback@slack.com</code> 은 중단되었습니다. 이제 <strong className="text-gray-900">Slack 고객지원센터</strong>에서 지원 사례(Case)를 생성하세요.
           </p>
           <p className="mt-2 text-sm text-gray-500">
             <code className="text-xs font-medium bg-[#635BFF]/10 text-[#635BFF] px-1.5 py-0.5 rounded">/feedback</code> 실행 시 Help Center 안내창으로 이동합니다.
